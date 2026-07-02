@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { MessageSquare, ArrowUp, Share2, Twitter, Facebook, Linkedin, Copy, Check, X } from "lucide-react";
+import { MessageSquare, ArrowUp, Share2, Twitter, Facebook, Linkedin, Copy, Check, X, BookOpen } from "lucide-react";
 
 interface FloatingContactProps {
   highContrast: boolean;
@@ -262,6 +262,35 @@ export default function FloatingContact({ highContrast }: FloatingContactProps) 
           </div>
         </div>
       )}
+       {/* LEFT-SIDE FLOATING WHATSAPP CATALOG BUTTON */}
+      <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-3.5 items-start">
+        <a
+          href="https://wa.me/c/554195507310"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group cursor-pointer"
+          aria-label="Ver nosso Catálogo de Persianas no WhatsApp"
+          id="btn-floating-catalog-left"
+        >
+          {/* Breathing background circle pulse */}
+          <span className="absolute -inset-2 bg-emerald-500/35 rounded-full animate-ping pointer-events-none duration-1000" />
+          
+          {/* Main Catalog Button */}
+          <div className={`w-15 h-15 rounded-full shadow-2xl flex items-center justify-center border hover:scale-105 active:scale-95 transition-transform duration-200 ${
+            highContrast
+              ? "bg-yellow-400 text-black border-black"
+              : "bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-500/35"
+          }`}>
+            <BookOpen className="w-7 h-7 shrink-0 animate-pulse" />
+          </div>
+
+          {/* Text tooltip for hover on desktop */}
+          <span className="absolute left-18 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-xl border border-slate-800 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:inline">
+            Catálogo de Persianas 📖
+          </span>
+        </a>
+      </div>
+
     </>
   );
 }

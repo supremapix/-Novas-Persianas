@@ -5,7 +5,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, ShieldCheck, CheckSquare, MessageSquare, ExternalLink, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, CheckSquare, MessageSquare, ExternalLink, Heart, BookOpen } from "lucide-react";
 
 interface FooterProps {
   highContrast: boolean;
@@ -302,6 +302,18 @@ export default function Footer({
               Central do Cliente
             </h4>
             <ul className="flex flex-col gap-3 text-base font-semibold">
+              <li>
+                <a 
+                  href="https://wa.me/c/554195507310" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline focus:underline text-emerald-400 hover:text-emerald-300 font-extrabold min-h-[40px] flex items-center gap-1.5"
+                  title="Acessar o Catálogo de Persianas no WhatsApp"
+                >
+                  <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Catálogo de Persianas (WhatsApp)</span>
+                </a>
+              </li>
               <li>
                 <a href="#conta" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
                   Minha Conta / Acesso

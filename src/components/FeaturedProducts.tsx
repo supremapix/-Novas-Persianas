@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { MessageSquare, Search, Sparkles, SlidersHorizontal, Info, Check } from "lucide-react";
+import { MessageSquare, Search, Sparkles, SlidersHorizontal, Info, Check, BookOpen } from "lucide-react";
 import { PRODUCTS } from "../data";
 import { Product } from "../types";
 
@@ -97,7 +97,7 @@ export default function FeaturedProducts({
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Title and Intro */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue font-bold px-3 py-1 rounded-full text-xs uppercase mb-3 border border-brand-blue/20">
             <Sparkles className="w-3.5 h-3.5 text-brand-blue" />
             <span>Nossa Seleção Especial</span>
@@ -110,6 +110,49 @@ export default function FeaturedProducts({
           <p className="text-base text-slate-600 font-medium leading-relaxed">
             Nossos modelos campeões de vendas em Curitiba. Clique em <strong>Orçamento</strong> para falar com nossos consultores ou em <strong>Ficha Técnica</strong> para ver os detalhes de cada produto.
           </p>
+        </div>
+
+        {/* Catálogo Completo WhatsApp Prominent Banner/Highlight */}
+        <div className={`mb-10 p-6 md:p-8 rounded-2xl border-2 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 relative overflow-hidden ${
+          highContrast 
+            ? "bg-black border-yellow-400 text-white" 
+            : "bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 text-white border-emerald-500/25 shadow-xl"
+        }`}>
+          {/* Decorative Back Light */}
+          {!highContrast && (
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          )}
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+            <div className="w-16 h-16 rounded-full bg-emerald-500/15 flex items-center justify-center text-emerald-400 border border-emerald-500/35 shrink-0 animate-pulse">
+              <BookOpen className="w-8 h-8" />
+            </div>
+            <div>
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 inline-block mb-1.5">
+                Catálogo Oficial
+              </span>
+              <h3 className="text-xl md:text-2xl font-black font-display tracking-tight uppercase">
+                Acesse Nosso Catálogo Completo no WhatsApp
+              </h3>
+              <p className="text-stone-300 text-sm mt-1 max-w-xl font-medium">
+                Conheça todas as variações de tecidos, cores e opções de motorização inteligente diretamente no catálogo oficial Nova's Persianas.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/c/554195507310"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`relative z-10 px-6 py-4 rounded-xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-md shrink-0 hover:scale-105 active:scale-95 cursor-pointer min-h-[48px] ${
+              highContrast
+                ? "bg-yellow-400 text-black border-2 border-black"
+                : "bg-emerald-500 hover:bg-emerald-600 text-white border border-emerald-400"
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>Ver Catálogo Completo</span>
+          </a>
         </div>
 
         {/* Search & Accessibility Filter Controls */}

@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { Menu, X, ChevronDown, Phone, MessageSquare, ArrowRight, ExternalLink, ZoomIn, ZoomOut, Contrast, Mail, MapPin, Star, Navigation, Settings } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, MessageSquare, ArrowRight, ExternalLink, ZoomIn, ZoomOut, Contrast, Mail, MapPin, Star, Navigation, Settings, BookOpen } from "lucide-react";
 import { PERSIANA_CATEGORIES } from "../data";
 
 interface HeaderProps {
@@ -462,6 +462,19 @@ export default function Header({
               Contato
             </button>
 
+            {/* Catálogo */}
+            <a
+              href="https://wa.me/c/554195507310"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 font-black text-emerald-400 hover:text-emerald-300 focus:text-emerald-300 rounded-lg text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+              aria-label="Ver Catálogo de Persianas no WhatsApp (abre em nova janela)"
+              title="Ver Catálogo de Persianas no WhatsApp"
+            >
+              <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Catálogo</span>
+            </a>
+
             {/* Avaliar (Review) - Highlighted Link */}
             <a
               href="https://share.google/UZ4TJH0aoxwaonagc"
@@ -720,6 +733,18 @@ export default function Header({
               >
                 Fale Conosco (Contato)
               </button>
+
+              {/* Catálogo no WhatsApp */}
+              <a
+                href="https://wa.me/c/554195507310"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-left p-4 rounded-xl border-b border-slate-800 hover:bg-emerald-900/20 focus:bg-emerald-900/20 text-emerald-400 font-extrabold transition-colors min-h-[60px] flex items-center gap-3 cursor-pointer"
+                aria-label="Ver Catálogo de Persianas no WhatsApp"
+              >
+                <BookOpen className="w-5 h-5 text-emerald-400 shrink-0" />
+                <span>Catálogo no WhatsApp</span>
+              </a>
             </nav>
 
             {/* COLLAPSIBLE ACCESSIBILITY PANEL (SENIOR OPTIONS COLLAPSED AT THE BOTTOM) */}
