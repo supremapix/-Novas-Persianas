@@ -1,0 +1,15 @@
+/* TEAM */
+Chef de Projeto / SEO Senior: Nova's Persianas SEO Architecture Team
+Developer: AI Studio Code Agent (Gemini-3.5-Flash)
+Sede: Curitiba - PR - Brasil
+
+/* THANKS */
+Google AI Studio, Vite, React, Tailwind CSS
+
+/* SITE */
+Standards: HTML5, CSS3, JSON-LD, WebApp Manifest, Schema.org, WCAG 2.1 (Acessibilidade)
+Components: React, Lucide Icons, Framer Motion
+Software: Vite, TypeScript, PostCSS
+Domain: https://novaspersianascuritiba.com.br
+Segment: Persianas Sob Medida em Curitiba
+Sede Fisica: R. Frei Henrique de Coimbra, 1750, Hauer, Curitiba - PR

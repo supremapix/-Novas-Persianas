@@ -10,27 +10,53 @@ import { Phone, Mail, MapPin, ShieldCheck, CheckSquare, MessageSquare, ExternalL
 interface FooterProps {
   highContrast: boolean;
   onFilterProduct: (category: string) => void;
+  activePage: "home" | "quem-somos" | "contato";
+  setActivePage: (page: "home" | "quem-somos" | "contato") => void;
   onOpenAccessibility?: () => void;
 }
 
-export default function Footer({ highContrast, onFilterProduct, onOpenAccessibility }: FooterProps) {
+export default function Footer({ 
+  highContrast, 
+  onFilterProduct, 
+  activePage,
+  setActivePage,
+  onOpenAccessibility 
+}: FooterProps) {
   
   const handleScrollToSection = (hashId: string, categoryFilter?: string) => {
     if (categoryFilter) {
       onFilterProduct(categoryFilter);
     }
 
-    const element = document.getElementById(hashId);
-    if (element) {
-      const headerOffset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+    if (hashId === "sobre") {
+      setActivePage("quem-somos");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
+
+    if (hashId === "contato") {
+      setActivePage("contato");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    setActivePage("home");
+
+    setTimeout(() => {
+      const element = document.getElementById(hashId);
+      if (element) {
+        const headerOffset = 120;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 120);
   };
 
   return (
@@ -196,7 +222,7 @@ export default function Footer({ highContrast, onFilterProduct, onOpenAccessibil
               </li>
               <li>
                 <button 
-                  onClick={() => handleScrollToSection("footer")}
+                  onClick={() => handleScrollToSection("contato")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
                   Contate-nos

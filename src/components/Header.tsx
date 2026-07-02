@@ -14,6 +14,8 @@ interface HeaderProps {
   fontSizeLevel: number;
   setFontSizeLevel: (level: number) => void;
   onFilterProduct: (category: string) => void;
+  activePage: "home" | "quem-somos" | "contato";
+  setActivePage: (page: "home" | "quem-somos" | "contato") => void;
 }
 
 export default function Header({ 
@@ -21,7 +23,9 @@ export default function Header({
   setHighContrast,
   fontSizeLevel,
   setFontSizeLevel,
-  onFilterProduct 
+  onFilterProduct,
+  activePage,
+  setActivePage
 }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,18 +87,36 @@ export default function Header({
       onFilterProduct(categoryFilter);
     }
 
-    const element = document.getElementById(hashId);
-    if (element) {
-      // Calculate header offset
-      const headerOffset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+    if (hashId === "sobre") {
+      setActivePage("quem-somos");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
+
+    if (hashId === "contato") {
+      setActivePage("contato");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    setActivePage("home");
+
+    setTimeout(() => {
+      const element = document.getElementById(hashId);
+      if (element) {
+        // Calculate header offset
+        const headerOffset = 120;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 120);
   };
 
   return (
@@ -387,7 +409,7 @@ export default function Header({
 
             {/* Contato */}
             <button
-              onClick={() => handleNavItemClick("footer")}
+              onClick={() => handleNavItemClick("contato")}
               className="px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider transition-colors cursor-pointer text-white"
               aria-label="Ir para informações de contato"
             >
@@ -646,7 +668,7 @@ export default function Header({
 
               {/* Contato */}
               <button
-                onClick={() => handleNavItemClick("footer")}
+                onClick={() => handleNavItemClick("contato")}
                 className="w-full text-left p-4 rounded-xl border-b border-slate-800 hover:bg-slate-800/40 focus:bg-slate-800/40 transition-colors min-h-[60px] flex items-center cursor-pointer text-white"
                 aria-label="Ir para rodapé com contatos"
               >

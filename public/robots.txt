@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://novaspersianascuritiba.com.br/sitemap.xml

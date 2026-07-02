@@ -1,0 +1,6 @@
+Contact: mailto:security@novaspersianascuritiba.com.br
+Contact: https://novaspersianascuritiba.com.br/contato
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: pt, en
+Canonical: https://novaspersianascuritiba.com.br/.well-known/security.txt
+Policy: https://novaspersianascuritiba.com.br/politica-de-privacidade
