@@ -127,22 +127,71 @@ export default function Footer({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-center gap-2 mb-12 pb-8 border-b border-stone-800 text-center"
+          className="flex flex-col items-center justify-center gap-4 mb-12 pb-8 border-b border-stone-800 text-center"
         >
-          <div className="flex flex-col gap-[4px] w-12 justify-center items-center">
-            <div className="h-[4px] w-full bg-brand-blue rounded"></div>
-            <div className="h-[4px] w-11/12 bg-white rounded"></div>
-            <div className="h-[4px] w-4/5 bg-brand-blue rounded"></div>
-            <div className="h-[4px] w-3/4 bg-white rounded"></div>
+          <div className="relative flex items-center justify-center">
+            {/* Ambient Back Glow */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-sky-400/5 to-brand-blue/10 blur-xl rounded-full"
+              animate={{
+                scale: [0.95, 1.2, 0.95],
+                opacity: [0.3, 0.6, 0.3]
+              }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            {/* Interactive Image Container with Floating */}
+            <motion.div
+              animate={{
+                y: [0, -3, 0]
+              }}
+              whileHover={{
+                scale: 1.08,
+                filter: highContrast 
+                  ? "drop-shadow(0 0 12px #fff)" 
+                  : "drop-shadow(0 0 12px rgba(56, 189, 248, 0.5))",
+              }}
+              whileTap={{ scale: 0.96 }}
+              transition={{
+                y: {
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                },
+                scale: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 15
+                }
+              }}
+              className="relative z-10 cursor-pointer"
+              onClick={() => handleScrollToSection("hero")}
+            >
+              <img
+                src="https://img.novaspersianascuritiba.com.br/novapercianas-removebg-preview.png"
+                alt="Nova's Persianas"
+                referrerPolicy="no-referrer"
+                className="h-16 md:h-20 w-auto object-contain transition-all duration-300 hover:brightness-110"
+              />
+              
+              {/* Premium Shimmer Sweep effect across the logo on Hover */}
+              <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden rounded-lg">
+                <motion.div
+                  className="absolute -inset-full bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12"
+                  initial={{ x: "-100%" }}
+                  whileHover={{
+                    x: ["100%", "-100%"],
+                    transition: { duration: 1.2, ease: "easeOut" }
+                  }}
+                />
+              </div>
+            </motion.div>
           </div>
-          <div className="flex flex-col mt-2">
-            <span className="text-2xl font-black font-display tracking-tight leading-none text-white uppercase">
-              Nova's
-            </span>
-            <span className="text-[10px] font-bold tracking-widest uppercase text-brand-blue leading-none mt-1">
-              Persianas
-            </span>
-          </div>
+
           <p className="text-stone-400 text-xs mt-2 font-medium max-w-md">
             Líder em Persianas Sob Medida • Atendimento humanizado e focado no conforto e facilidade para a Terceira Idade.
           </p>

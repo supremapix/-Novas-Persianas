@@ -235,32 +235,78 @@ export default function Header({
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           
-          {/* Logo - Matching Nova's Persianas closely */}
+          {/* Logo - Premium Image with Interactive/Idle Animations */}
           <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
           >
             <button
               onClick={() => handleNavItemClick("hero")}
-              className="text-left py-1 focus:ring-2 focus:ring-brand-blue rounded flex items-center gap-3 group cursor-pointer"
+              className="py-1 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 rounded-xl flex items-center justify-center group cursor-pointer overflow-hidden relative"
               aria-label="Página Inicial - Nova's Persianas logo"
             >
-              {/* Slat Icon representing Blinds */}
-              <div className="flex flex-col gap-[3px] w-8 shrink-0">
-                <div className="h-[3px] w-full bg-brand-blue rounded"></div>
-                <div className="h-[3px] w-11/12 bg-white rounded"></div>
-                <div className="h-[3px] w-4/5 bg-brand-blue rounded"></div>
-                <div className="h-[3px] w-3/4 bg-white rounded"></div>
-                <div className="h-[3px] w-2/3 bg-brand-blue rounded"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-black font-display tracking-tight leading-none text-white group-hover:text-brand-blue transition-colors">
-                  Nova's
-                </span>
-                <span className="text-[9px] font-bold tracking-widest uppercase text-brand-blue leading-none mt-0.5">
-                  Persianas
-                </span>
+              <div className="relative flex items-center">
+                {/* Premium Golden/Blue Ambient Shine Behind the Logo (Idle Breathe & Glow) */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-brand-blue/20 via-sky-400/10 to-brand-blue/20 blur-xl rounded-full"
+                  animate={{
+                    scale: [0.9, 1.15, 0.9],
+                    opacity: [0.4, 0.7, 0.4]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                {/* Floating Logo Element */}
+                <motion.div
+                  animate={{
+                    y: [0, -3, 0],
+                  }}
+                  whileHover={{
+                    scale: 1.08,
+                    filter: highContrast 
+                      ? "drop-shadow(0 0 12px #fff)" 
+                      : "drop-shadow(0 0 12px rgba(56, 189, 248, 0.6))",
+                  }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={{
+                    y: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 15
+                    }
+                  }}
+                  className="relative z-10 flex items-center"
+                >
+                  <img
+                    src="https://img.novaspersianascuritiba.com.br/novapercianas-removebg-preview.png"
+                    alt="Nova's Persianas Curitiba"
+                    referrerPolicy="no-referrer"
+                    className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
+                  />
+                  
+                  {/* Premium Shimmer Sweep effect across the logo on Hover */}
+                  <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden rounded-lg">
+                    <motion.div
+                      className="absolute -inset-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+                      initial={{ x: "-100%" }}
+                      whileHover={{
+                        x: ["100%", "-100%"],
+                        transition: { duration: 1.2, ease: "easeOut" }
+                      }}
+                    />
+                  </div>
+                </motion.div>
               </div>
             </button>
           </motion.div>

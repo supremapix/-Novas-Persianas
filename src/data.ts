@@ -191,7 +191,7 @@ export const SERVICES: Service[] = [
     name: "Instalação Profissional",
     description: "Instalação especializada realizada por técnicos capacitados e com ferramentas de precisão. Garantimos que sua persiana fique perfeitamente alinhada, com funcionamento suave e sem danos à sua estrutura.",
     details: ["Agendamento pontual e flexível", "Limpeza pós-serviço inclusa", "Garantia de 1 ano de fixação técnica", "Instaladores com treinamento de cortesia"],
-    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTFQj6NuJDjW8sfkkHIhJ4Kw-5EQSw60Fxeqr2IjTc4wFsZUa1i0Jqy219iTSuQhiDH33kJJ45ac9bwZE19jA7i-RRz94ibg7y-SUJ3CjYvlS017X4Av4uLy0c-lwXvPFdZYQ=s680-w680-h510-rw"
+    image: "https://scontent.fbfh15-2.fna.fbcdn.net/v/t39.30808-6/722963878_944294635328737_6535233456210834431_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1071&ctp=s1080x1071&_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHrzzp0AWNz6kga0Y4HlwzFSxZcPvGxgu5LFlw-8bGC7j6e-p51Uy5muIp-Bf4XUAKDd-XmjJkWuBjv0U19szEX&_nc_ohc=Iccb_sFIaPwQ7kNvwEF8-cx&_nc_oc=Adrr-xSqSp4IWEubcPS6vFKUVjLfHuzD9N3eXODZ0Al8ED6Hr6ybtxDUGsIPPdnkkB_sZV485z5rlCUVEw3PyAgf&_nc_zt=23&_nc_ht=scontent.fbfh15-2.fna&_nc_gid=p9mECjYaInzgmiimdepWTg&_nc_ss=7b2a8&oh=00_AQBLfjmCQNMMS37LWNeioCrr24hNFGogAtQUFGbk9-xFXw&oe=6A4C5D2C"
   },
   {
     id: "s2",
