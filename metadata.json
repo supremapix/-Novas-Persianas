@@ -1,0 +1,6 @@
+{
+  "name": "Nova's Persianas",
+  "description": "Site institucional acessível e moderno para Nova's Persianas em Curitiba/PR. Especialistas em persianas e cortinas com mais de 20 anos de tradição.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
