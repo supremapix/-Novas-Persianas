@@ -1,0 +1,27 @@
+# ######################################################################
+# NOVA'S PERSIANAS CURITIBA - APACHE SEO CONFIGURATION & REDIRECTS
+# ######################################################################
+
+RewriteEngine On
+RewriteBase /
+
+# 1. Force WWW (Good SEO Practice)
+RewriteCond %{HTTP_HOST} ^novaspersianascuritiba\.com\.br [NC]
+RewriteRule ^(.*)$ https://www.novaspersianascuritiba.com.br/$1 [L,R=301]
+
+# 2. Redirects for old installation URLs to the new SEO optimized URL
+Redirect 301 /instalacao https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+Redirect 301 /instalacao/ https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+Redirect 301 /instalacoes https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+Redirect 301 /instalacoes/ https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+Redirect 301 /instalacao-de-persianas https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+Redirect 301 /instalacao-de-persianas/ https://www.novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba
+
+# 3. Redirect old shop URLs to home
+Redirect 301 /shop https://www.novaspersianascuritiba.com.br/
+Redirect 301 /shop/ https://www.novaspersianascuritiba.com.br/
+
+# 4. Fallback for Single Page Application (SPA) routing (HTML5 History API)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

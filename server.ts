@@ -16,6 +16,18 @@ async function startServer() {
     res.redirect(301, "/");
   });
 
+  // Handle old installation URLs with a 301 Moved Permanently server redirection
+  app.get([
+    "/instalacoes", 
+    "/instalacoes/", 
+    "/instalacao", 
+    "/instalacao/", 
+    "/instalacao-de-persianas", 
+    "/instalacao-de-persianas/"
+  ], (req, res) => {
+    res.redirect(301, "/instalacao-de-persianas-curitiba");
+  });
+
   // Vite middleware for development or serving built files in production
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

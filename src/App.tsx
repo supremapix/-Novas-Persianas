@@ -20,6 +20,8 @@ import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
 import SeoManager from "./components/SeoManager";
 import SeoLandingPage from "./components/SeoLandingPage";
+import Redirect301 from "./components/Redirect301";
+import NotFoundPage from "./components/NotFoundPage";
 
 const VALID_SEO_ROUTES = [
   "persianas-curitiba",
@@ -60,10 +62,12 @@ export default function App() {
           modelsSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 800);
+    } else if (["instalacoes", "instalacao", "instalacao-de-persianas"].includes(path)) {
+      setActivePage("redirect-instalacao");
     } else if (VALID_SEO_ROUTES.includes(path)) {
       setActivePage(path);
     } else {
-      setActivePage("home");
+      setActivePage("404");
     }
   }, []);
 
@@ -85,10 +89,12 @@ export default function App() {
             modelsSection.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }, 800);
+      } else if (["instalacoes", "instalacao", "instalacao-de-persianas"].includes(path)) {
+        setActivePage("redirect-instalacao");
       } else if (VALID_SEO_ROUTES.includes(path)) {
         setActivePage(path);
       } else {
-        setActivePage("home");
+        setActivePage("404");
       }
     };
     window.addEventListener("popstate", handlePopState);
@@ -223,6 +229,19 @@ export default function App() {
             route={activePage}
             onNavigateHome={() => navigateTo("home")}
             setActivePage={(page) => navigateTo(page)}
+          />
+        )}
+
+        {/* Server/Client-side 301 redirection fallback */}
+        {activePage === "redirect-instalacao" && (
+          <Redirect301 to="/instalacao-de-persianas-curitiba" />
+        )}
+
+        {/* Fallback 404 Intelligent Page */}
+        {activePage === "404" && (
+          <NotFoundPage
+            highContrast={highContrast}
+            onNavigate={(page) => navigateTo(page)}
           />
         )}
 

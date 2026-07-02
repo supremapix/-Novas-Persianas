@@ -1,0 +1,50 @@
+{
+  "redirects": [
+    {
+      "source": "/shop",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/instalacoes",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/instalacoes/",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/instalacao",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/instalacao/",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/instalacao-de-persianas",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/instalacao-de-persianas/",
+      "destination": "/instalacao-de-persianas-curitiba",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
