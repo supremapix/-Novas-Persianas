@@ -334,36 +334,46 @@ export default function Footer({
           </div>
 
           {/* Column 4: CONTATOS & CONFIAVEL BADGE */}
-          <div className={`flex flex-col gap-4 p-5 rounded-2xl border transition-all duration-300 ${
+          <div className={`flex flex-col gap-5 p-6 rounded-2xl border transition-all duration-300 ${
             highContrast 
-              ? "bg-stone-950 border-white text-white" 
-              : "bg-stone-950/60 text-stone-200 border-stone-800"
-          } shadow-xl`}>
-            <h4 className="text-lg font-bold text-white border-b border-stone-700 pb-2 font-display uppercase tracking-wider">
+              ? "bg-black border-white text-white" 
+              : "bg-stone-900/90 text-stone-200 border-stone-800 shadow-2xl"
+          }`}>
+            <h4 className="text-lg font-black text-white border-b border-stone-700 pb-2.5 font-display uppercase tracking-wider">
               Contatos Rápidos
             </h4>
-            <div className="flex flex-col gap-3.5 text-base font-semibold">
+            <div className="flex flex-col gap-4 text-base font-semibold">
               
               {/* Phone Click */}
               <a 
                 href="tel:+5541995507310" 
-                className="flex items-start gap-2.5 text-stone-300 hover:text-white hover:underline focus:underline p-1 rounded focus:outline-none"
-                title="Ligar para a loja"
+                className="group flex items-center gap-3 text-stone-300 hover:text-brand-blue transition-colors p-1.5 rounded-xl hover:bg-stone-800/40 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                title="Ligar para Nova's Persianas"
                 aria-label="Ligar para o telefone (41) 99550-7310"
               >
-                <Phone className="w-5 h-5 text-brand-blue shrink-0 mt-1 animate-pulse" />
-                <span className="text-lg font-bold text-white">(41) 99550-7310</span>
+                <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                  <Phone className="w-5 h-5 shrink-0 animate-pulse" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-stone-400 font-bold uppercase tracking-wider">Telefone & WhatsApp</span>
+                  <span className="text-lg font-extrabold text-white group-hover:underline">(41) 99550-7310</span>
+                </div>
               </a>
 
               {/* Email Click */}
               <a 
-                href="mailto:atendimento@novaspersianas.com.br" 
-                className="flex items-start gap-2.5 text-stone-300 hover:text-white hover:underline focus:underline p-1 rounded focus:outline-none break-all text-xs"
-                title="Enviar e-mail para a loja"
-                aria-label="Enviar e-mail para atendimento@novaspersianas.com.br"
+                href="mailto:contato@novaspersianascuritiba.com.br" 
+                className="group flex items-center gap-3 text-stone-300 hover:text-brand-blue transition-colors p-1.5 rounded-xl hover:bg-stone-800/40 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                title="Enviar e-mail para contato@novaspersianascuritiba.com.br"
+                aria-label="Enviar e-mail para contato@novaspersianascuritiba.com.br"
               >
-                <Mail className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
-                <span>atendimento@novaspersianas.com.br</span>
+                <div className="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                  <Mail className="w-5 h-5 shrink-0" />
+                </div>
+                <div className="flex flex-col overflow-hidden">
+                  <span className="text-xs text-stone-400 font-bold uppercase tracking-wider">E-mail Comercial</span>
+                  <span className="text-sm font-extrabold text-white group-hover:underline truncate">contato@novaspersianascuritiba.com.br</span>
+                </div>
               </a>
 
               {/* Address Click */}
@@ -371,17 +381,22 @@ export default function Footer({
                 href="https://maps.app.goo.gl/cywjDuMVyBH4QiDD8?g_st=ac" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-start gap-2.5 text-stone-300 hover:text-white hover:underline focus:underline p-1 rounded focus:outline-none text-xs"
-                title="Abrir endereço no mapa"
-                aria-label="Endereço Curitiba, Paraná. Clique para ver direções no mapa."
+                className="group flex items-center gap-3 text-stone-300 hover:text-brand-blue transition-colors p-1.5 rounded-xl hover:bg-stone-800/40 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                title="Ver endereço no Google Maps"
+                aria-label="Nossa sede no bairro Hauer em Curitiba. Clique para abrir rotas no Google Maps."
               >
-                <MapPin className="w-5 h-5 text-red-400 shrink-0 mt-1" />
-                <span>Atendimento Domiciliar em Curitiba - PR</span>
+                <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 group-hover:bg-red-500 group-hover:text-white transition-all">
+                  <MapPin className="w-5 h-5 shrink-0" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-stone-400 font-bold uppercase tracking-wider">Endereço Física / Sede</span>
+                  <span className="text-xs font-extrabold text-stone-200 leading-tight group-hover:underline">Rua Frei Henrique de Coimbra, 1750, Hauer, Curitiba - PR</span>
+                </div>
               </a>
 
               {/* SELO DE SITE CONFIÁVEL / SITE SEGURO */}
-              <div className={`mt-4 p-3 rounded-xl border flex items-center gap-3 ${
-                highContrast ? "bg-stone-900 border-white text-white" : "bg-stone-900/80 text-emerald-100 border-stone-800"
+              <div className={`mt-2 p-3.5 rounded-xl border flex items-center gap-3 ${
+                highContrast ? "bg-stone-900 border-white text-white" : "bg-stone-900/90 text-emerald-100 border-stone-800"
               }`}>
                 <ShieldCheck className="w-8 h-8 text-emerald-400 shrink-0" />
                 <div className="text-xs">
