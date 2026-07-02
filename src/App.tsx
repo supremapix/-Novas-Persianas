@@ -52,6 +52,14 @@ export default function App() {
       setActivePage("quem-somos");
     } else if (path === "contato") {
       setActivePage("contato");
+    } else if (path === "shop") {
+      setActivePage("home");
+      setTimeout(() => {
+        const modelsSection = document.getElementById("modelos");
+        if (modelsSection) {
+          modelsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 800);
     } else if (VALID_SEO_ROUTES.includes(path)) {
       setActivePage(path);
     } else {
@@ -69,6 +77,14 @@ export default function App() {
         setActivePage("quem-somos");
       } else if (path === "contato") {
         setActivePage("contato");
+      } else if (path === "shop") {
+        setActivePage("home");
+        setTimeout(() => {
+          const modelsSection = document.getElementById("modelos");
+          if (modelsSection) {
+            modelsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 800);
       } else if (VALID_SEO_ROUTES.includes(path)) {
         setActivePage(path);
       } else {
