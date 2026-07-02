@@ -10,8 +10,8 @@ import { Phone, Mail, MapPin, ShieldCheck, CheckSquare, MessageSquare, ExternalL
 interface FooterProps {
   highContrast: boolean;
   onFilterProduct: (category: string) => void;
-  activePage: "home" | "quem-somos" | "contato";
-  setActivePage: (page: "home" | "quem-somos" | "contato") => void;
+  activePage: "home" | "quem-somos" | "contato" | string;
+  setActivePage: (page: string) => void;
   onOpenAccessibility?: () => void;
 }
 
@@ -466,6 +466,18 @@ export default function Footer({
             </p>
             <p className="text-stone-500 text-xs mt-1">
               CNPJ: 12.345.678/0001-90 • Curitiba, PR
+            </p>
+            <p className="mt-1 text-[10px] text-stone-600 font-normal">
+              <button 
+                onClick={() => {
+                  setActivePage("mapa-do-site");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }} 
+                className="hover:text-stone-400 hover:underline cursor-pointer transition-colors"
+                title="Mapa do Site estruturado para buscadores"
+              >
+                Sitemap / Mapa do Site
+              </button>
             </p>
           </div>
         </div>

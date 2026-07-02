@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { generateSeoContent } from "../data/seoContent";
 
 interface SeoManagerProps {
   activePage: string;
@@ -10,6 +11,8 @@ export default function SeoManager({ activePage }: SeoManagerProps) {
     let title = "Nova's Persianas Curitiba | Persianas Sob Medida no Hauer";
     let description = "A Nova's Persianas em Curitiba é especializada em persianas sob medida residenciais e comerciais. Medição gratuita em domicílio, instalação rápida e facilidade de pagamento em até 10x.";
     let canonical = `https://novaspersianascuritiba.com.br`;
+    let isLandingPage = false;
+    let landingData: any = null;
 
     if (activePage === "quem-somos") {
       title = "Quem Somos | Nova's Persianas Curitiba - Tradição e Confiança";
@@ -19,54 +22,13 @@ export default function SeoManager({ activePage }: SeoManagerProps) {
       title = "Fale Conosco | Nova's Persianas Curitiba - Agende Medição Gratuita";
       description = "Entre em contato conosco e agende hoje mesmo a sua visita técnica com mostruários em Curitiba. Telefone e WhatsApp: (41) 99550-7310.";
       canonical = `https://novaspersianascuritiba.com.br/contato`;
-    } else if (activePage === "persianas-curitiba") {
-      title = "Cortinas e Persianas Curitiba | Loja Especializada Sob Medida";
-      description = "A melhor loja de cortinas e persianas em Curitiba com sede física no Hauer. Modelos Double Vision, Rolô, Romana e Verticais sob medida. Fale conosco!";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-curitiba`;
-    } else if (activePage === "persianas-sob-medida-curitiba") {
-      title = "Persianas Sob Medida Curitiba | Qualidade Direto da Fábrica";
-      description = "Projetos milimétricos com tecidos premium em Curitiba. Adquira persianas sob medida para salas, quartos e escritórios com a Nova's Persianas.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-sob-medida-curitiba`;
-    } else if (activePage === "persianas-verticais-curitiba") {
-      title = "Persianas Verticais Curitiba | Modelos em PVC, Blackout e Tecido";
-      description = "Sua melhor opção em persianas verticais em Curitiba. Controle preciso de luminosidade para grandes janelas no Hauer e região. Orçamento grátis!";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-verticais-curitiba`;
-    } else if (activePage === "persianas-horizontais-curitiba") {
-      title = "Persianas Horizontais Curitiba | Madeira Nobre e Alumínio Clássico";
-      description = "Persianas horizontais sob medida em Curitiba. Alumínio resistente de 25mm e nobres de madeira natural de 50mm. Melhor preço e qualidade garantidos.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-horizontais-curitiba`;
-    } else if (activePage === "persianas-rolo-curitiba") {
-      title = "Persianas Rolô Curitiba | Blackout e Tela Solar Sacada";
-      description = "As melhores persianas rolô sob medida de Curitiba. Proteção térmica, bloqueio total de luz e redução de calor em sua varanda ou quarto.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-rolo-curitiba`;
-    } else if (activePage === "persianas-romana-curitiba") {
-      title = "Persianas Romana Curitiba | Sofisticação em Gomos Elegantes";
-      description = "Persianas romanas sob medida em Curitiba. Design requintado em gomos horizontais para salas e quartos. Cores translúcidas e blackout.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-romana-curitiba`;
-    } else if (activePage === "persianas-double-vision-curitiba") {
-      title = "Persiana Double Vision Curitiba | Luxo e Elegância Sob Medida";
-      description = "A persiana queridinha de Curitiba: Double Vision com bandô de alumínio. Controle de luz contemporâneo. Agende sua visita de medição gratuita.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-double-vision-curitiba`;
-    } else if (activePage === "persianas-painel-curitiba") {
-      title = "Persianas Painel Curitiba | Trilhos Deslizantes para Grandes Vãos";
-      description = "Persianas modelo painel sob medida em Curitiba para portas de correr, divisórias de ambientes e sacadas integradas. Leveza e beleza com garantia.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-painel-curitiba`;
-    } else if (activePage === "persianas-automizadas-curitiba") {
-      title = "Persianas Motorizadas e Automatizadas Curitiba | Luxo Inteligente";
-      description = "Automatize suas persianas sob medida em Curitiba. Motores silenciosos com controle por controle remoto, Alexa ou celular. Ideal para idosos.";
-      canonical = `https://novaspersianascuritiba.com.br/persianas-automizadas-curitiba`;
-    } else if (activePage === "manutencao-de-persianas-curitiba") {
-      title = "Conserto e Manutenção de Persianas Curitiba | Lavagem e Reparos";
-      description = "Serviço profissional de higienização profunda, lavagem antibactericida, troca de cordas, comandos e reformas de persianas sob medida em Curitiba.";
-      canonical = `https://novaspersianascuritiba.com.br/manutencao-de-persianas-curitiba`;
-    } else if (activePage === "instalacao-de-persianas-curitiba") {
-      title = "Instalação de Persianas Curitiba | Técnicos Rápidos e Sem Sujeira";
-      description = "Instalação profissional de persianas e cortinas em Curitiba. Furações precisas com coletor de poeira e garantia de fixação mecânica de 1 ano.";
-      canonical = `https://novaspersianascuritiba.com.br/instalacao-de-persianas-curitiba`;
-    } else if (activePage === "orcamento-persianas-curitiba") {
-      title = "Orçamento de Persianas Curitiba | Preço e Visita Grátis Hoje";
-      description = "Solicite estimativa de orçamento de persiana sob medida em Curitiba. Parcelamento facilitado em até 10x sem juros ou desconto à vista no PIX.";
-      canonical = `https://novaspersianascuritiba.com.br/orcamento-persianas-curitiba`;
+    } else if (activePage !== "home" && activePage !== "") {
+      // Pull dynamically from the SEO content engine!
+      landingData = generateSeoContent(activePage);
+      title = landingData.title;
+      description = landingData.description;
+      canonical = `https://novaspersianascuritiba.com.br/${activePage}`;
+      isLandingPage = true;
     }
 
     // 2. UPDATE DOCUMENT HEAD DOM ELEMENTS
@@ -186,7 +148,7 @@ export default function SeoManager({ activePage }: SeoManagerProps) {
           "name": "Home",
           "item": "https://novaspersianascuritiba.com.br"
         },
-        activePage !== "home" ? {
+        activePage !== "home" && activePage !== "" ? {
           "@type": "ListItem",
           "position": 2,
           "name": activePage.replace(/-/g, " "),
@@ -225,17 +187,11 @@ export default function SeoManager({ activePage }: SeoManagerProps) {
     injectJsonLd(websiteSchema);
 
     // Dynamic FAQ Schema specifically for the landing pages
-    if (activePage !== "home" && activePage !== "quem-somos" && activePage !== "contato") {
-      // Create specific FAQ Page schemas for the landing routes
-      let faqItems = [
-        { q: "Qual o prazo de entrega das persianas sob medida em Curitiba?", a: "Nosso prazo médio de fabricação e instalação técnica em Curitiba é de 7 a 10 dias úteis após a aprovação do projeto e das medidas finas." },
-        { q: "Vocês atendem no bairro Hauer em Curitiba?", a: "Sim! Nossa sede física fica exatamente no Hauer, na R. Frei Henrique de Coimbra, 1750. Atendemos com imensa rapidez toda a região." }
-      ];
-
+    if (isLandingPage && landingData && landingData.faq && landingData.faq.length > 0) {
       const faqPageSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": faqItems.map(item => ({
+        "mainEntity": landingData.faq.map((item: any) => ({
           "@type": "Question",
           "name": item.q,
           "acceptedAnswer": {
@@ -245,6 +201,43 @@ export default function SeoManager({ activePage }: SeoManagerProps) {
         }))
       };
       injectJsonLd(faqPageSchema);
+
+      // Also inject a specific Service / Offer schema to dominate search!
+      const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": landingData.title,
+        "serviceType": "Instalação e Venda de Persianas sob Medida",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Nova's Persianas",
+          "telephone": "+55-41-99550-7310",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Frei Henrique de Coimbra, 1750",
+            "addressLocality": "Curitiba",
+            "addressRegion": "PR",
+            "postalCode": "81630-140",
+            "addressCountry": "BR"
+          }
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Curitiba",
+          "sameAs": "https://en.wikipedia.org/wiki/Curitiba"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "BRL",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceType": "https://schema.org/MinimumPrice",
+            "billingIncrement": 1,
+            "description": "Orçamento e medição gratuita a laser em Curitiba"
+          }
+        }
+      };
+      injectJsonLd(serviceSchema);
     }
 
   }, [activePage]);

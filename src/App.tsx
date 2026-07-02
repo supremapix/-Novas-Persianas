@@ -23,20 +23,10 @@ import SeoLandingPage from "./components/SeoLandingPage";
 import Redirect301 from "./components/Redirect301";
 import NotFoundPage from "./components/NotFoundPage";
 
-const VALID_SEO_ROUTES = [
-  "persianas-curitiba",
-  "persianas-sob-medida-curitiba",
-  "persianas-verticais-curitiba",
-  "persianas-horizontais-curitiba",
-  "persianas-rolo-curitiba",
-  "persianas-romana-curitiba",
-  "persianas-double-vision-curitiba",
-  "persianas-painel-curitiba",
-  "persianas-automizadas-curitiba",
-  "manutencao-de-persianas-curitiba",
-  "instalacao-de-persianas-curitiba",
-  "orcamento-persianas-curitiba"
-];
+import SitemapPage from "./components/SitemapPage";
+import { ALL_SEO_ROUTES } from "./data/seoContent";
+
+const VALID_SEO_ROUTES = ALL_SEO_ROUTES;
 
 export default function App() {
   const [fontSizeLevel, setFontSizeLevel] = useState(0); // 0: Normal, 1: Medium, 2: Large, 3: Very Large
@@ -54,6 +44,8 @@ export default function App() {
       setActivePage("quem-somos");
     } else if (path === "contato") {
       setActivePage("contato");
+    } else if (path === "mapa-do-site") {
+      setActivePage("mapa-do-site");
     } else if (path === "shop") {
       setActivePage("home");
       setTimeout(() => {
@@ -81,6 +73,8 @@ export default function App() {
         setActivePage("quem-somos");
       } else if (path === "contato") {
         setActivePage("contato");
+      } else if (path === "mapa-do-site") {
+        setActivePage("mapa-do-site");
       } else if (path === "shop") {
         setActivePage("home");
         setTimeout(() => {
@@ -219,6 +213,14 @@ export default function App() {
           <ContatoPage 
             highContrast={highContrast} 
             onNavigateHome={() => navigateTo("home")}
+          />
+        )}
+
+        {activePage === "mapa-do-site" && (
+          <SitemapPage 
+            highContrast={highContrast} 
+            onNavigateHome={() => navigateTo("home")}
+            setActivePage={(page) => navigateTo(page)}
           />
         )}
 
