@@ -111,6 +111,24 @@ export default function ContatoPage({ highContrast, onNavigateHome }: ContatoPag
               </h2>
               
               <div className="flex flex-col gap-5">
+                {/* Telefone Fixo (Destaque) */}
+                <a 
+                  href="tel:+554132788598" 
+                  className={`flex items-start gap-4 p-3 rounded-xl hover:scale-[1.01] transition-all bg-brand-blue/10 border border-brand-blue/30 ${
+                    highContrast ? "hover:bg-stone-900" : "hover:bg-brand-blue/5"
+                  }`}
+                >
+                  <div className={`p-2.5 rounded-xl ${
+                    highContrast ? "bg-yellow-400 text-black" : "bg-brand-blue text-white"
+                  }`}>
+                    <Phone size={18} />
+                  </div>
+                  <div>
+                    <span className="block text-xs text-brand-blue font-black uppercase tracking-wider">Telefone Fixo</span>
+                    <span className="text-lg font-black text-slate-950 dark:text-white">(41) 3278-8598</span>
+                  </div>
+                </a>
+
                 {/* Phone */}
                 <a 
                   href="tel:+5541995507310" 

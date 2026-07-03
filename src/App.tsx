@@ -18,7 +18,8 @@ import QuemSomosPage from "./components/QuemSomosPage";
 import ContatoPage from "./components/ContatoPage";
 import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
-import SeoManager from "./components/SeoManager";
+import { HelmetProvider } from "react-helmet-async";
+import EnhancedSEO from "./components/EnhancedSEO";
 import SeoLandingPage from "./components/SeoLandingPage";
 import Redirect301 from "./components/Redirect301";
 import NotFoundPage from "./components/NotFoundPage";
@@ -118,20 +119,21 @@ export default function App() {
   };
 
   return (
-    <div 
-      className={`min-h-screen flex flex-col transition-colors duration-300 ${
-        highContrast 
-          ? "bg-black text-white dark-theme" 
-          : "bg-white text-brand-text"
-      }`}
-      style={{
-        // Line height and letter spacing adjustments for high readability
-        lineHeight: "1.65",
-        letterSpacing: "0.015em"
-      }}
-    >
-      {/* Dynamic SEO Meta Tags & structured schemas Injector */}
-      <SeoManager activePage={activePage} />
+    <HelmetProvider>
+      <div 
+        className={`min-h-screen flex flex-col transition-colors duration-300 ${
+          highContrast 
+            ? "bg-black text-white dark-theme" 
+            : "bg-white text-brand-text"
+        }`}
+        style={{
+          // Line height and letter spacing adjustments for high readability
+          lineHeight: "1.65",
+          letterSpacing: "0.015em"
+        }}
+      >
+        {/* Dynamic SEO Meta Tags & structured schemas Injector */}
+        <EnhancedSEO activePage={activePage} />
 
       {/* 1. TOP BAR - ACCESSIBILITY HUB (Zoom + High Contrast) */}
       <AccessibilityPanel
@@ -264,6 +266,7 @@ export default function App() {
       {/* 12. FLOATING STICKY CONTROLS (Back-to-top & breathing WhatsApp button) */}
       <FloatingContact highContrast={highContrast} />
 
-    </div>
+      </div>
+    </HelmetProvider>
   );
 }

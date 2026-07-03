@@ -198,7 +198,7 @@ export const SERVICES: Service[] = [
     name: "Higienização & Lavagem Especializada",
     description: "A lavagem correta prolonga a vida útil dos tecidos, remove poeira profunda, fungos, ácaros e restaura a cor original das persianas. Utilizamos produtos neutros específicos que não danificam as fibras.",
     details: ["Retirada e reinstalação inclusas", "Secagem natural à sombra controlada", "Remoção de odores e poeira alergênica", "Higienização de mecanismos internos"],
-    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAECt_kTJA5gfecqhKF5JW5Frd_dD2peOb2Vpq3EzFN168vcWhxGJ2yyKusEVf8Ch1T8IWH1GBRmr-mHTXbPaH6wmZIMbafdzk298fHK9tadUlNKB9IZqWVxpyrXcVM38HxJ1IsQ=s680-w680-h510-rw"
+    image: "https://img.novaspersianascuritiba.com.br/tecnico-persianas-e-venezianas.webp"
   },
   {
     id: "s3",

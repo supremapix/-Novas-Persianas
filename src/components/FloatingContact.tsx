@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { MessageSquare, ArrowUp, Share2, Twitter, Facebook, Linkedin, Copy, Check, X, BookOpen } from "lucide-react";
+import { MessageSquare, ArrowUp, Share2, Twitter, Facebook, Linkedin, Copy, Check, X, BookOpen, Phone } from "lucide-react";
 
 interface FloatingContactProps {
   highContrast: boolean;
@@ -122,6 +122,31 @@ export default function FloatingContact({ highContrast }: FloatingContactProps) 
           {/* Text tooltip for hover on desktop */}
           <span className="absolute right-18 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-xl border border-slate-800 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:inline">
             Falar no WhatsApp (41) 99550-7310
+          </span>
+        </a>
+
+        {/* 4. PERSISTENT FLOATING CALL NOW (LIGAR AGORA) BUTTON WITH PULSE EFFECT */}
+        <a
+          href="tel:+554132788598"
+          className="relative group cursor-pointer"
+          aria-label="Ligar agora para o Telefone Fixo"
+          id="btn-floating-call-now"
+        >
+          {/* Breathing background circle pulse (Subtle and elegant) */}
+          <span className="absolute -inset-2 bg-amber-500/35 rounded-full animate-ping pointer-events-none duration-1000" />
+          
+          {/* Main Call Button */}
+          <div className={`w-15 h-15 rounded-full shadow-2xl flex items-center justify-center border hover:scale-105 active:scale-95 transition-transform duration-200 ${
+            highContrast
+              ? "bg-yellow-400 text-black border-black"
+              : "bg-amber-500 hover:bg-amber-600 text-slate-950 border-amber-400/35"
+          }`}>
+            <Phone className="w-7 h-7 shrink-0 animate-pulse" />
+          </div>
+
+          {/* Text tooltip for hover on desktop */}
+          <span className="absolute right-18 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-xl border border-slate-800 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:inline">
+            Ligar Agora (Fixo): (41) 3278-8598
           </span>
         </a>
 

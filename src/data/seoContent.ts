@@ -4,6 +4,9 @@
  * Guarantees a minimum of 1500 words of authentic, high-value text for search engines and AI models.
  */
 
+import { VENEZIANA_SEO_ROUTES, generateVenezianaFaq, generateVenezianaBodyText } from "./venezianaContent";
+export { VENEZIANA_SEO_ROUTES };
+
 export interface PageMetadata {
   title: string;
   subtitle: string;
@@ -121,6 +124,96 @@ const NEIGHBORHOODS: Record<string, { name: string; type: string; details: strin
     type: "residencial familiar e militar",
     details: "bairro tradicional do norte de Curitiba com excelente infraestrutura residencial e comercial de médio-alto padrão, ideal para persianas rolô e cortinas romanas modernas",
     landmarks: "próximo ao Parque Bacacheri e Aeroporto do Bacacheri"
+  },
+  juveve: {
+    name: "Juvevê",
+    type: "nobre residencial e comercial",
+    details: "vizinho do Cabral, com sofisticados escritórios e apartamentos que buscam persianas rolô tela solar screen e cortinas romanas elegantes para controle térmico perfeito",
+    landmarks: "perto da Avenida João Gualberto e Rua Augusto Stresser"
+  },
+  merces: {
+    name: "Mercês",
+    type: "residencial tradicional de alto padrão",
+    details: "próximo ao Centro e Santa Felicidade, caracterizado por belas residências históricas e modernos condomínios que exigem controle solar preciso e persianas de madeira de 50mm",
+    landmarks: "próximo à Torre Panorâmica das Mercês e Praça 29 de Março"
+  },
+  "cristo-rei": {
+    name: "Cristo Rei",
+    type: "residencial calmo e verticalizado",
+    details: "bairro vizinho ao Jardim Botânico com novos empreendimentos verticais de alto padrão, cujos moradores demandam persianas blackout e double vision sob medida",
+    landmarks: "perto do Jardim Botânico de Curitiba e do Hospital Cajuru"
+  },
+  "alto-da-xv": {
+    name: "Alto da XV",
+    type: "misto comercial e residencial de alto padrão",
+    details: "região nobre de Curitiba ideal para instalação de persianas horizontais de alumínio em consultórios e clínicas, além de rolô tela solar em varandas gourmet de apartamentos",
+    landmarks: "próximo ao Hospital de Clínicas e Praça das Nações"
+  },
+  seminario: {
+    name: "Seminário",
+    type: "estritamente residencial nobre",
+    details: "bairro tradicional vizinho ao Batel, com grandes residências térreas e sobrados de luxo que exigem projetos integrados de persianas motorizadas e automatizadas com Alexa",
+    landmarks: "perto da Paróquia Nossa Senhora de Fátima e Avenida Batel"
+  },
+  "prado-velho": {
+    name: "Prado Velho",
+    type: "comercial, acadêmico e logístico",
+    details: "região com forte demanda de persianas verticais de PVC de alta resistência e fácil higienização para salas de aula, estúdios de tecnologia e clínicas",
+    landmarks: "próximo à PUCPR (Pontifícia Universidade Católica do Paraná)"
+  },
+  ahu: {
+    name: "Ahú",
+    type: "residencial nobre e administrativo",
+    details: "bairro de perfil residencial nobre, caracterizado por condomínios elegantes que necessitam de persianas romanas em linho e persianas rolô blackout para total privacidade",
+    landmarks: "perto do Tribunal de Justiça (Sede Centro Cívico/Ahú) e Justiça Federal"
+  },
+  "jardim-botanico": {
+    name: "Jardim Botânico",
+    type: "turístico e residencial de alto nível",
+    details: "bairro com excelente infraestrutura residencial, cujos apartamentos exigem persianas blackout e double vision de fabricação milimétrica para proteção contra raios solares",
+    landmarks: "próximo ao Jardim Botânico de Curitiba e Campus Jardim Botânico da UFPR"
+  },
+  bigorrilho: {
+    name: "Bigorrilho",
+    type: "altamente verticalizado residencial de alto padrão",
+    details: "bairro com a maior densidade de edifícios residenciais de Curitiba, exigindo centenas de persianas rolô blackout e tela solar sob medida para sacadas e salas de estar",
+    landmarks: "também conhecido como Champagnat, próximo à Praça da Ucrânia e Parque Barigui"
+  },
+  "campina-do-siqueira": {
+    name: "Campina do Siqueira",
+    type: "residencial de classe média-alta e comercial em desenvolvimento",
+    details: "bairro vizinho ao Seminário e ao Parque Barigui, ideal para instalação de persianas de madeira de 50mm e persianas rolô automatizadas inteligentes",
+    landmarks: "próximo ao Terminal do Campina do Siqueira e ao ParkShoppingBarigüi"
+  },
+  "bairro-alto": {
+    name: "Bairro Alto",
+    type: "residencial de grande porte e comercial",
+    details: "bairro familiar focado em sobrados modernos, excelente para instalação de persianas horizontais de alumínio e persianas blackout em dormitórios",
+    landmarks: "perto do Hospital Pinheirinho e do Shopping Jockey Plaza"
+  },
+  cajuru: {
+    name: "Cajuru",
+    type: "residencial e comercial extenso",
+    details: "bairro com forte expansão de sobrados e residências que buscam persianas duráveis de excelente custo-benefício, como persianas horizontais de alumínio ou PVC",
+    landmarks: "próximo ao Terminal do Centenário e BR-277"
+  },
+  pilarzinho: {
+    name: "Pilarzinho",
+    type: "verde residencial familiar",
+    details: "bairro com topografia acidentada e belas vistas panorâmicas, ideais para persianas romanas translúcidas e persianas automáticas para maior conforto térmico",
+    landmarks: "perto da Ópera de Arame, Parque Tanguá e Pedreira Paulo Leminski"
+  },
+  "vista-alegre": {
+    name: "Vista Alegre",
+    type: "residencial familiar de alto padrão",
+    details: "bairro calmo caracterizado por belíssimas casas que priorizam isolamento térmico natural contra as variações térmicas de Curitiba com persianas de madeira natural",
+    landmarks: "próximo ao Parque Vista Alegre e Portal de Santa Felicidade"
+  },
+  "bom-retiro": {
+    name: "Bom Retiro",
+    type: "residencial nobre e comercial",
+    details: "bairro muito calmo e seguro próximo ao Centro Cívico, ideal para persianas motorizadas inteligentes e persianas rolô integradas à automação residencial e corporativa",
+    landmarks: "perto do Hospital de Olhos de Curitiba e Centro Cívico"
   }
 };
 
@@ -215,6 +308,76 @@ const PRODUCTS_MAP: Record<string, { name: string; synonym: string; description:
 export function generateSeoContent(route: string): PageMetadata {
   const cleanRoute = route.replace(/^\/|\/$/g, "");
   
+  const isVenezianaRoute = VENEZIANA_SEO_ROUTES.includes(cleanRoute);
+  if (isVenezianaRoute) {
+    let title = "";
+    let subtitle = "";
+    let description = "";
+    let intro = "";
+    let content = "";
+
+    if (cleanRoute === "manutencao-de-venezianas") {
+      title = "Manutenção de Venezianas Curitiba | Conserto e Assistência Técnica";
+      subtitle = "Manutenção preventiva e corretiva de venezianas integradas, manuais e automáticas externas";
+      description = "Precisa de manutenção de venezianas em Curitiba? Somos especialistas no conserto, lubrificação e troca de acessórios para venezianas de alumínio e PVC sob medida.";
+      intro = "Se você tem venezianas externas de rolar em Curitiba, sabe que a poeira e a umidade podem causar travamentos e desgaste de fitas e molas. A Nova's Persianas oferece assistência técnica especializada para manter suas venezianas deslizando suavemente.";
+      content = "Nosso serviço técnico inclui a limpeza das guias verticais, lubrificação com silicone de alto desempenho, troca de fitas recolhedoras desgastadas e regulagem mecânica de eixos e ponteiras. Fazemos o orçamento sem custo no seu domicílio.";
+    } else if (cleanRoute === "instalacao-de-venezianas") {
+      title = "Instalação de Venezianas Curitiba | Modelos Externos sob Medida";
+      subtitle = "Instalação profissional de venezianas de rolar em alumínio térmico e PVC para portas e janelas";
+      description = "Procura instalação de venezianas em Curitiba? Oferecemos fabricação própria sob medida, alta isolação térmica e acústica com equipe técnica certificada.";
+      intro = "Transforme suas fachadas e janelas com venezianas de enrolar externas de altíssima durabilidade. Produzidas sob medida pela Nova's, elas trazem vedação de luz 100% e conforto acústico incomparável para o seu imóvel.";
+      content = "Nossas venezianas externas de alumínio injetado com poliuretano expandido barram o vento, o frio e o calor extremo de Curitiba. Contamos com instaladores próprios de alta qualificação que garantem o perfeito nivelamento e acabamento.";
+    } else if (cleanRoute === "instalacao-de-venezianas-automaticas") {
+      title = "Instalação de Venezianas Automáticas Curitiba | Motorizadas sob Medida";
+      subtitle = "Venezianas elétricas de enrolar integradas com controle remoto, Alexa e sensores inteligentes";
+      description = "Especialistas em instalação de venezianas automáticas em Curitiba. Motorização silenciosa de alta durabilidade com garantia e medição grátis no Hauer e região.";
+      intro = "Praticidade e sofisticação incomparáveis com as venezianas automáticas externas sob medida da Nova's. Abra e feche suas janelas pesadas com apenas um toque ou por comando de voz sincronizado com sua casa inteligente.";
+      content = "Utilizamos motores tubulares silenciosos importados com certificação internacional de qualidade. Projetos integrados com centrais de automação e final de curso eletrônico de precisão regulado por técnicos experientes.";
+    } else if (cleanRoute === "tecnico-de-venezianas") {
+      title = "Técnico de Venezianas Curitiba | Assistência Rápida em Domicílio";
+      subtitle = "Técnicos especialistas para conserto, manutenção, troca de fitas e regulagem de motores";
+      description = "Precisa de um técnico de venezianas em Curitiba? Atendimento rápido para resolver travamentos, trocar molas, fitas e configurar automação no seu endereço.";
+      intro = "Evite dores de cabeça tentando consertar sistemas complexos de proteção solar por conta própria. Chame nosso técnico especialista em venezianas externas de rolar para um diagnóstico mecânico preciso e seguro no seu imóvel.";
+      content = "Nossa equipe técnica móvel atende Curitiba e Região Metropolitana no mesmo dia para emergências. Carregamos componentes originais em nossos veículos para resolver o seu problema na primeira visita de forma definitiva.";
+    } else if (cleanRoute === "automatizacao-de-venezianas") {
+      title = "Automatização de Venezianas Curitiba | Motorização de Venezianas";
+      subtitle = "Transforme sua veneziana manual externa em automática e inteligente sem quebrar paredes";
+      description = "Realizamos automatização de venezianas em Curitiba com motores tubulares importados de alta costura. Controle suas venezianas por aplicativo e comando de voz.";
+      intro = "Sua veneziana de rolar manual de fita está pesada e difícil de puxar? Realizamos o retrofit mecânico instalando motores elétricos ou a bateria recarregável silenciosos dentro do eixo oco, sem quebrar sua alvenaria ou gesso.";
+      content = "Modernize seu imóvel com economia e tecnologia. Nossos sistemas automatizados eliminam de vez cordões e fitas de tração (child & pet safety), agregando enorme valor estético e ergonômico para idosos e crianças.";
+    } else if (cleanRoute === "conserto-de-venezianas") {
+      title = "Conserto de Venezianas Curitiba | Reforma e Assistência Técnica";
+      subtitle = "Reparo de venezianas externas travadas, lâminas quebradas, troca de mola recolhedora e fitas";
+      description = "Sua veneziana de rolar travou? Fazemos o conserto de venezianas em Curitiba no mesmo dia com peças de reposição originais e técnicos especializados.";
+      intro = "Não gaste uma fortuna trocando suas esquadrias velhas de janela! O conserto especializado da Nova's resgata o perfeito funcionamento mecânico da sua veneziana por uma fração insignificante do valor de uma nova.";
+      content = "Consertamos lâminas longitudinais entortadas por vento ou granizo, trocamos fitas desfiadas ou partidas, consertamos molas recolhedoras cansadas e trocamos rolamentos engripados com garantia e técnicos certificados.";
+    }
+
+    const fullBodyText = generateVenezianaBodyText(cleanRoute, title, subtitle);
+    const faq = generateVenezianaFaq(cleanRoute);
+    const showProducts = false;
+    const categoryFilter = "all";
+    const breadcrumbs = [
+      { name: "Início", url: "/" },
+      { name: cleanRoute.replace(/-/g, " "), url: `/${cleanRoute}` }
+    ];
+
+    return {
+      title,
+      subtitle,
+      description,
+      heroImage: "https://img.novaspersianascuritiba.com.br/persianas-e-venezianas.webp",
+      intro,
+      content,
+      fullBodyText,
+      faq,
+      showProducts,
+      categoryFilter,
+      breadcrumbs
+    };
+  }
+
   // Initialize default metadata
   let title = "Nova's Persianas Curitiba | Fábrica Sob Medida no Hauer";
   let subtitle = "A melhor loja de cortinas e persianas de Curitiba com fabricação própria, preço de fábrica e medição grátis";
@@ -524,7 +687,22 @@ export const NEIGHBORHOOD_SEO_ROUTES = [
   "persianas-santa-felicidade",
   "persianas-cic",
   "persianas-cabral",
-  "persianas-bacacheri"
+  "persianas-bacacheri",
+  "persianas-juveve",
+  "persianas-merces",
+  "persianas-cristo-rei",
+  "persianas-alto-da-xv",
+  "persianas-seminario",
+  "persianas-prado-velho",
+  "persianas-ahu",
+  "persianas-jardim-botanico",
+  "persianas-bigorrilho",
+  "persianas-campina-do-siqueira",
+  "persianas-bairro-alto",
+  "persianas-cajuru",
+  "persianas-pilarzinho",
+  "persianas-vista-alegre",
+  "persianas-bom-retiro"
 ];
 
 export const INTENT_SEO_ROUTES = [
@@ -572,5 +750,6 @@ export const ALL_SEO_ROUTES = [
   ...PRODUCT_SEO_ROUTES,
   ...NEIGHBORHOOD_SEO_ROUTES,
   ...INTENT_SEO_ROUTES,
-  ...OLD_PLURAL_ROUTES
+  ...OLD_PLURAL_ROUTES,
+  ...VENEZIANA_SEO_ROUTES
 ];

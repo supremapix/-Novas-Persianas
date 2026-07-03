@@ -10,7 +10,8 @@ import {
   CORE_SEO_ROUTES, 
   PRODUCT_SEO_ROUTES, 
   NEIGHBORHOOD_SEO_ROUTES, 
-  INTENT_SEO_ROUTES 
+  INTENT_SEO_ROUTES,
+  VENEZIANA_SEO_ROUTES
 } from "../data/seoContent";
 
 interface SitemapPageProps {
@@ -267,6 +268,38 @@ export default function SitemapPage({ highContrast, onNavigateHome, setActivePag
                   }`}
                 >
                   ⚡ {route.replace(/-/g, " ").replace(/^\w/, c => c.toUpperCase())}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Section 6: Specialized Veneziana Services */}
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            className={`p-6 rounded-2xl border ${
+              highContrast ? "bg-stone-950 border-white" : "bg-white border-stone-200/60 shadow-sm"
+            }`}
+          >
+            <div className="flex items-center gap-2.5 mb-5 border-b pb-3 border-stone-200/50">
+              <Settings className="w-5 h-5 text-brand-blue" />
+              <h2 className={`text-base font-black uppercase tracking-wider ${
+                highContrast ? "text-yellow-300" : "text-brand-blue"
+              }`}>
+                Serviços de Venezianas
+              </h2>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              {VENEZIANA_SEO_ROUTES.map((route) => (
+                <button
+                  key={route}
+                  onClick={() => handleRouteClick(route)}
+                  className={`text-left text-xs font-bold py-1 hover:underline transition-all cursor-pointer ${
+                    highContrast ? "text-stone-300 hover:text-yellow-400" : "text-stone-600 hover:text-brand-blue"
+                  }`}
+                >
+                  🛠️ {route.replace(/-/g, " ").split(" ").map(w => w === "de" || w === "e" ? w : w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
                 </button>
               ))}
             </div>
