@@ -252,10 +252,9 @@ export default function Header({
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          
           {/* Logo - Premium Image with Interactive/Idle Animations */}
           <motion.div 
-            className="flex items-center"
+            className="flex items-center shrink-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -330,11 +329,11 @@ export default function Header({
           </motion.div>
 
           {/* Desktop Navigation Menu (Matching image: INÍCIO, PRODUTOS, SOBRE NÓS, GALERIA, DEPOIMENTOS, CONTATO) */}
-          <nav className="hidden xl:flex items-center gap-1" role="navigation" aria-label="Menu principal de navegação">
+          <nav className="hidden xl:flex items-center xl:gap-0.5 2xl:gap-1 shrink" role="navigation" aria-label="Menu principal de navegação">
             {/* Início */}
             <button
               onClick={() => handleNavItemClick("hero")}
-              className="px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider transition-colors cursor-pointer text-white"
+              className="xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider transition-colors cursor-pointer text-white whitespace-nowrap"
               aria-label="Ir para seção Inicial"
             >
               Início
@@ -347,7 +346,7 @@ export default function Header({
               onMouseLeave={handlePersianasLeave}
             >
               <button
-                className={`px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-white ${
+                className={`xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-white whitespace-nowrap ${
                   isPersianasOpen ? "text-brand-blue" : ""
                 }`}
                 aria-expanded={isPersianasOpen}
@@ -355,7 +354,7 @@ export default function Header({
                 aria-label="Menu Produtos. Clique ou passe o mouse para expandir"
               >
                 <span>Produtos</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isPersianasOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 shrink-0 ${isPersianasOpen ? "rotate-180" : ""}`} />
               </button>
 
               {/* Delayed Dropdown Menu Container (Grid of 18 items) */}
@@ -402,7 +401,7 @@ export default function Header({
             {/* Quem Somos */}
             <button
               onClick={() => handleNavItemClick("sobre")}
-              className="px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider transition-colors cursor-pointer text-white"
+              className="xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider transition-colors cursor-pointer text-white whitespace-nowrap"
               aria-label="Ir para seção Sobre Nós"
             >
               Sobre Nós
@@ -415,7 +414,7 @@ export default function Header({
               onMouseLeave={handleServicosLeave}
             >
               <button
-                className={`px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-white ${
+                className={`xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-white whitespace-nowrap ${
                   isServicosOpen ? "text-brand-blue" : ""
                 }`}
                 aria-expanded={isServicosOpen}
@@ -423,7 +422,7 @@ export default function Header({
                 aria-label="Menu Serviços e Galeria. Clique ou passe o mouse para expandir"
               >
                 <span>Serviços</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicosOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 shrink-0 ${isServicosOpen ? "rotate-180" : ""}`} />
               </button>
 
               {/* Delayed Dropdown Menu Container */}
@@ -465,7 +464,7 @@ export default function Header({
             {/* Depoimentos */}
             <button
               onClick={() => handleNavItemClick("depoimentos")}
-              className="px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider transition-colors cursor-pointer text-white"
+              className="xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider transition-colors cursor-pointer text-white whitespace-nowrap"
               aria-label="Ir para seção de Depoimentos"
             >
               Depoimentos
@@ -474,7 +473,7 @@ export default function Header({
             {/* Contato */}
             <button
               onClick={() => handleNavItemClick("contato")}
-              className="px-3.5 py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg text-sm uppercase tracking-wider transition-colors cursor-pointer text-white"
+              className="xl:px-2 xl:py-1.5 2xl:px-3.5 2xl:py-2 font-bold hover:text-brand-blue focus:text-brand-blue rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider transition-colors cursor-pointer text-white whitespace-nowrap"
               aria-label="Ir para informações de contato"
             >
               Contato
@@ -485,11 +484,11 @@ export default function Header({
               href="https://wa.me/c/554195507310"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 font-black text-emerald-400 hover:text-emerald-300 focus:text-emerald-300 rounded-lg text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="xl:px-1.5 xl:py-1.5 2xl:px-3 2xl:py-2 font-black text-emerald-400 hover:text-emerald-300 focus:text-emerald-300 rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer whitespace-nowrap"
               aria-label="Ver Catálogo de Persianas no WhatsApp (abre em nova janela)"
               title="Ver Catálogo de Persianas no WhatsApp"
             >
-              <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
+              <BookOpen className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
               <span>Catálogo</span>
             </a>
 
@@ -498,11 +497,11 @@ export default function Header({
               href="https://share.google/UZ4TJH0aoxwaonagc"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 font-black hover:text-amber-300 focus:text-amber-300 rounded-lg text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer text-amber-400"
+              className="xl:px-1.5 xl:py-1.5 2xl:px-3 2xl:py-2 font-black hover:text-amber-300 focus:text-amber-300 rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-amber-400 whitespace-nowrap"
               aria-label="Avaliar Nova's Persianas no Google (abre em nova janela)"
               title="Deixar avaliação no Google"
             >
-              <Star className="w-4 h-4 fill-amber-400/20 text-amber-400 shrink-0" />
+              <Star className="w-3.5 h-3.5 fill-amber-400/20 text-amber-400 shrink-0" />
               <span>Avaliar</span>
             </a>
 
@@ -511,19 +510,19 @@ export default function Header({
               href="https://maps.app.goo.gl/cywjDuMVyBH4QiDD8?g_st=ac"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 font-black hover:text-sky-300 focus:text-sky-300 rounded-lg text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer text-sky-400"
+              className="xl:px-1.5 xl:py-1.5 2xl:px-3 2xl:py-2 font-black hover:text-sky-300 focus:text-sky-300 rounded-lg xl:text-xs 2xl:text-sm uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer text-sky-400 whitespace-nowrap"
               aria-label="Como chegar no mapa - Rotas (abre em nova janela)"
               title="Ver rotas no Google Maps"
             >
-              <Navigation className="w-4 h-4 text-sky-400 shrink-0" />
+              <Navigation className="w-3.5 h-3.5 text-sky-400 shrink-0" />
               <span>Rotas</span>
             </a>
           </nav>
 
-            <div className="hidden xl:flex items-center gap-2.5">
+          <div className="hidden xl:flex items-center xl:gap-1.5 2xl:gap-2.5 shrink-0">
             <a
               href="tel:+554132788598"
-              className={`px-4 py-2 rounded-xl font-black text-[12px] tracking-wider flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md border-2 ${
+              className={`xl:px-2.5 xl:py-1.5 2xl:px-4 2xl:py-2 rounded-xl font-black xl:text-[11px] 2xl:text-[12px] tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md border-2 whitespace-nowrap shrink-0 ${
                 highContrast 
                   ? "bg-black text-yellow-400 border-yellow-400" 
                   : "bg-amber-500 text-slate-950 border-amber-400 hover:bg-amber-400"
@@ -532,14 +531,14 @@ export default function Header({
               aria-label="Ligar para o Telefone Fixo"
               title="Ligar para o Telefone Fixo (41) 3278-8598"
             >
-              <Phone className="w-4 h-4 animate-bounce" />
+              <Phone className="w-3.5 h-3.5 animate-bounce shrink-0" />
               <span>FIXO: (41) 3278-8598</span>
             </a>
             <a
               href="https://api.whatsapp.com/send/?phone=5541995507310&text=Ol%C3%A1%2C%20achei%20seu%20site%20no%20%2AGoogle%2A%20e%20%2Agostaria%20de%3A%2A"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-4 py-2 rounded-xl font-extrabold text-[11px] tracking-wider flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md ${
+              className={`xl:px-2.5 xl:py-1.5 2xl:px-4 2xl:py-2 rounded-xl font-extrabold xl:text-[11px] 2xl:text-[11px] tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md whitespace-nowrap shrink-0 ${
                 highContrast 
                   ? "bg-yellow-400 text-black border-2 border-black" 
                   : "bg-brand-blue text-white hover:bg-brand-blue-hover"
@@ -547,7 +546,7 @@ export default function Header({
               id="header-btn-budget"
               aria-label="Solicitar Orçamento via WhatsApp"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
+              <MessageSquare className="w-3.5 h-3.5 shrink-0" />
               <span>ORÇAMENTO</span>
             </a>
           </div>
