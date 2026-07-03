@@ -26,6 +26,7 @@ import NotFoundPage from "./components/NotFoundPage";
 
 import SitemapPage from "./components/SitemapPage";
 import { ALL_SEO_ROUTES } from "./data/seoContent";
+import VideoSection from "./components/VideoSection";
 
 const VALID_SEO_ROUTES = ALL_SEO_ROUTES;
 
@@ -164,6 +165,9 @@ export default function App() {
             {/* 3. HERO / MAIN CAROUSEL */}
             <Hero highContrast={highContrast} />
 
+            {/* NEW VIDEO SECTION RIGHT AFTER HERO */}
+            <VideoSection activePage="home" highContrast={highContrast} />
+
             {/* 4. PRIMARY BENEFITS (Garantia, Entrega, Suporte) */}
             <Benefits highContrast={highContrast} type="primary" />
 
@@ -247,6 +251,11 @@ export default function App() {
             highContrast={highContrast}
             onNavigate={(page) => navigateTo(page)}
           />
+        )}
+
+        {/* VideoSection for all non-home pages right before footer */}
+        {activePage !== "home" && activePage !== "redirect-instalacao" && (
+          <VideoSection activePage={activePage} highContrast={highContrast} />
         )}
 
       </main>
