@@ -37,7 +37,7 @@ export function getSEOData(activePage: string) {
   // 1. Structured Data Markup definitions
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "ProfessionalService", "LocalBusiness"],
+    "@type": "HomeAndConstructionBusiness",
     "@id": "https://www.novaspersianascuritiba.com.br/#localbusiness",
     "name": "Nova's Persianas",
     "legalName": "Nova's Persianas Curitiba",

@@ -1,0 +1,22 @@
+{
+  "name": "Nova's Persianas Curitiba",
+  "short_name": "Nova's Persianas",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://shopcell-clone-react.lovable.app/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://shopcell-clone-react.lovable.app/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -2,8 +2,8 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square70x70logo src="https://img.novaspersianascuritiba.com.br/favicon.png" />
-      <square150x150logo src="https://img.novaspersianascuritiba.com.br/favicon.png" />
+      <square70x70logo src="https://shopcell-clone-react.lovable.app/favicon.ico" />
+      <square150x150logo src="https://shopcell-clone-react.lovable.app/favicon.ico" />
       <TileColor>#0f172a</TileColor>
     </tile>
   </msapplication>
