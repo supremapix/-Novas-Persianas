@@ -305,6 +305,123 @@ const PRODUCTS_MAP: Record<string, { name: string; synonym: string; description:
   }
 };
 
+// 75 Official neighborhoods of Curitiba (IPPUC)
+export const OFFICIAL_NEIGHBORHOODS = [
+  "abranches", "agua-verde", "ahu", "alto-boqueirao", "alto-da-gloria", "alto-da-rua-xv", "atuba", "augusta", 
+  "bacacheri", "bairro-alto", "barreirinha", "batel", "bigorrilho", "boa-vista", "bom-retiro", "boqueirao", 
+  "butiatuvinha", "cabral", "cachoeira", "cajuru", "campina-do-siqueira", "campo-comprido", "campo-de-santana", 
+  "capao-raso", "capao-da-imbuia", "cascatinha", "caximba", "centro", "centro-civico", "cic", "cristo-rei", 
+  "fanny", "fazendinha", "ganchinho", "guabirotuba", "guaira", "hauer", "hugo-lange", "jardim-botanico", 
+  "jardim-social", "jardim-das-americas", "juveve", "lamenha-pequena", "lindoia", "merces", "mossungue", 
+  "novo-mundo", "orleans", "parolin", "pilarzinho", "pinheirinho", "portao", "prado-velho", "reboucas", 
+  "riviera", "santa-candida", "santa-felicidade", "santa-quiteria", "santo-inacio", "seminario", "sitio-cercado", 
+  "sao-braz", "sao-francisco", "sao-joao", "sao-lourenco", "sao-miguel", "taboao", "taruma", "tatuquara", 
+  "tingui", "uberaba", "umbara", "vila-izabel", "vista-alegre", "xaxim"
+];
+
+// Popular / Unofficial neighborhoods and regions of Curitiba
+export const POPULAR_NEIGHBORHOODS = [
+  "vila-sandra", "cic-central", "neoville", "vitoria-regia", "caiua", "sabara", "vila-verde", 
+  "nossa-senhora-da-luz", "barigui-cic", "conquista", "augusta-regiao", "riviera-regiao", 
+  "sao-miguel-regiao", "gabineto", "itatiaia", "santa-helena", "atenas", "osvaldo-cruz", 
+  "vila-pantanal", "vila-torres", "vila-das-torres", "vila-parolin", "vila-hauer", "vila-guaira", 
+  "vila-oficinas", "vila-osternack", "vila-sao-pedro", "vila-audi", "pinheirinho-velho", 
+  "portao-velho", "capao-raso-velho", "sitio-cercado-velho", "jardim-gabineto", "jardim-itatiaia", 
+  "jardim-kosmos", "jardim-da-ordem", "jardim-alvorada", "umbara-de-baixo", "umbara-de-cima", 
+  "carmo", "hauer-velho", "xaxim-velho", "boqueirao-alto", "boqueirao-velho", "cajuru-alto", 
+  "uberaba-velho", "uberaba-de-cima", "jardim-das-torres", "vila-prado", "bairro-alto-norte", 
+  "bairro-alto-velho", "tingui-velho", "boa-vista-norte", "orleans-velho", "sao-braz-alto", 
+  "santa-felicidade-norte"
+];
+
+// Nearby cities
+export const NEARBY_CITIES = [
+  "pinhais", "sao-jose-dos-pinhais", "colombo", "araucaria", "almirante-tamandare", 
+  "campo-largo", "campo-magro", "fazenda-rio-grande", "quatro-barras", "campina-grande-do-sul", 
+  "mandirituba", "balsa-nova", "rio-branco-do-sul", "itaperucu", "tijucas-do-sul", "piraquara"
+];
+
+// Specific requested pages
+export const SPECIFIC_SEO_ROUTES = [
+  "olx-persianas-curitiba",
+  "persianas-usadas-curitiba",
+  "comprar-persianas-curitiba",
+  "limpeza-de-persianas-curitiba",
+  "persianas-automatizadas-curitiba",
+  "persianas-blackout-curitiba",
+  "persianas-rolo-curitiba",
+  "persianas-romana-curitiba",
+  "persianas-horizontais-curitiba",
+  "persianas-verticais-curitiba"
+];
+
+const ACCENT_MAPPING: Record<string, string> = {
+  "agua": "Água",
+  "ahu": "Ahú",
+  "portao": "Portão",
+  "boqueirao": "Boqueirão",
+  "remedio": "Remédio",
+  "merces": "Mercês",
+  "sitio": "Sítio",
+  "braz": "Braz",
+  "sao": "São",
+  "joao": "João",
+  "lourenco": "Lourenço",
+  "taruma": "Tarumã",
+  "tatuquara": "Tatuquara",
+  "umbara": "Umbará",
+  "izabel": "Izabel",
+  "caiua": "Caiuá",
+  "sabara": "Sabará",
+  "vitoria": "Vitória",
+  "regia": "Régia",
+  "araucaria": "Araucária",
+  "almirante": "Almirante",
+  "tamandare": "Tamandaré",
+  "itaperucu": "Itaperuçu",
+  "parolin": "Parolin",
+  "fazendinha": "Fazendinha",
+  "uberaba": "Uberaba",
+  "pinheirinho": "Pinheirinho",
+  "capao": "Capão",
+  "imbuia": "Imbuia",
+  "barreirinha": "Barreirinha",
+  "butiatuvinha": "Butiatuvinha",
+  "cachoeira": "Cachoeira",
+  "cascatinha": "Cascatinha",
+  "caximba": "Caximba",
+  "civico": "Cívico",
+  "guaira": "Guaíra",
+  "lindoia": "Lindóia",
+  "mossungue": "Mossunguê",
+  "candida": "Cândida",
+  "quiteria": "Quitéria",
+  "inacio": "Inácio",
+  "seminario": "Seminário",
+  "botanico": "Botânico",
+  "olx": "OLX"
+};
+
+export function formatName(slug: string): string {
+  const specialWords: Record<string, string> = {
+    "dos": "dos", "de": "de", "da": "da", "do": "do", "e": "e", "para": "para", "em": "em",
+    "xv": "XV", "cic": "CIC", "pucpr": "PUCPR", "ufpr": "UFPR", "uv": "UV", "olx": "OLX", "pix": "PIX"
+  };
+  return slug
+    .split("-")
+    .map(word => {
+      const lower = word.toLowerCase();
+      if (ACCENT_MAPPING[lower]) {
+        return ACCENT_MAPPING[lower];
+      }
+      if (specialWords[lower]) {
+        return specialWords[lower];
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
 export function generateSeoContent(route: string): PageMetadata {
   const cleanRoute = route.replace(/^\/|\/$/g, "");
   
@@ -388,16 +505,121 @@ export function generateSeoContent(route: string): PageMetadata {
   let categoryFilter = "all";
   let showProducts = true;
 
-  // CLASSIFICATION 1: NEIGHBORHOOD SEO PAGES (e.g. /persianas-hauer, /persianas-batel)
-  const isNeighborhoodRoute = cleanRoute.startsWith("persianas-") && !cleanRoute.endsWith("-curitiba") && !cleanRoute.includes("para-") && !cleanRoute.includes("sob-medida") && !cleanRoute.includes("promocao") && !cleanRoute.includes("preco") && !cleanRoute.includes("baratas") && !cleanRoute.includes("residenciais") && !cleanRoute.includes("comerciais") && !cleanRoute.includes("modernas") && !cleanRoute.includes("personalizadas");
+  const isSpecificRoute = SPECIFIC_SEO_ROUTES.includes(cleanRoute);
   
-  if (isNeighborhoodRoute) {
+  // CLASSIFICATION 1: NEIGHBORHOOD SEO PAGES (e.g. /persianas-hauer, /persianas-batel)
+  const isNeighborhoodRoute = !isSpecificRoute && cleanRoute.startsWith("persianas-") && 
+    !cleanRoute.endsWith("-curitiba") && 
+    !cleanRoute.includes("para-") && 
+    !cleanRoute.includes("sob-medida") && 
+    !cleanRoute.includes("promocao") && 
+    !cleanRoute.includes("preco") && 
+    !cleanRoute.includes("baratas") && 
+    !cleanRoute.includes("residenciais") && 
+    !cleanRoute.includes("comerciais") && 
+    !cleanRoute.includes("modernas") && 
+    !cleanRoute.includes("personalizadas");
+
+  // CLASSIFICATION 2: PRODUCT-SPECIFIC SEO PAGES (e.g. /persiana-rolo-curitiba, /persiana-madeira-curitiba)
+  const isProductRoute = !isSpecificRoute && cleanRoute.startsWith("persiana-") && cleanRoute.endsWith("-curitiba");
+
+  // CLASSIFICATION 3: INTENT / SEARCH QUERIES (e.g. /quanto-custa-uma-persiana)
+  const isIntentRoute = !isSpecificRoute && !isNeighborhoodRoute && !isProductRoute && (
+    cleanRoute.includes("quanto-custa") || 
+    cleanRoute.includes("onde-comprar") || 
+    cleanRoute.includes("qual-a-melhor") || 
+    cleanRoute.startsWith("persianas-para-") ||
+    cleanRoute.startsWith("persianas-") || 
+    cleanRoute.startsWith("loja-de-") || 
+    cleanRoute.startsWith("empresa-de-") ||
+    cleanRoute.startsWith("orcamento-") ||
+    ["persianas-curitiba", "persianas-sob-medida-curitiba", "orcamento-persianas-curitiba", "manutencao-de-persianas-curitiba", "instalacao-de-persianas-curitiba"].includes(cleanRoute)
+  );
+
+  if (isSpecificRoute) {
+    if (cleanRoute === "olx-persianas-curitiba" || cleanRoute === "persianas-usadas-curitiba") {
+      const isOlx = cleanRoute === "olx-persianas-curitiba";
+      title = isOlx 
+        ? "OLX Persianas Curitiba | Usadas ou Novas Sob Medida?" 
+        : "Persianas Usadas Curitiba | Riscos vs Qualidade de Fábrica";
+      subtitle = isOlx
+        ? "Compare os riscos das persianas usadas de segunda mão com as novas sob medida direto da fábrica"
+        : "O barato que sai caro: por que investir em persianas sob medida com garantia de fábrica em Curitiba";
+      description = isOlx
+        ? "Pesquisando por OLX persianas Curitiba? Conheça os riscos ocultos de comprar persianas usadas e veja por que investir em modelos novos sob medida de fábrica."
+        : "Procurando persianas usadas em Curitiba? Descubra por que comprar persianas usadas pode sair caro e as vantagens de adquirir modelos sob medida direto de fábrica.";
+      intro = isOlx
+        ? "Procurar por <strong>OLX persianas Curitiba</strong> é muito comum para quem está de mudança ou querendo renovar a decoração gastando pouco. Contudo, comprar persianas usadas de segunda mão na OLX pode se tornar uma grande cilada devido a problemas de dimensões e desgaste mecânico."
+        : "Adquirir <strong>persianas usadas em Curitiba</strong> pode parecer uma excelente oportunidade de economia em um primeiro momento. No entanto, cobrir janelas residenciais ou comerciais com produtos de segunda mão traz frestas de luz incômodas, falta de peças de reposição e riscos de alergias.";
+      content = "Na Nova's Persianas, somos especialistas em fabricar cortinas e persianas sob medida de altíssimo padrão com preço direto de fábrica. Eliminamos intermediários para entregar produtos novos, com garantia total de instalação de até 2 anos, medição com laser gratuita em domicílio e materiais antialérgicos com proteção UV. Conheça as vantagens das novas sob medida antes de decidir.";
+    } else if (cleanRoute === "comprar-persianas-curitiba") {
+      title = "Comprar Persianas Curitiba | Showroom no Bairro Hauer";
+      subtitle = "Adquira cortinas e persianas sob medida direto da fábrica com medição e instalação grátis";
+      description = "Procurando onde comprar persianas em Curitiba? Conheça a Nova's Persianas no Hauer. Fabricação própria, medição laser grátis, parcelamento em 10x e garantia.";
+      intro = "Se você está planejando redecorar sua residência, equipar um novo escritório ou climatizar um apartamento, escolher onde comprar persianas em Curitiba com segurança, suporte local e garantia é o passo mais importante para o sucesso do seu projeto.";
+      content = "A Nova's Persianas oferece showroom completo na Rua Frei Henrique de Coimbra, 1750, no tradicional bairro Hauer. Atendemos todos os bairros de Curitiba e região metropolitana com consultoria móvel gratuita em domicílio, mostruário físico de tecidos importados e técnicos de instalação própria.";
+    } else if (cleanRoute === "limpeza-de-persianas-curitiba") {
+      title = "Limpeza de Persianas Curitiba | Lavagem Antibactericida";
+      subtitle = "Higienização profunda com retirada, conserto de engrenagens e entrega expressa";
+      description = "Sua persiana está suja ou com manchas de mofo? Fazemos a lavagem profunda antibactericida e conserto de persianas em Curitiba com retirada e reinstalação grátis.";
+      intro = "As persianas e cortinas acumulam poeira, poluentes e bolor devido ao clima úmido característico de Curitiba. Realizar a limpeza incorretamente em casa pode estragar os tecidos e oxidar os mecanismos internos.";
+      content = "A lavanderia industrial da Nova's Persianas utiliza produtos biodegradáveis antifungo que higienizam profundamente o tecido sem remover sua resina protetora. Nosso serviço inclui a retirada técnica em seu endereço, lavagem, reparo de acessórios e a reinstalação pontual.";
+    } else if (cleanRoute === "persianas-automatizadas-curitiba") {
+      title = "Persianas Automatizadas Curitiba | Motorização e Controle";
+      subtitle = "Praticidade e luxo incomparáveis com persianas elétricas integradas à Alexa e Google Assistant";
+      description = "Quer motorizar suas persianas em Curitiba? Somos especialistas na automação de persianas sob medida com motores silenciosos, garantia total e medição grátis.";
+      intro = "As persianas automatizadas representam o auge do conforto e design de interiores moderno em Curitiba. Elas eliminam correntes manuais suspensas (child & pet safety) e são fáceis de operar por controle remoto ou comando de voz.";
+      content = "Utilizamos os melhores motores tubulares silenciosos importados instalados diretamente no tubo da persiana rolô ou romana. Integramos com sua rede Wi-Fi residencial ou comercial sem quebrar paredes de gesso.";
+    } else if (cleanRoute === "persianas-blackout-curitiba") {
+      title = "Persiana Blackout Curitiba | Bloqueio de Luz sob Medida";
+      subtitle = "Noites de sono profundas e confortáveis com cortinas rolô blackout emborrachadas de fábrica";
+      description = "Adquira persianas blackout sob medida em Curitiba direto da fábrica Nova's Persianas. Bloqueio total de claridade, conforto térmico e acústico com até 10x sem juros.";
+      intro = "A persiana blackout (ou blecaute) é indispensável para quem busca vedação de luz absoluta para quartos, salas de home theater ou salas de projeção empresarial em Curitiba.";
+      content = "Nossos tecidos blackout contam com tripla camada de resina acrílica e emborrachamento que, além de vedar 100% da radiação de postes de rua ou do sol da manhã, atuam como isolante térmico contra o frio severo.";
+      categoryFilter = "blackout";
+    } else if (cleanRoute === "persianas-rolo-curitiba") {
+      title = "Persiana Rolô Curitiba | Cortinas de Rolo de Fábrica";
+      subtitle = "Estilo minimalista, controle de luz solar e acabamento milimétrico sob medida para sua residência";
+      description = "Procura persiana rolô em Curitiba? Compre direto do fabricante Nova's Persianas. Opções de tela solar screen, blackout e translúcidas com orçamento gratuito.";
+      intro = "O modelo de persiana rolô é o mais versátil e querido no mercado de decoração curitibano. Seu design limpo e discreto recolhe o tecido por completo no tubo superior de alumínio.";
+      content = "Ideal para cobrir vãos de janelas e fachadas de vidro de apartamentos, sobrados e lojas comerciais. Oferecemos opções em poliéster, PVC e linho, com garras de fixação reforçadas para teto ou parede.";
+      categoryFilter = "rolo";
+    } else if (cleanRoute === "persianas-romana-curitiba") {
+      title = "Persiana Romana Curitiba | Sofisticação em Gomos";
+      subtitle = "A elegância da alta costura unida à praticidade do controle solar sob medida";
+      description = "Adquira persiana romana sob medida em Curitiba direto da fábrica Nova's Persianas. Modelos elegantes em tecido e linho com medição e orçamento grátis.";
+      intro = "As persianas romanas trazem um charme atemporal para ambientes sociais e íntimos em Curitiba. Elas se dobram horizontalmente em gomos clássicos conforme o recolhimento.";
+      content = "São perfeitas para salas de jantar, quartos de casal e escritórios de psicologia ou advocacia que exigem um visual acolhedor. Produzimos em diversos padrões de tecidos texturizados de altíssimo padrão.";
+      categoryFilter = "romana";
+    } else if (cleanRoute === "persianas-horizontais-curitiba") {
+      title = "Persianas Horizontais Curitiba | Ajuste Fino de Luz";
+      subtitle = "Lâminas reguláveis de madeira de 50mm ou alumínio de 25mm para controle térmico e privacidade";
+      description = "Procurando persianas horizontais em Curitiba? Conheça os modelos em alumínio e madeira natural de fábrica sob medida na Nova's. Medição grátis e parcelamento.";
+      intro = "As persianas horizontais são ideais para quem busca um direcionamento dinâmico da claridade do sol e circulação de vento sem expor o interior do imóvel curitibano.";
+      content = "Disponíveis em ligas nobres de alumínio anticorrosivo (excelentes para cozinhas, lavanderias e banheiros) e em madeira natural tratada (perfeitas para escritórios de luxo e salas de estar).";
+      categoryFilter = "horizontal";
+    } else if (cleanRoute === "persianas-verticais-curitiba") {
+      title = "Persianas Verticais Curitiba | Controle para Grandes Vãos";
+      subtitle = "Trilhos de alumínio naval e lâminas giratórias de PVC ou tecido resinado direto da fábrica";
+      description = "Compre persianas verticais sob medida em Curitiba. Melhor preço de fábrica para cobrir grandes janelas e portas de correr com durabilidade e fácil limpeza.";
+      intro = "As persianas verticais continuam sendo a opção com melhor custo-benefício para cobrir vãos de vidro muito amplos, como portas-janelas de correr e divisórias de escritórios em Curitiba.";
+      content = "Nossos modelos contam com trilhos de alumínio trefilado que deslizam suavemente, sem trancar ou enroscar as lâminas de tecido resinado antialérgico ou PVC lavável.";
+      categoryFilter = "vertical";
+    }
+  } else if (isNeighborhoodRoute) {
     const neighborhoodKey = cleanRoute.replace("persianas-", "");
+    const formattedGeoName = formatName(neighborhoodKey);
+    const isCity = NEARBY_CITIES.includes(neighborhoodKey);
+    
     const neighborhood = NEIGHBORHOODS[neighborhoodKey] || {
-      name: neighborhoodKey.charAt(0).toUpperCase() + neighborhoodKey.slice(1).replace(/-/g, " "),
-      type: "residencial e comercial",
-      details: "atendimento residencial focado em condomínios fechados, sobrados e apartamentos modernos na região",
-      landmarks: "atendimento personalizado em domicílio com mostruário completo"
+      name: formattedGeoName,
+      type: isCity ? "cidade próxima da região metropolitana" : "residencial familiar e comercial local",
+      details: isCity 
+        ? `atendimento completo em toda a região de ${formattedGeoName} com nossa equipe técnica móvel trazendo mostruários físicos e realizando orçamentos sem custo`
+        : `atendimento personalizado de excelência para residências, apartamentos modernos e comércios no tradicional bairro do ${formattedGeoName}`,
+      landmarks: isCity
+        ? `atendimento de excelência estendido a toda a região metropolitana de Curitiba`
+        : `atendimento móvel gratuito para medição técnica e consultoria estética em domicílio`
     };
 
     title = `Persianas no ${neighborhood.name} Curitiba | Sob Medida Nova's`;
@@ -408,16 +630,12 @@ export function generateSeoContent(route: string): PageMetadata {
     intro = `Se você reside ou possui um empreendimento comercial no bairro ${neighborhood.name} em Curitiba, sabe a importância de contar com fornecedores locais de confiança. A Nova's Persianas oferece uma experiência completa e sem estresse para quem quer instalar persianas sob medida no ${neighborhood.name}. Nós enviamos um especialista técnico até o seu endereço para coletar as medidas milimetricamente e apresentar nossos catálogos de tecidos sem compromisso.`;
     
     content = `Como o bairro ${neighborhood.name} possui características de perfil ${neighborhood.type}, nós desenvolvemos soluções exclusivas que se alinham perfeitamente ao estilo de vida da região. Seja para grandes coberturas envidraçadas ${neighborhood.landmarks}, ou para apartamentos compactos que precisam de otimização de espaço com persianas rolô ou double vision, nossa fábrica própria garante preço justo, acabamento de costura impecável e instalação profissional limpa e ágil.`;
-  }
-
-  // CLASSIFICATION 2: PRODUCT-SPECIFIC SEO PAGES (e.g. /persiana-rolo-curitiba, /persiana-madeira-curitiba)
-  const isProductRoute = cleanRoute.startsWith("persiana-") && cleanRoute.endsWith("-curitiba");
-  if (isProductRoute) {
+  } else if (isProductRoute) {
     const productKey = cleanRoute.replace("persiana-", "").replace("-curitiba", "");
     const product = PRODUCTS_MAP[productKey] || {
       name: productKey.charAt(0).toUpperCase() + productKey.slice(1).replace(/-/g, " "),
       synonym: `cortina ${productKey}`,
-      description: "design funcional de alta durabilidade para controle de luz e calor sob medida",
+      description: "design functional de alta durabilidade para controle de luz e calor sob medida",
       benefits: "perfeita para modernizar o visual de salas, quartos e escritórios com alto desempenho térmico",
       washCare: "limpeza simples com espanador de pó ou aspiração leve periódica"
     };
@@ -436,22 +654,7 @@ export function generateSeoContent(route: string): PageMetadata {
     content = `Os benefícios principais da ${product.name} incluem ${product.benefits}. Ela é muito indicada tanto para salas residenciais aconchegantes quanto para escritórios corporativos elegantes. Em relação à limpeza e conservação, trata-se de um produto muito prático: ${product.washCare}. Nossa equipe técnica realiza a instalação com buchas de alta fixação mecânica de modo que a persiana permaneça perfeitamente nivelada e suave de operar por muitos anos.`;
     
     categoryFilter = product.name.replace("Persiana ", "").trim();
-  }
-
-  // CLASSIFICATION 3: INTENT / SEARCH QUERIES (e.g. /quanto-custa-uma-persiana, /persianas-para-sala)
-  const isIntentRoute = !isNeighborhoodRoute && !isProductRoute && (
-    cleanRoute.includes("quanto-custa") || 
-    cleanRoute.includes("onde-comprar") || 
-    cleanRoute.includes("qual-a-melhor") || 
-    cleanRoute.startsWith("persianas-para-") ||
-    cleanRoute.startsWith("persianas-") || 
-    cleanRoute.startsWith("loja-de-") || 
-    cleanRoute.startsWith("empresa-de-") ||
-    cleanRoute.startsWith("orcamento-") ||
-    ["persianas-curitiba", "persianas-sob-medida-curitiba", "orcamento-persianas-curitiba", "manutencao-de-persianas-curitiba", "instalacao-de-persianas-curitiba"].includes(cleanRoute)
-  );
-
-  if (isIntentRoute) {
+  } else if (isIntentRoute) {
     if (cleanRoute.includes("quanto-custa") || cleanRoute.includes("preco") || cleanRoute.includes("baratas")) {
       title = "Quanto Custa uma Persiana Curitiba | Preços e Promoções de Fábrica";
       subtitle = "Tabela de preços de persianas sob medida no m², fatores de variação e descontos no PIX";
@@ -483,7 +686,7 @@ export function generateSeoContent(route: string): PageMetadata {
       title = "Conserto e Manutenção de Persianas Curitiba | Lavagem Profissional";
       subtitle = "Substituição de cordões, comandos, trilhos e higienização profunda bactericida";
       description = "Sua persiana quebrou ou está suja? Realizamos reforma, conserto e lavagem de persianas multimarcas em Curitiba com retirada e entrega ágeis. Ligue já!";
-      intro = "Antes de descartar sua persiana sob medida por estar travada, suja ou com os cordões arrebentados, fale com a equipe de assistência técnica da Nova's Persianas. Nós somos especialistas na manutenção, reforma e higienização profunda de persianas de todas as marcas nacionais e importadas em Curitiba, resgatando a beleza e o perfeito funcionamento do produto por uma fração do preço de um novo.";
+      intro = "Antes de descartar sua persiana sob medida por estar travada, suja ou com os cordões arrebentados, fale com a equipe de assistência técnica da Nova's Persianas. Nós somos especialistas na manutenção, reforma e higienização profunda de persianas de todas as marcas nacionais e importadas in Curitiba, resgatando a beleza e o perfeito funcionamento do produto por uma fração do preço de um novo.";
       content = "Nosso serviço de higienização profissional utiliza detergentes antibactericidas específicos que eliminam ácaros, mofo e fungos acumulados nas tramas do tecido, sendo fundamental para pessoas com rinite ou problemas respiratórios, muito comuns no clima úmido de Curitiba. Retiramos as persianas em seu endereço com todo cuidado, efetuamos a lavagem química e secagem natural em nossa estufa, substituímos acessórios quebrados (garras, comandos, correntes e pêndulos) e as reinstalamos com funcionamento suave e garantia técnica.";
       showProducts = false;
     }
@@ -632,7 +835,7 @@ export function generateSeoContent(route: string): PageMetadata {
   };
 }
 
-// Generate the complete programmatic list of all 74+ valid routes
+// Generate the complete programmatic list of all 150+ valid routes
 export const CORE_SEO_ROUTES = [
   "persianas-curitiba",
   "persianas-sob-medida-curitiba",
@@ -670,40 +873,11 @@ export const PRODUCT_SEO_ROUTES = [
   "persiana-motorizada-curitiba"
 ];
 
-export const NEIGHBORHOOD_SEO_ROUTES = [
-  "persianas-hauer",
-  "persianas-boqueirao",
-  "persianas-portao",
-  "persianas-agua-verde",
-  "persianas-batel",
-  "persianas-centro",
-  "persianas-xaxim",
-  "persianas-pinheirinho",
-  "persianas-novo-mundo",
-  "persianas-capao-raso",
-  "persianas-uberaba",
-  "persianas-reboucas",
-  "persianas-jardim-das-americas",
-  "persianas-santa-felicidade",
-  "persianas-cic",
-  "persianas-cabral",
-  "persianas-bacacheri",
-  "persianas-juveve",
-  "persianas-merces",
-  "persianas-cristo-rei",
-  "persianas-alto-da-xv",
-  "persianas-seminario",
-  "persianas-prado-velho",
-  "persianas-ahu",
-  "persianas-jardim-botanico",
-  "persianas-bigorrilho",
-  "persianas-campina-do-siqueira",
-  "persianas-bairro-alto",
-  "persianas-cajuru",
-  "persianas-pilarzinho",
-  "persianas-vista-alegre",
-  "persianas-bom-retiro"
-];
+export const NEIGHBORHOOD_SEO_ROUTES = Array.from(new Set([
+  ...OFFICIAL_NEIGHBORHOODS.map(n => `persianas-${n}`),
+  ...POPULAR_NEIGHBORHOODS.map(n => `persianas-${n}`),
+  ...NEARBY_CITIES.map(c => `persianas-${c}`)
+]));
 
 export const INTENT_SEO_ROUTES = [
   "onde-comprar-persianas-em-curitiba",
@@ -745,11 +919,12 @@ export const OLD_PLURAL_ROUTES = [
   "persianas-automizadas-curitiba"
 ];
 
-export const ALL_SEO_ROUTES = [
+export const ALL_SEO_ROUTES = Array.from(new Set([
+  ...SPECIFIC_SEO_ROUTES,
   ...CORE_SEO_ROUTES,
   ...PRODUCT_SEO_ROUTES,
   ...NEIGHBORHOOD_SEO_ROUTES,
   ...INTENT_SEO_ROUTES,
   ...OLD_PLURAL_ROUTES,
   ...VENEZIANA_SEO_ROUTES
-];
+]));
