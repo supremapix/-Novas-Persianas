@@ -33,7 +33,7 @@ export default function EnhancedSEO({ activePage }: EnhancedSEOProps) {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.canonical} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://img.novaspersianascuritiba.com.br/novas-persianas.webp" />
+      <meta property="og:image" content={seo.image} />
       <meta property="og:site_name" content="Nova's Persianas" />
       <meta property="og:locale" content="pt_BR" />
 
@@ -41,7 +41,7 @@ export default function EnhancedSEO({ activePage }: EnhancedSEOProps) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content="https://img.novaspersianascuritiba.com.br/novas-persianas.webp" />
+      <meta name="twitter:image" content={seo.image} />
 
       {/* 5. Geo Targeting Meta Tags */}
       <meta name="geo.region" content="BR-PR" />

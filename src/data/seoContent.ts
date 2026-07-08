@@ -4,7 +4,7 @@
  * Guarantees a minimum of 1500 words of authentic, high-value text for search engines and AI models.
  */
 
-import { VENEZIANA_SEO_ROUTES, generateVenezianaFaq, generateVenezianaBodyText } from "./venezianaContent";
+import { VENEZIANA_SEO_ROUTES, generateVenezianaFaq, generateVenezianaBodyText, getVenezianaMetadata } from "./venezianaContent";
 export { VENEZIANA_SEO_ROUTES };
 
 export interface PageMetadata {
@@ -427,51 +427,8 @@ export function generateSeoContent(route: string): PageMetadata {
   
   const isVenezianaRoute = VENEZIANA_SEO_ROUTES.includes(cleanRoute);
   if (isVenezianaRoute) {
-    let title = "";
-    let subtitle = "";
-    let description = "";
-    let intro = "";
-    let content = "";
-
-    if (cleanRoute === "manutencao-de-venezianas") {
-      title = "Manutenção de Venezianas Curitiba | Conserto e Assistência Técnica";
-      subtitle = "Manutenção preventiva e corretiva de venezianas integradas, manuais e automáticas externas";
-      description = "Precisa de manutenção de venezianas em Curitiba? Somos especialistas no conserto, lubrificação e troca de acessórios para venezianas de alumínio e PVC sob medida.";
-      intro = "Se você tem venezianas externas de rolar em Curitiba, sabe que a poeira e a umidade podem causar travamentos e desgaste de fitas e molas. A Nova's Persianas oferece assistência técnica especializada para manter suas venezianas deslizando suavemente.";
-      content = "Nosso serviço técnico inclui a limpeza das guias verticais, lubrificação com silicone de alto desempenho, troca de fitas recolhedoras desgastadas e regulagem mecânica de eixos e ponteiras. Fazemos o orçamento sem custo no seu domicílio.";
-    } else if (cleanRoute === "instalacao-de-venezianas") {
-      title = "Instalação de Venezianas Curitiba | Modelos Externos sob Medida";
-      subtitle = "Instalação profissional de venezianas de rolar em alumínio térmico e PVC para portas e janelas";
-      description = "Procura instalação de venezianas em Curitiba? Oferecemos fabricação própria sob medida, alta isolação térmica e acústica com equipe técnica certificada.";
-      intro = "Transforme suas fachadas e janelas com venezianas de enrolar externas de altíssima durabilidade. Produzidas sob medida pela Nova's, elas trazem vedação de luz 100% e conforto acústico incomparável para o seu imóvel.";
-      content = "Nossas venezianas externas de alumínio injetado com poliuretano expandido barram o vento, o frio e o calor extremo de Curitiba. Contamos com instaladores próprios de alta qualificação que garantem o perfeito nivelamento e acabamento.";
-    } else if (cleanRoute === "instalacao-de-venezianas-automaticas") {
-      title = "Instalação de Venezianas Automáticas Curitiba | Motorizadas sob Medida";
-      subtitle = "Venezianas elétricas de enrolar integradas com controle remoto, Alexa e sensores inteligentes";
-      description = "Especialistas em instalação de venezianas automáticas em Curitiba. Motorização silenciosa de alta durabilidade com garantia e medição grátis no Hauer e região.";
-      intro = "Praticidade e sofisticação incomparáveis com as venezianas automáticas externas sob medida da Nova's. Abra e feche suas janelas pesadas com apenas um toque ou por comando de voz sincronizado com sua casa inteligente.";
-      content = "Utilizamos motores tubulares silenciosos importados com certificação internacional de qualidade. Projetos integrados com centrais de automação e final de curso eletrônico de precisão regulado por técnicos experientes.";
-    } else if (cleanRoute === "tecnico-de-venezianas") {
-      title = "Técnico de Venezianas Curitiba | Assistência Rápida em Domicílio";
-      subtitle = "Técnicos especialistas para conserto, manutenção, troca de fitas e regulagem de motores";
-      description = "Precisa de um técnico de venezianas em Curitiba? Atendimento rápido para resolver travamentos, trocar molas, fitas e configurar automação no seu endereço.";
-      intro = "Evite dores de cabeça tentando consertar sistemas complexos de proteção solar por conta própria. Chame nosso técnico especialista em venezianas externas de rolar para um diagnóstico mecânico preciso e seguro no seu imóvel.";
-      content = "Nossa equipe técnica móvel atende Curitiba e Região Metropolitana no mesmo dia para emergências. Carregamos componentes originais em nossos veículos para resolver o seu problema na primeira visita de forma definitiva.";
-    } else if (cleanRoute === "automatizacao-de-venezianas") {
-      title = "Automatização de Venezianas Curitiba | Motorização de Venezianas";
-      subtitle = "Transforme sua veneziana manual externa em automática e inteligente sem quebrar paredes";
-      description = "Realizamos automatização de venezianas em Curitiba com motores tubulares importados de alta costura. Controle suas venezianas por aplicativo e comando de voz.";
-      intro = "Sua veneziana de rolar manual de fita está pesada e difícil de puxar? Realizamos o retrofit mecânico instalando motores elétricos ou a bateria recarregável silenciosos dentro do eixo oco, sem quebrar sua alvenaria ou gesso.";
-      content = "Modernize seu imóvel com economia e tecnologia. Nossos sistemas automatizados eliminam de vez cordões e fitas de tração (child & pet safety), agregando enorme valor estético e ergonômico para idosos e crianças.";
-    } else if (cleanRoute === "conserto-de-venezianas") {
-      title = "Conserto de Venezianas Curitiba | Reforma e Assistência Técnica";
-      subtitle = "Reparo de venezianas externas travadas, lâminas quebradas, troca de mola recolhedora e fitas";
-      description = "Sua veneziana de rolar travou? Fazemos o conserto de venezianas em Curitiba no mesmo dia com peças de reposição originais e técnicos especializados.";
-      intro = "Não gaste uma fortuna trocando suas esquadrias velhas de janela! O conserto especializado da Nova's resgata o perfeito funcionamento mecânico da sua veneziana por uma fração insignificante do valor de uma nova.";
-      content = "Consertamos lâminas longitudinais entortadas por vento ou granizo, trocamos fitas desfiadas ou partidas, consertamos molas recolhedoras cansadas e trocamos rolamentos engripados com garantia e técnicos certificados.";
-    }
-
-    const fullBodyText = generateVenezianaBodyText(cleanRoute, title, subtitle);
+    const meta = getVenezianaMetadata(cleanRoute);
+    const fullBodyText = generateVenezianaBodyText(cleanRoute, meta.title, meta.subtitle);
     const faq = generateVenezianaFaq(cleanRoute);
     const showProducts = false;
     const categoryFilter = "all";
@@ -481,12 +438,12 @@ export function generateSeoContent(route: string): PageMetadata {
     ];
 
     return {
-      title,
-      subtitle,
-      description,
+      title: meta.title,
+      subtitle: meta.subtitle,
+      description: meta.description,
       heroImage: "https://img.novaspersianascuritiba.com.br/persianas-e-venezianas.webp",
-      intro,
-      content,
+      intro: meta.intro,
+      content: meta.content,
       fullBodyText,
       faq,
       showProducts,

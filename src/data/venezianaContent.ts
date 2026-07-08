@@ -10,8 +10,215 @@ export const VENEZIANA_SEO_ROUTES = [
   "instalacao-de-venezianas-automaticas",
   "tecnico-de-venezianas",
   "automatizacao-de-venezianas",
-  "conserto-de-venezianas"
+  "conserto-de-venezianas",
+  "assistencia-tecnica-em-venezianas",
+  "reparo-de-venezianas",
+  "reforma-de-venezianas",
+  "limpeza-de-venezianas",
+  "venezianas-automaticas",
+  "manutencao-de-venezianas-automaticas",
+  "conversao-para-motorizacao",
+  "troca-de-pecas-de-venezianas",
+  "troca-de-cordoes-de-venezianas",
+  "troca-de-fitas-de-venezianas",
+  "troca-de-correntes-de-venezianas",
+  "regulagem-de-venezianas",
+  "lubrificacao-de-venezianas",
+  "revisao-preventiva-de-venezianas",
+  "atendimento-residencial-venezianas",
+  "atendimento-comercial-venezianas",
+  "atendimento-corporativo-venezianas",
+  "atendimento-industrial-venezianas"
 ];
+
+export interface VenezianaMeta {
+  title: string;
+  subtitle: string;
+  description: string;
+  intro: string;
+  content: string;
+}
+
+export function getVenezianaMetadata(route: string): VenezianaMeta {
+  const metaMap: Record<string, VenezianaMeta> = {
+    "manutencao-de-venezianas": {
+      title: "Manutenção de Venezianas Curitiba | Conserto e Assistência Técnica",
+      subtitle: "Manutenção preventiva e corretiva de venezianas integradas, manuais e automáticas externas",
+      description: "Precisa de manutenção de venezianas em Curitiba? Somos especialistas no conserto, lubrificação e troca de acessórios para venezianas de alumínio e PVC sob medida.",
+      intro: "Se você tem venezianas externas de rolar em Curitiba, sabe que a poeira e a umidade podem causar travamentos e desgaste de fitas e molas. A Nova's Persianas oferece assistência técnica especializada para manter suas venezianas deslizando suavemente.",
+      content: "Nosso serviço técnico inclui a limpeza das guias verticais, lubrificação com silicone de alto desempenho, troca de fitas recolhedoras desgastadas e regulagem mecânica de eixos e ponteiras. Fazemos o orçamento sem custo no seu domicílio."
+    },
+    "instalacao-de-venezianas": {
+      title: "Instalação de Venezianas Curitiba | Modelos Externos sob Medida",
+      subtitle: "Instalação profissional de venezianas de rolar em alumínio térmico e PVC para portas e janelas",
+      description: "Procura instalação de venezianas em Curitiba? Oferecemos fabricação própria sob medida, alta isolação térmica e acústica com equipe técnica certificada.",
+      intro: "Transforme suas fachadas e janelas com venezianas de enrolar externas de altíssima durabilidade. Produzidas sob medida pela Nova's, elas trazem vedação de luz 100% e conforto acústico incomparável para o seu imóvel.",
+      content: "Nossas venezianas externas de alumínio injetado com poliuretano expandido barram o vento, o frio e o calor extremo de Curitiba. Contamos com instaladores próprios de alta qualificação que garantem o perfeito nivelamento e acabamento."
+    },
+    "instalacao-de-venezianas-automaticas": {
+      title: "Instalação de Venezianas Automáticas Curitiba | Motorizadas sob Medida",
+      subtitle: "Venezianas elétricas de enrolar integradas com controle remoto, Alexa e sensores inteligentes",
+      description: "Especialistas em instalação de venezianas automáticas em Curitiba. Motorização silenciosa de alta durabilidade com garantia e medição grátis no Hauer e região.",
+      intro: "Praticidade e sofisticação incomparáveis com as venezianas automáticas externas sob medida da Nova's. Abra e feche suas janelas pesadas com apenas um toque ou por comando de voz sincronizado com sua casa inteligente.",
+      content: "Utilizamos motores tubulares silenciosos importados com certificação internacional de qualidade. Projetos integrados com centrais de automação e final de curso eletrônico de precisão regulado por técnicos experientes."
+    },
+    "tecnico-de-venezianas": {
+      title: "Técnico de Venezianas Curitiba | Assistência Rápida em Domicílio",
+      subtitle: "Técnicos especialistas para conserto, manutenção, troca de fitas e regulagem de motores",
+      description: "Precisa de um técnico de venezianas em Curitiba? Atendimento rápido para resolver travamentos, trocar molas, fitas e configurar automação no seu endereço.",
+      intro: "Evite dores de cabeça tentando consertar sistemas complexos de proteção solar por conta própria. Chame nosso técnico especialista em venezianas externas de rolar para um diagnóstico mecânico preciso e seguro no seu imóvel.",
+      content: "Nossa equipe técnica móvel atende Curitiba e Região Metropolitana no mesmo dia para emergências. Carregamos componentes originais em nossos veículos para resolver o seu problema na primeira visita de forma definitiva."
+    },
+    "automatizacao-de-venezianas": {
+      title: "Automatização de Venezianas Curitiba | Motorização de Venezianas",
+      subtitle: "Transforme sua veneziana manual externa em automática e inteligente sem quebrar paredes",
+      description: "Realizamos automatização de venezianas em Curitiba com motores tubulares importados de alta qualidade. Controle suas venezianas por aplicativo e comando de voz.",
+      intro: "Sua veneziana de rolar manual de fita está pesada e difícil de puxar? Realizamos o retrofit mecânico instalando motores elétricos ou a bateria recarregável silenciosos dentro do eixo oco, sem quebrar sua alvenaria ou gesso.",
+      content: "Modernize seu imóvel com economia e tecnologia. Nossos sistemas automatizados eliminam de vez cordões e fitas de tração (child & pet safety), agregando enorme valor estético e ergonômico para idosos e crianças."
+    },
+    "conserto-de-venezianas": {
+      title: "Conserto de Venezianas Curitiba | Reforma e Assistência Técnica",
+      subtitle: "Reparo de venezianas externas travadas, lâminas quebradas, troca de mola recolhedora e fitas",
+      description: "Sua veneziana de rolar travou? Fazemos o conserto de venezianas em Curitiba no mesmo dia com peças de reposição originais e técnicos especializados.",
+      intro: "Não gaste uma fortuna trocando suas esquadrias velhas de janela! O conserto especializado da Nova's resgata o perfeito funcionamento mecânico da sua veneziana por uma fração insignificante do valor de uma nova.",
+      content: "Consertamos lâminas longitudinais entortadas por vento ou granizo, trocamos fitas desfiadas ou partidas, consertamos molas recolhedoras cansadas e trocamos rolamentos engripados com garantia e técnicos certificados."
+    },
+    "assistencia-tecnica-em-venezianas": {
+      title: "Assistência Técnica em Venezianas Curitiba | Conserto e Reforma",
+      subtitle: "Assistência técnica especializada em venezianas externas de rolar, motorizadas e manuais",
+      description: "Melhor assistência técnica em venezianas de Curitiba. Atendemos venezianas de alumínio, PVC, integradas e externas com peças originais e garantia técnica.",
+      intro: "Mantenha o perfeito controle de luz e isolamento térmico em sua casa com a assistência técnica líder em Curitiba. Consertamos venezianas externas de todas as marcas com rapidez e excelência.",
+      content: "Seja para destravamento, troca de motor, troca de fita recolhedora ou reparo nas lâminas de alumínio térmico, nossa equipe oferece diagnóstico eletrônico a laser e troca de componentes no mesmo dia."
+    },
+    "reparo-de-venezianas": {
+      title: "Reparo de Venezianas Curitiba | Assistência de Emergência",
+      subtitle: "Reparo rápido de venezianas externas de enrolar travadas, fitas rompidas e motores queimados",
+      description: "Realizamos reparo de venezianas em Curitiba com atendimento express em domicílio. Conserto de lâminas amassadas, recolhedores mecânicos e retrofit de eixos.",
+      intro: "Sua veneziana de rolar travou de lado ou a fita arrebentou e ela desabou? Não se preocupe! Nossa equipe de técnicos móveis executa o reparo imediato com total segurança e peças de reposição de fábrica.",
+      content: "Atendemos apartamentos e residências no Batel, Portão, Água Verde e demais regiões de Curitiba, reestabelecendo a leveza de operação e o isolamento termoacústico no mesmo dia."
+    },
+    "reforma-de-venezianas": {
+      title: "Reforma de Venezianas Curitiba | Restauração Completa de Fábrica",
+      subtitle: "Reforma e modernização de venezianas externas antigas de PVC, madeira e alumínio",
+      description: "Sua veneziana está velha e pesada? Fazemos reforma completa de venezianas em Curitiba. Substituição de eixos, polias, garras e motorização de sistemas antigos.",
+      intro: "Antes de gastar muito dinheiro trocando suas esquadrias, considere a reforma estrutural e estética da sua veneziana externa de enrolar. A Nova's Persianas restaura o pleno funcionamento e o brilho original de fábrica.",
+      content: "Substituímos eixos de madeira por liga especial de alumínio estrutural, trocamos rolamentos velhos por esferas de aço autolubrificantes e repomos lâminas quebradas com pintura eletrostática idêntica."
+    },
+    "limpeza-de-venezianas": {
+      title: "Limpeza de Venezianas Curitiba | Lavagem e Higienização Química",
+      subtitle: "Higienização profunda contra mofo, fungos e poluição urbana com retirada e reinstalação",
+      description: "Sua veneziana está preta de fuligem ou mofada? Realizamos limpeza de venezianas em Curitiba com produtos bactericidas biodegradáveis que eliminam ácaros.",
+      intro: "O clima úmido de Curitiba favorece o acúmulo de manchas escuras de bolor e ácaros nas venezianas externas de rolar. Nossa lavagem industrial profunda protege a saúde de sua família eliminando mofo de forma definitiva.",
+      content: "Utilizamos agentes químicos biodegradáveis que limpam as tramas das fitas e as lâminas sem agredir a pintura eletrostática ou enferrujar os componentes da caixa superior de enrolamento."
+    },
+    "venezianas-automaticas": {
+      title: "Venezianas Automáticas Curitiba | Motorização e Conforto sob Medida",
+      subtitle: "Instalação de venezianas elétricas de enrolar com controle remoto e integração inteligente",
+      description: "Especialistas em venezianas automáticas em Curitiba. Fabricação própria sob medida, motores tubulares silenciosos e integração com Alexa e celular.",
+      intro: "As venezianas automáticas trazem o máximo de elegância, ergonomia e facilidade para sua rotina diária em Curitiba. Abra e feche suas janelas com apenas um toque ou por agendamento automático no smartphone.",
+      content: "Substituímos mecanismos pesados manuais de fita por motores tubulares modernos instalados dentro do eixo da veneziana, mantendo o visual limpo, livre de fios e seguro para crianças e pets."
+    },
+    "manutencao-de-venezianas-automaticas": {
+      title: "Manutenção de Venezianas Automáticas Curitiba | Assistência em Motores",
+      subtitle: "Manutenção preventiva e corretiva de motores tubulares, centrais e sensores de automação",
+      description: "Sua veneziana elétrica parou de funcionar ou desregulou? Oferecemos assistência técnica especializada em manutenção de venezianas automáticas em Curitiba.",
+      intro: "Venezianas automáticas exigem precisão técnica absoluta. Quando o limite de curso desregula ou o motor produz estalos metálicos, nossa assistência faz o diagnóstico fino para preservar a integridade do sistema elétrico.",
+      content: "Testamos a tensão da fiação, ajustamos o sensor eletrônico de parada fina, lubrificamos as guias laterais e substituímos centrais RF ou receptores com garantia técnica direto de fábrica."
+    },
+    "conversao-para-motorizacao": {
+      title: "Conversão para Motorização de Venezianas Curitiba | Retrofit de Fita para Motor",
+      subtitle: "Transforme sua veneziana manual de fita em automática sem quebrar gesso ou alvenaria",
+      description: "Diga adeus à fita pesada! Fazemos a conversão para motorização de venezianas em Curitiba com motores tubulares importados de até 5 anos de garantia.",
+      intro: "Sua veneziana manual está pesada e quebrando a fita de tração constantemente? O serviço de conversão para motorização (retrofit mecânico) da Nova's instala motores elétricos ou a bateria de forma limpa e rápida.",
+      content: "Aproveitamos toda a estrutura existente, substituindo apenas os mechanisms internos antigos por um tubo de alumínio de alta densidade equipado com motor tubular silencioso integrado ao seu Wi-Fi."
+    },
+    "troca-de-pecas-de-venezianas": {
+      title: "Troca de Peças de Venezianas Curitiba | Acessórios Originais",
+      subtitle: "Substituição técnica de recolhedores, eixos, rolamentos e garras com peças de fábrica",
+      description: "Precisa de peças para venezianas em Curitiba? Fornecemos e instalamos acessórios originais com garantia: molas, garras, rolamentos e ponteiras guia.",
+      intro: "O funcionamento macio de uma veneziana externa depende da saúde mecânica de cada pequena engrenagem. A Nova's Persianas mantém um amplo estoque de peças originais para reposição imediata no seu endereço.",
+      content: "Nossos técnicos andam com veículos equipados com polias de nylon, molas espirais, rolamentos vedados de esferas de aço e garras de segurança para resolver qualquer falha mecânica na primeira visita técnica."
+    },
+    "troca-de-cordoes-de-venezianas": {
+      title: "Troca de Cordões de Venezianas Curitiba | Assistência Técnica Rápida",
+      subtitle: "Substituição de cordões de tração desfiados ou rompidos com agilidade em domicílio",
+      description: "Seu cordão de veneziana arrebentou? Realizamos a troca de cordões de venezianas em Curitiba no mesmo dia com nylon duplo de alta resistência mecânica.",
+      intro: "Mecanismos de venezianas com cordão manual exigem cabos de alta performance que suportem o atrito contínuo. Se o seu cordão arrebentou, o conserto da Nova's devolve o perfeito funcionamento de forma segura.",
+      content: "Instalamos cordões industriais de poliamida com costura reforçada anti-desgaste, substituímos polias trincadas e regulamos a tração interna do cabeçote para que a subida fique extremamente leve."
+    },
+    "troca-de-fitas-de-venezianas": {
+      title: "Troca de Fitas de Venezianas Curitiba | Conserto e Substituição",
+      subtitle: "Troca de correias (fitas) de nylon de parede para venezianas externas de enrolar",
+      description: "Fita da veneziana desfiou ou quebrou? Fazemos a troca de fitas de venezianas em Curitiba no mesmo dia com poliéster reforçado com tratamento UV.",
+      intro: "A fita recolhedora de nylon de parede é o componente mecânico que mais sofre esforço físico diário. A Nova's Persianas realiza a troca preventiva e corretiva da fita em toda a grande Curitiba de forma expressa.",
+      content: "Substituímos a fita antiga por um modelo premium de poliéster duplo industrial, revisamos o recolhedor mecânico de parede e regulamos o tensionador de mola para garantir uma operação sem emperramentos."
+    },
+    "troca-de-correntes-de-venezianas": {
+      title: "Troca de Correntes de Venezianas Curitiba | Conserto de Acessórios",
+      subtitle: "Substituição de correntes de nylon e metal de acionamento para venezianas e persianas",
+      description: "Corrente de acionamento quebrou ou travou? Realizamos a troca de correntes de venezianas em Curitiba com componentes reforçados de alta resistência.",
+      intro: "As correntes de esferas plásticas ou metálicas controlam o basculamento ou recolhimento das lâminas de sua veneziana. Oferecemos correntes de nylon de alta densidade anti-estiramento com excelente durabilidade.",
+      content: "Nossos instaladores substituem correntes arrebentadas, adicionam limitadores de curso mecânicos e instalam garras fixadoras de parede (child safety) para evitar perigos com crianças e animais de estimação."
+    },
+    "regulagem-de-venezianas": {
+      title: "Regulagem de Venezianas Curitiba | Alinhamento e Prumo Fino",
+      subtitle: "Ajuste técnico de prumo, nivelamento de lâminas e sincronização mecânica",
+      description: "Sua veneziana está subindo torta ou batendo? Oferecemos regulagem de venezianas em Curitiba com nível a laser e técnicos licenciados. Evite queimas de motor.",
+      intro: "Lâminas desalinhadas lateralmente causam atrito excessivo contra as guias verticais, forçando o mecanismo e correndo o risco de engavetar. A regulagem fina da Nova's preserva a vida útil de todo o sistema.",
+      content: "Alinhamos as lâminas longitudinalmente utilizando prumo digital tridimensional, instalamos ponteiras guias de nylon, regulamos a tensão da mola de mastro e eliminamos ruídos e chiados metálicos incômodos."
+    },
+    "lubrificacao-de-venezianas": {
+      title: "Lubrificação de Venezianas Curitiba | Silicone Técnico de Alta Performance",
+      subtitle: "Limpeza de canaletas e lubrificação técnica com silicone que repele poeira e fuligem",
+      description: "Veneziana pesada ou rangendo? Realizamos lubrificação de venezianas em Curitiba com silicone seco industrial que não acumula sujeira. Atendimento rápido.",
+      intro: "Nunca use óleo mineral, graxa ou grafite em pó nas guias de sua veneziana! Esses lubrificantes comuns se misturam à poeira e fuligem de Curitiba, criando uma crosta abrasiva que destrói as engrenagens e as lâminas.",
+      content: "Nossa lubrificação especializada limpa quimicamente todos os detritos dos trilhos e aplica uma película protetora de silicone seco autolubrificante que repele poeira e garante um deslizar livre e silencioso."
+    },
+    "revisao-preventiva-de-venezianas": {
+      title: "Revisão Preventiva de Venezianas Curitiba | Evite Quebras e Danos",
+      subtitle: "Check-up técnico completo de venezianas de enrolar com limpeza e ajustes periódicos",
+      description: "Faça uma revisão preventiva de venezianas em Curitiba e economize muito! Testamos molas, engrenagens, fitas e motores com técnicos próprios especializados.",
+      intro: "Assim como em um automóvel, realizar um check-up mecânico periódico em suas venezianas externas de enrolar a cada 18 ou 24 meses evita paradas surpresas, acidentes domésticos e custos elevados com reparos emergenciais.",
+      content: "Nosso técnico examina o nível de desgaste das fitas, o balanceamento de peso no eixo central, a fixação dos suportes na parede e a assepsia geral contra mofo e poeira rígida, aplicando os ajustes mecânicos necessários."
+    },
+    "atendimento-residencial-venezianas": {
+      title: "Atendimento Residencial de Venezianas Curitiba | Conforto no Seu Lar",
+      subtitle: "Assistência técnica rápida e humanizada de venezianas para casas, sobrados e apartamentos",
+      description: "Melhor atendimento residencial para venezianas em Curitiba. Técnicos discretos, pontuais e equipados com aspirador de pó para instalações limpas no seu lar.",
+      intro: "Prezamos pelo absoluto conforto, silêncio e segurança do seu ambiente residencial em Curitiba. Nossa equipe móvel realiza visitas agendadas, respeitando os horários do condomínio e a privacidade de sua família.",
+      content: "Seja para consertar a veneziana do quarto do bebê de forma silenciosa ou motorizar as janelas da sala de estar para idosos no Batel ou Cabral, oferecemos o tratamento humanizado e cuidadoso de alto padrão que você merece."
+    },
+    "atendimento-comercial-venezianas": {
+      title: "Atendimento Comercial de Venezianas Curitiba | Proteção para Sua Loja",
+      subtitle: "Instalação, manutenção e automação de venezianas externas para comércios e lojas",
+      description: "Precisa de manutenção ou venezianas novas para sua empresa? Oferecemos atendimento comercial de venezianas em Curitiba com condições especiais e NF-e.",
+      intro: "A fachada comercial de sua empresa ou loja em Curitiba necessita de segurança rígida contra arrombamentos, excelente controle solar térmico para proteger vitrines de produtos e um visual sofisticado de alto padrão.",
+      content: "Desenvolvemos projetos de venezianas externas sob medida de alta segurança em ligas nobres de alumínio anodizado, com sistemas automáticos sincronizados por controle remoto e suporte de manutenção técnica expressa."
+    },
+    "atendimento-corporativo-venezianas": {
+      title: "Atendimento Corporativo de Venezianas Curitiba | Escritórios e Empresas",
+      subtitle: "Projetos de proteção solar e automação de venezianas externas para escritórios e corporações",
+      description: "Atendimento corporativo especializado para venezianas e persianas em Curitiba. Projetos sob medida, facilidade de faturamento e suporte de engenharia.",
+      intro: "Otimize o consumo de ar-condicionado e elimine reflexos de luz solar nas telas de computadores em seu escritório de Curitiba. Nossas venezianas térmicas sob medida agregam produtividade, silêncio acústico e ergonomia.",
+      content: "Atendemos construtoras, escritórios de arquitetura, clínicas e sedes empresariais com contratos de manutenção preventiva programada, faturamento simplificado em CNPJ e cumprimento rigoroso de normas técnicas de segurança."
+    },
+    "atendimento-industrial-venezianas": {
+      title: "Atendimento Industrial de Venezianas Curitiba | Galpões e Indústrias",
+      subtitle: "Venezianas de alta segurança, isolação térmica e acústica de alta performance para indústrias",
+      description: "Manutenção e instalação de venezianas de enrolar industriais em Curitiba e RMC. Equipe com EPI completa, certificações de segurança (NR-35) e suporte técnico.",
+      intro: "Galpões e indústrias na CIC, Pinhais ou Araucária exigem sistemas de proteção mecânica robustos que resistam a intempéries severas e tragam alta isolação acústica para reduzir ruídos produtivos externos.",
+      content: "Instalamos venezianas industriais de enrolar automáticas com ligas estruturais pesadas de alumínio injetadas com poliuretano de alta densidade, com técnicos certificados pelas normas NR-35 (trabalho em altura) e NR-12."
+    }
+  };
+
+  return metaMap[route] || {
+    title: "Serviço de Veneziana Curitiba | Nova's Persianas",
+    subtitle: "Soluções técnicas sob medida com preço de fábrica e medição grátis",
+    description: "Serviço técnico especializado de venezianas externas em Curitiba. Equipe própria, peças originais, orçamento grátis e pagamento facilitado.",
+    intro: "Mantenha o perfeito funcionamento mecânico de suas venezianas com a equipe qualificada da Nova's Persianas. Oferecemos soluções eficientes em Curitiba.",
+    content: "Atendimento técnico em domicílio com rapidez, componentes originais e garantia estendida direta do fabricante."
+  };
+}
 
 export function generateVenezianaFaq(route: string): Array<{ q: string; a: string }> {
   const isManutencao = route.includes("manutencao");
@@ -105,11 +312,11 @@ export function generateVenezianaFaq(route: string): Array<{ q: string; a: strin
 }
 
 export function generateVenezianaBodyText(route: string, title: string, subtitle: string): string {
-  const isManutencao = route.includes("manutencao");
-  const isInstalacao = route.includes("instalacao") && !route.includes("automaticas");
-  const isAutomatica = route.includes("automaticas") || route.includes("automatizacao");
-  const isTecnico = route.includes("tecnico");
-  const isConserto = route.includes("conserto");
+  const isManutencao = route.includes("manutencao") || route.includes("revisao");
+  const isInstalacao = (route.includes("instalacao") && !route.includes("automaticas")) || route.includes("residencial") || route.includes("comercial") || route.includes("corporativo") || route.includes("industrial");
+  const isAutomatica = route.includes("automaticas") || route.includes("automatizacao") || route.includes("motorizacao");
+  const isTecnico = route.includes("tecnico") || route.includes("assistencia");
+  const isConserto = route.includes("conserto") || route.includes("reparo") || route.includes("reforma") || route.includes("limpeza") || route.includes("troca") || route.includes("regulagem") || route.includes("lubrificacao") || (!route.includes("manutencao") && !route.includes("instalacao") && !route.includes("tecnico") && !route.includes("automatizacao") && !route.includes("revisao") && !route.includes("assistencia"));
 
   let h1 = title;
   let dynamicKeyword = isManutencao ? "manutenção preventiva de venezianas de rolar" :
