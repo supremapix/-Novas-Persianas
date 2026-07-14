@@ -5,7 +5,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { MessageSquare, Sparkles, Wrench, Shield, CheckCircle } from "lucide-react";
+import { MessageSquare, Sparkles, Wrench, Shield, CheckCircle, ArrowRight } from "lucide-react";
 import { SERVICES } from "../data";
 
 interface ServicesProps {
@@ -142,6 +142,36 @@ export default function Services({ highContrast }: ServicesProps) {
               Especialistas recomendam lavar e higienizar suas persianas a cada <strong>12 meses</strong> para eliminar ácaros e poeiras que causam alergias respiratórias e danificam o tecido. Faça um orçamento com a gente!
             </p>
           </div>
+        </div>
+
+        {/* Dynamic portfolio cross-link banner */}
+        <div className={`mt-6 p-6 rounded-2xl border flex flex-col md:flex-row gap-5 items-center justify-between ${
+          highContrast ? "bg-black border-white" : "bg-gradient-to-r from-amber-500/10 to-brand-blue/5 border-amber-500/15"
+        }`}>
+          <div className="text-center md:text-left flex items-center gap-4 flex-col md:flex-row">
+            <span className="text-4xl text-amber-500">📸</span>
+            <div>
+              <h4 className={`text-base font-black uppercase tracking-tight mb-1 ${
+                highContrast ? "text-yellow-300" : "text-slate-900"
+              }`}>
+                Veja Nossos Serviços Concluídos em Vídeo & Foto!
+              </h4>
+              <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-semibold">
+                Nossos técnicos registram os serviços diariamente. Confira a galeria de trabalhos reais realizados em diversos bairros de Curitiba ou acesse nossa pasta oficial no Google Drive.
+              </p>
+            </div>
+          </div>
+          <a
+            href="#servicos-feitos"
+            className={`px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition-all shadow hover:scale-[1.02] active:scale-[0.98] min-h-[44px] flex items-center justify-center gap-1.5 cursor-pointer text-center w-full md:w-auto shrink-0 ${
+              highContrast 
+                ? "bg-yellow-400 text-black border-2 border-black" 
+                : "bg-amber-500 hover:bg-amber-600 text-slate-950"
+            }`}
+          >
+            <span>Ver Fotos & Vídeos</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
       </div>

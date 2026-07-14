@@ -457,6 +457,13 @@ export default function Header({
                   >
                     Consertos e Reformas
                   </button>
+                  <button
+                    onClick={() => handleNavItemClick("servicos-feitos")}
+                    className="px-4 py-2 rounded-lg text-left text-xs font-black text-amber-400 hover:bg-amber-400 hover:text-black focus:bg-amber-400 focus:text-black focus:outline-none transition-colors cursor-pointer border-t border-slate-800/80 mt-1 pt-2 flex items-center gap-1.5"
+                    role="menuitem"
+                  >
+                    ✨ Serviços Feitos (Portfólio)
+                  </button>
                 </div>
               )}
             </div>
@@ -751,6 +758,12 @@ export default function Header({
                       className="w-full text-left py-3 px-6 text-base font-medium hover:bg-brand-blue/30 rounded-lg min-h-[48px] flex items-center text-slate-300 cursor-pointer"
                     >
                       Consertos e Peças
+                    </button>
+                    <button
+                      onClick={() => handleNavItemClick("servicos-feitos")}
+                      className="w-full text-left py-3 px-6 text-base font-black text-amber-400 hover:bg-amber-400/20 rounded-lg min-h-[48px] flex items-center gap-1.5 cursor-pointer border-t border-slate-800/60 mt-1 pt-3"
+                    >
+                      ✨ Serviços Feitos (Portfólio)
                     </button>
                   </div>
                 )}

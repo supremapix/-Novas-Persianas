@@ -245,6 +245,14 @@ export default function Footer({
                   Nossos Serviços
                 </button>
               </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("servicos-feitos")}
+                  className="hover:underline focus:underline text-left text-amber-400 font-extrabold hover:text-white cursor-pointer min-h-[40px] flex items-center gap-1"
+                >
+                  ✨ Serviços Feitos (Portfólio)
+                </button>
+              </li>
             </ul>
           </div>
 

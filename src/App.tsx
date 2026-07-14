@@ -12,6 +12,7 @@ import PromoBanners from "./components/PromoBanners";
 import FeaturedProducts from "./components/FeaturedProducts";
 import AboutSection from "./components/AboutSection";
 import Services from "./components/Services";
+import ServicosFeitos from "./components/ServicosFeitos";
 import GoogleReviews from "./components/GoogleReviews";
 import InstagramFeed from "./components/InstagramFeed";
 import QuemSomosPage from "./components/QuemSomosPage";
@@ -196,6 +197,9 @@ export default function App() {
 
             {/* 9. DETAILED SERVICE BLOCKS (Instalações, Lavagem, Consertos) */}
             <Services highContrast={highContrast} />
+
+            {/* 9b. PORTFOLIO AND COMPLETED PROJECTS (Serviços Feitos & Google Drive Gallery) */}
+            <ServicosFeitos highContrast={highContrast} />
 
             {/* 10. GOOGLE REVIEWS SECTION (with bottom to top animation and GMaps card design) */}
             <GoogleReviews highContrast={highContrast} />

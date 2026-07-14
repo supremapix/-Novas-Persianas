@@ -102,24 +102,27 @@ export default function AboutSection({ highContrast }: AboutSectionProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
-                  src="https://scontent.fbfh15-1.fna.fbcdn.net/v/t39.30808-6/611279552_814467461644789_5601742766907040930_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1379&ctp=s1080x1379&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEO2VrTLz3H_xxr4x_SfmAiv8E4V_gpOj6_wThX-Ck6PtIqvD0HY4wzAA7Bm0mPQxBzk6qUu7PKRVWcz3dyNFpf&_nc_ohc=LANmlOodIMEQ7kNvwF6l1v5&_nc_oc=AdoEXzCgSAenUM9gT2ViwEUED3rbsRJLcoTSxfFqyPh6eWmdl0ghcK10tiI_sPvzfTnXp9qXEeC1dR4uty_jBi21&_nc_zt=23&_nc_ht=scontent.fbfh15-1.fna&_nc_gid=XBPhMCbT25-QA0TgwEWPlQ&_nc_ss=7b2a8&oh=00_AQBln_jnN5tyvZ9qW_7ilVqrBocacR8pL3ahLJWfu_RJ1w&oe=6A4C62D8"
+                  src="https://img.novaspersianascuritiba.com.br/novas-persianas-double-vision.webp"
                   alt="Trabalho com persianas de alta qualidade"
                   referrerPolicy="no-referrer"
                   className="rounded-2xl object-cover h-64 w-full border border-slate-100 shadow-md"
                 />
                 <img
-                  src="https://scontent.fbfh15-1.fna.fbcdn.net/v/t39.30808-6/472228266_518793247876768_7595922982151912763_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHKDGukvaRIh8ZsRo3_e8Jiplf-EwcF6cumV_4TBwXpy6WxD-Kc6zKHJupGlgd__vVl_hieeelpXKDBMi6DHBJB&_nc_ohc=DIrzEGhM2iAQ7kNvwFPQZke&_nc_oc=AdpMVUfhm9_06VzsP40dWyRgjJVzxQek0zVVmKujkkmk133oNIO6t0WuNua4MRldfqZx2canj6-ayCxSfC4ujPGl&_nc_zt=23&_nc_ht=scontent.fbfh15-1.fna&_nc_gid=wUrl3dZSPNwJAhLYKfVZpg&_nc_ss=7b2a8&oh=00_AQDtnwRpp6lsThSXjTuBFiQ7VMAW9-yJZNRlcPXzwHAfag&oe=6A4C5469"
+                  src="https://img.novaspersianascuritiba.com.br/novas-persianas-caixa-box.webp"
                   alt="Instalação sob medida com acabamento perfeito"
                   referrerPolicy="no-referrer"
                   className="rounded-2xl object-cover h-44 w-full border border-slate-100 shadow-md"
                 />
               </div>
               <div className="pt-8">
-                <img
-                  src="https://scontent.fbfh15-2.fna.fbcdn.net/v/t39.30808-6/472570446_518793467876746_5900944399952779982_n.jpg?stp=dst-jpg_tt6&cstp=mx540x960&ctp=s540x960&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHffgg0_HG1hQ8ST90FVV_hGkC3KRfc9-saQLcpF9z36yxcsA8JbN5quLBgdft52FwOqt8WFjT3RBUKfBQ_rEJp&_nc_ohc=4PWIIcJNxMQQ7kNvwE6dQPb&_nc_oc=AdodOkh1N82ETstpJdtkVJPg1WlZuTIVB4tQckopr5Yvb0gvtTpIkVA5IItQNgX8WwW_B_vrmXSMGp9y2xGyfeQc&_nc_zt=23&_nc_ht=scontent.fbfh15-2.fna&_nc_gid=jlk2mAdVPd2K2x_8gQTyAA&_nc_ss=7b2a8&oh=00_AQDXJKzeaF7nmOcoPl9JHkTGI-AqRUVw89j5TQMvjydu3Q&oe=6A4C619F"
-                  alt="Medição e escolha de tecidos premium"
-                  referrerPolicy="no-referrer"
+                <video
+                  src="https://img.novaspersianascuritiba.com.br/persianas-e-venezianas-novas.mp4"
                   className="rounded-2xl object-cover h-[410px] w-full border border-slate-100 shadow-md"
+                  controls
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
                 />
               </div>
             </div>
