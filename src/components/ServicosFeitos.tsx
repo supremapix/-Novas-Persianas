@@ -104,7 +104,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
       date: "Maio de 2026",
       description: "Retrofit mecânico de uma veneziana externa clássica de madeira, cujo manuseio manual por corda pesava mais de 15kg.",
       solution: "Instalação de motor elétrico tubular italiano de 50Nm inserido dentro do eixo oco, sem quebrar nenhuma parede ou gesso do cliente.",
-      imageUrl: "https://71026.cdn.simplo7.net/static/71026/sku/persianas-persiana-madeira-persiana-horizontal-de-madeira-natural-branca-50mm-com-fita--p-1631664913801.jpg",
+      imageUrl: "https://img.novaspersianascuritiba.com.br/veneziana-automatizada-em-curitiba-instalacao-de-automacao-veneziana.webp",
       hasVideo: true
     },
     {
@@ -139,6 +139,18 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
       description: "Montagem técnica de persiana rolô caixa em janela de dormitório infantil para obtenção de blackout total.",
       solution: "Montagem de perfis em 'U' laterais com acabamento de escovas vedadoras de vento e claridade, resultando em escurecimento absoluto de 100%.",
       imageUrl: "https://loja.persianascrisdan.com.br/arquivos/produtos/imagens_adicionais/webp/8bd069b3e34f4c5c4462ac923956c34b5b06dacb.jpeg.webp"
+    },
+    {
+      id: "job9",
+      title: "Automação Completa de Persianas Integradas",
+      category: "automacao",
+      categoryLabel: "Automação & Motores",
+      neighborhood: "Jardim Social",
+      date: "Julho de 2026",
+      description: "Instalação de motores eletrônicos inteligentes e silenciosos em persianas de enrolar integradas de alto padrão, configurados para comando remoto.",
+      solution: "Sincronização de controle multicanais e configuração de assistentes Alexa e Google Home para automação de cenários de iluminação personalizados.",
+      imageUrl: "https://img.novaspersianascuritiba.com.br/persianas-automatica.webp",
+      hasVideo: true
     }
   ];
 
