@@ -27,10 +27,14 @@ export default function FeaturedProducts({
 
   // Grouped quick filters
   const filters = [
-    { name: "Todos os Modelos", shortName: "Todos", value: "all" },
+    { name: "Todos", shortName: "Todos", value: "all" },
+    { name: "Cortinas Rolô", shortName: "Rolô", value: "Rolo" },
     { name: "Double Vision", shortName: "Double Vision", value: "Double Vision" },
-    { name: "Madeira e Alumínio", shortName: "Madeira", value: "Horizontal" },
-    { name: "Painel e Caixa", shortName: "Painel", value: "Painel" },
+    { name: "Romana", shortName: "Romana", value: "Romana" },
+    { name: "Painel", shortName: "Painel", value: "Painel" },
+    { name: "Vertical", shortName: "Vertical", value: "Vertical" },
+    { name: "Horizontais", shortName: "Horizontais", value: "Horizontal" },
+    { name: "Modelos Premium", shortName: "Premium", value: "Premium" },
   ];
 
   // Sync scroll on header filter changes
@@ -52,11 +56,24 @@ export default function FeaturedProducts({
       return matchesSearch;
     }
 
-    // Check if category matches or is a substring (e.g. "Double Vision" covers "Double Vision Semi Blackout")
-    const matchesCategory = 
-      product.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      selectedCategory.toLowerCase().includes(product.category.toLowerCase()) ||
-      product.name.toLowerCase().includes(selectedCategory.toLowerCase());
+    // Advanced category match (robust and accent-insensitive)
+    const normCategory = selectedCategory.toLowerCase();
+    const normProductCat = product.category.toLowerCase();
+    const normProductName = product.name.toLowerCase();
+
+    let matchesCategory = false;
+
+    if (normCategory === "rolo") {
+      matchesCategory = normProductCat.includes("rolo") || normProductCat.includes("rolô") || normProductName.includes("rolo") || normProductName.includes("rolô");
+    } else if (normCategory === "premium") {
+      matchesCategory = ["produto-persiana-caixa", "produto-persiana-shangrila"].includes(product.slug);
+    } else {
+      const cleanNorm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      matchesCategory = 
+        cleanNorm(product.category).includes(cleanNorm(selectedCategory)) ||
+        cleanNorm(selectedCategory).includes(cleanNorm(product.category)) ||
+        cleanNorm(product.name).includes(cleanNorm(selectedCategory));
+    }
 
     return matchesCategory && matchesSearch;
   });
