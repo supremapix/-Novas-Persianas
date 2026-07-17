@@ -13,12 +13,14 @@ interface FeaturedProductsProps {
   highContrast: boolean;
   selectedCategory: string; // Passed down if filtered from header dropdown
   setSelectedCategory: (cat: string) => void;
+  setActivePage?: (page: string) => void;
 }
 
 export default function FeaturedProducts({ 
   highContrast, 
   selectedCategory,
-  setSelectedCategory
+  setSelectedCategory,
+  setActivePage
 }: FeaturedProductsProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
@@ -267,13 +269,26 @@ export default function FeaturedProducts({
                 aria-label={`Card do produto: ${product.name}`}
               >
                 {/* Product Image Frame */}
-                <div className="relative h-56 w-full bg-slate-100 overflow-hidden shrink-0">
+                <div 
+                  onClick={() => {
+                    if (setActivePage) {
+                      setActivePage(product.slug);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                  className="relative h-56 w-full bg-slate-100 overflow-hidden shrink-0 cursor-pointer group"
+                >
                   <img
                     src={product.image}
                     alt={`Foto instalada de ${product.name}`}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-brand-blue hover:bg-brand-blue-hover text-white text-[10px] uppercase font-black tracking-widest px-4 py-2.5 rounded-xl shadow-lg">
+                      Ver Detalhes do Produto
+                    </span>
+                  </div>
                   <div className={`absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-bold shadow-md ${
                     highContrast ? "bg-yellow-400 text-black" : "bg-brand-blue text-white"
                   }`}>
@@ -283,9 +298,17 @@ export default function FeaturedProducts({
 
                 {/* Content */}
                 <div className="p-5 flex-1 flex flex-col">
-                  <h3 className={`text-xl font-bold mb-2 tracking-tight uppercase ${
-                    highContrast ? "text-yellow-300" : "text-slate-900 font-display"
-                  }`}>
+                  <h3 
+                    onClick={() => {
+                      if (setActivePage) {
+                        setActivePage(product.slug);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
+                    className={`text-xl font-bold mb-2 tracking-tight uppercase cursor-pointer hover:text-brand-blue transition-colors ${
+                      highContrast ? "text-yellow-300" : "text-slate-900 font-display"
+                    }`}
+                  >
                     {product.name}
                   </h3>
                   

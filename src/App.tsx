@@ -22,6 +22,7 @@ import FloatingContact from "./components/FloatingContact";
 import { HelmetProvider } from "react-helmet-async";
 import EnhancedSEO from "./components/EnhancedSEO";
 import SeoLandingPage from "./components/SeoLandingPage";
+import ProductDetailPage from "./components/ProductDetailPage";
 import Redirect301 from "./components/Redirect301";
 import NotFoundPage from "./components/NotFoundPage";
 
@@ -59,7 +60,7 @@ export default function App() {
       }, 800);
     } else if (["instalacoes", "instalacao", "instalacao-de-persianas"].includes(path)) {
       setActivePage("redirect-instalacao");
-    } else if (VALID_SEO_ROUTES.includes(path)) {
+    } else if (VALID_SEO_ROUTES.includes(path) || path.startsWith("produto-")) {
       setActivePage(path);
     } else {
       setActivePage("404");
@@ -88,7 +89,7 @@ export default function App() {
         }, 800);
       } else if (["instalacoes", "instalacao", "instalacao-de-persianas"].includes(path)) {
         setActivePage("redirect-instalacao");
-      } else if (VALID_SEO_ROUTES.includes(path)) {
+      } else if (VALID_SEO_ROUTES.includes(path) || path.startsWith("produto-")) {
         setActivePage(path);
       } else {
         setActivePage("404");
@@ -184,6 +185,7 @@ export default function App() {
               highContrast={highContrast}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
+              setActivePage={(page) => navigateTo(page)}
             />
 
             {/* 7. CHOOSE IDEAL PRODUCT BANNER */}
@@ -239,6 +241,16 @@ export default function App() {
           <SeoLandingPage
             highContrast={highContrast}
             route={activePage}
+            onNavigateHome={() => navigateTo("home")}
+            setActivePage={(page) => navigateTo(page)}
+          />
+        )}
+
+        {/* Dynamic Individual Product Pages Routing */}
+        {activePage.startsWith("produto-") && (
+          <ProductDetailPage
+            highContrast={highContrast}
+            slug={activePage}
             onNavigateHome={() => navigateTo("home")}
             setActivePage={(page) => navigateTo(page)}
           />

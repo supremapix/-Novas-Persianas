@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { Menu, X, ChevronDown, Phone, MessageSquare, ArrowRight, ExternalLink, ZoomIn, ZoomOut, Contrast, Mail, MapPin, Star, Navigation, Settings, BookOpen } from "lucide-react";
-import { PERSIANA_CATEGORIES } from "../data";
+import { PERSIANA_CATEGORIES, PRODUCTS } from "../data";
 
 interface HeaderProps {
   highContrast: boolean;
@@ -14,8 +14,8 @@ interface HeaderProps {
   fontSizeLevel: number;
   setFontSizeLevel: (level: number) => void;
   onFilterProduct: (category: string) => void;
-  activePage: "home" | "quem-somos" | "contato";
-  setActivePage: (page: "home" | "quem-somos" | "contato") => void;
+  activePage: "home" | "quem-somos" | "contato" | string;
+  setActivePage: (page: string) => void;
 }
 
 export default function Header({ 
@@ -85,6 +85,12 @@ export default function Header({
     
     if (categoryFilter) {
       onFilterProduct(categoryFilter);
+    }
+
+    if (hashId.startsWith("produto-")) {
+      setActivePage(hashId);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
 
     if (hashId === "sobre") {
@@ -339,10 +345,10 @@ export default function Header({
                 <ChevronDown className={`w-3 h-3 transition-transform duration-200 shrink-0 ${isPersianasOpen ? "rotate-180" : ""}`} />
               </button>
 
-              {/* Delayed Dropdown Menu Container (Grid of 18 items) */}
+              {/* Delayed Dropdown Menu Container (Interactive 3-Column Grid) */}
               {isPersianasOpen && (
                 <div 
-                  className={`absolute left-1/2 -translate-x-1/2 mt-1 w-[680px] p-5 rounded-xl shadow-2xl grid grid-cols-3 gap-3 border transition-all duration-200 ${
+                  className={`absolute left-1/2 -translate-x-1/2 mt-1 w-[820px] p-6 rounded-2xl shadow-2xl grid grid-cols-3 gap-6 border transition-all duration-200 ${
                     highContrast 
                       ? "bg-black text-white border-2 border-white" 
                       : "bg-brand-dark border-slate-800 text-slate-100 animate-slide-down"
@@ -350,30 +356,106 @@ export default function Header({
                   role="menu"
                   aria-label="Lista de modelos de Persianas"
                 >
-                  <div className="col-span-3 border-b border-slate-800 pb-2 mb-2">
-                    <span className="font-bold text-sm text-brand-blue block uppercase tracking-wider">Nossos Produtos</span>
-                    <span className="text-xs text-slate-400">Modelos modernos fabricados sob medida para seu ambiente</span>
-                  </div>
-                  {PERSIANA_CATEGORIES.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => handleNavItemClick("modelos", category)}
-                      className="px-3 py-2 rounded-lg text-left text-xs font-semibold hover:bg-brand-blue hover:text-white focus:bg-brand-blue focus:text-white focus:outline-none transition-colors truncate cursor-pointer text-slate-300"
-                      role="menuitem"
-                      title={`Filtrar por ${category}`}
+                  <div className="col-span-3 border-b border-slate-800 pb-3 mb-1 flex justify-between items-center">
+                    <div>
+                      <span className="font-black text-sm text-brand-blue block uppercase tracking-wider">Catálogo Completo de Persianas</span>
+                      <span className="text-xs text-slate-400">Clique em qualquer modelo para ver a página detalhada e solicitar seu orçamento</span>
+                    </div>
+                    <button 
+                      onClick={() => handleNavItemClick("modelos")}
+                      className="text-xs font-black bg-slate-800/80 hover:bg-brand-blue hover:text-white text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition-all cursor-pointer"
                     >
-                      • {category}
+                      Ver Tudo na Home
                     </button>
-                  ))}
-                  <div className="col-span-3 bg-slate-900/60 p-2.5 rounded-lg mt-2 flex justify-between items-center text-xs border border-slate-800">
-                    <span className="font-semibold text-slate-400">Fale direto com nossa equipe e agende sua medição grátis</span>
+                  </div>
+
+                  {/* Coluna 1: Rolô & Painel */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-black uppercase text-amber-400 tracking-wider mb-2 pb-1 border-b border-slate-800/60 block font-display">
+                      ◆ Rolô & Painel
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      {PRODUCTS.filter(p => [
+                        "produto-rolo-blackout",
+                        "produto-rolo-tela-solar",
+                        "produto-rolo-translucida",
+                        "produto-persiana-painel-blackout",
+                        "produto-persiana-painel-tela-solar",
+                        "produto-persiana-painel-translucida"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="text-[11px] py-1.5 px-2 rounded-lg text-left font-semibold hover:bg-brand-blue hover:text-white transition-all text-slate-300 hover:translate-x-1 duration-150 cursor-pointer flex items-center gap-1.5"
+                        >
+                          <span className="text-brand-blue hover:text-white text-xs shrink-0">›</span>
+                          <span className="truncate">{product.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Coluna 2: Romanas, Shangrilá & Box */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-black uppercase text-emerald-400 tracking-wider mb-2 pb-1 border-b border-slate-800/60 block font-display">
+                      ◆ Romanas, Shangrilá & Box
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      {PRODUCTS.filter(p => [
+                        "produto-persiana-romana-blackout",
+                        "produto-persiana-romana-tela-solar",
+                        "produto-persiana-romana-translucido",
+                        "produto-persiana-shangrila",
+                        "produto-persiana-caixa"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="text-[11px] py-1.5 px-2 rounded-lg text-left font-semibold hover:bg-brand-blue hover:text-white transition-all text-slate-300 hover:translate-x-1 duration-150 cursor-pointer flex items-center gap-1.5"
+                        >
+                          <span className="text-brand-blue hover:text-white text-xs shrink-0">›</span>
+                          <span className="truncate">{product.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Coluna 3: Double Vision & Tradicionais */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-black uppercase text-sky-400 tracking-wider mb-2 pb-1 border-b border-slate-800/60 block font-display">
+                      ◆ Double Vision & Tradicionais
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      {PRODUCTS.filter(p => [
+                        "produto-persiana-double-vision",
+                        "produto-persiana-double-vision-semi-blackout",
+                        "produto-persiana-horizontal-aluminio",
+                        "produto-persiana-horizontal-madeira",
+                        "produto-persiana-vertical-blackout",
+                        "produto-persiana-vertical-pvc",
+                        "produto-persiana-vertical-translucido"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="text-[11px] py-1.5 px-2 rounded-lg text-left font-semibold hover:bg-brand-blue hover:text-white transition-all text-slate-300 hover:translate-x-1 duration-150 cursor-pointer flex items-center gap-1.5"
+                        >
+                          <span className="text-brand-blue hover:text-white text-xs shrink-0">›</span>
+                          <span className="truncate">{product.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="col-span-3 bg-slate-900/60 p-3 rounded-xl mt-1 flex justify-between items-center text-[11px] border border-slate-800">
+                    <span className="font-semibold text-slate-400">Dúvidas sobre o melhor modelo ou medições? Chame no WhatsApp.</span>
                     <a 
                       href="https://api.whatsapp.com/send/?phone=5541995507310&text=Ol%C3%A1%2C%20achei%20seu%20site%20no%20%2AGoogle%2A%20e%20%2Agostaria%20de%3A%2A"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-brand-blue font-bold hover:underline flex items-center gap-1"
+                      className="text-brand-blue font-bold hover:underline flex items-center gap-1 cursor-pointer"
                     >
-                      Solicitar ajuda <ArrowRight className="w-3.5 h-3.5" />
+                      Falar com Atendimento <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -689,19 +771,77 @@ export default function Header({
                   </span>
                 </button>
 
-                {/* Submenu de Persianas em lista vertical espaçada */}
+                {/* Submenu de Persianas em lista vertical espaçada e categorizada */}
                 {isMobilePersianasOpen && (
-                  <div className="bg-slate-900/60 p-2 flex flex-col gap-2 max-h-[250px] overflow-y-auto">
-                    {PERSIANA_CATEGORIES.map((category) => (
-                      <button
-                        key={category}
-                        onClick={() => handleNavItemClick("modelos", category)}
-                        className="w-full text-left py-3 px-6 text-base font-medium hover:bg-brand-blue/30 rounded-lg min-h-[48px] flex items-center text-slate-300 hover:text-white border-l-4 border-brand-blue/50 cursor-pointer"
-                        title={`Filtrar modelos por ${category}`}
-                      >
-                        {category}
-                      </button>
-                    ))}
+                  <div className="bg-slate-900/80 p-3 flex flex-col gap-4 max-h-[350px] overflow-y-auto">
+                    {/* Categoria 1 */}
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs font-black uppercase text-amber-400 tracking-wider px-2 py-1 font-display">
+                        ◆ Rolô & Painel
+                      </span>
+                      {PRODUCTS.filter(p => [
+                        "produto-rolo-blackout",
+                        "produto-rolo-tela-solar",
+                        "produto-rolo-translucida",
+                        "produto-persiana-painel-blackout",
+                        "produto-persiana-painel-tela-solar",
+                        "produto-persiana-painel-translucida"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="w-full text-left py-2.5 px-4 text-sm font-semibold hover:bg-brand-blue/30 rounded-lg min-h-[48px] flex items-center text-slate-300 hover:text-white border-l-2 border-brand-blue/50 cursor-pointer"
+                        >
+                          {product.name}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Categoria 2 */}
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs font-black uppercase text-emerald-400 tracking-wider px-2 py-1 font-display">
+                        ◆ Romanas, Shangrilá & Box
+                      </span>
+                      {PRODUCTS.filter(p => [
+                        "produto-persiana-romana-blackout",
+                        "produto-persiana-romana-tela-solar",
+                        "produto-persiana-romana-translucido",
+                        "produto-persiana-shangrila",
+                        "produto-persiana-caixa"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="w-full text-left py-2.5 px-4 text-sm font-semibold hover:bg-brand-blue/30 rounded-lg min-h-[48px] flex items-center text-slate-300 hover:text-white border-l-2 border-brand-blue/50 cursor-pointer"
+                        >
+                          {product.name}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Categoria 3 */}
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs font-black uppercase text-sky-400 tracking-wider px-2 py-1 font-display">
+                        ◆ Double Vision & Tradicionais
+                      </span>
+                      {PRODUCTS.filter(p => [
+                        "produto-persiana-double-vision",
+                        "produto-persiana-double-vision-semi-blackout",
+                        "produto-persiana-horizontal-aluminio",
+                        "produto-persiana-horizontal-madeira",
+                        "produto-persiana-vertical-blackout",
+                        "produto-persiana-vertical-pvc",
+                        "produto-persiana-vertical-translucido"
+                      ].includes(p.slug)).map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleNavItemClick(product.slug)}
+                          className="w-full text-left py-2.5 px-4 text-sm font-semibold hover:bg-brand-blue/30 rounded-lg min-h-[48px] flex items-center text-slate-300 hover:text-white border-l-2 border-brand-blue/50 cursor-pointer"
+                        >
+                          {product.name}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

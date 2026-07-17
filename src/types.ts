@@ -17,10 +17,14 @@ export interface NavItem {
 export interface Product {
   id: string;
   name: string;
+  slug: string;
   category: string;
   description: string;
+  longDescription: string;
   image: string;
   features: string[];
+  specifications?: string[];
+  idealFor?: string[];
 }
 
 export interface Service {
