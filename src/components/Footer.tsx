@@ -364,19 +364,19 @@ export default function Footer({
             </h4>
             <div className="flex flex-col gap-4 text-base font-semibold">
               
-              {/* Telefone Fixo */}
+              {/* Telefone Principal */}
               <a 
-                href="tel:+554132788598" 
+                href="tel:+5541995507310" 
                 className="group flex items-center gap-3 text-stone-300 hover:text-amber-400 transition-all p-2 rounded-xl bg-amber-500/10 border border-amber-500/25 hover:bg-stone-800/40 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                title="Ligar para o Telefone Fixo"
-                aria-label="Ligar para o telefone fixo (41) 3278-8598"
+                title="Ligar para o Celular"
+                aria-label="Ligar para o celular (41) 99550-7310"
               >
                 <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
                   <Phone className="w-5 h-5 shrink-0 animate-pulse" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs text-amber-400 font-black uppercase tracking-wider">Telefone Fixo (Destaque)</span>
-                  <span className="text-lg font-black text-white group-hover:underline leading-tight">(41) 3278-8598</span>
+                  <span className="text-xs text-amber-400 font-black uppercase tracking-wider">Telefone Principal (Destaque)</span>
+                  <span className="text-lg font-black text-white group-hover:underline leading-tight">(41) 99550-7310</span>
                 </div>
               </a>
 

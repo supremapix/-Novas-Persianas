@@ -135,15 +135,6 @@ export default function Header({
           <div className="marquee-content gap-12 text-xs md:text-sm font-bold tracking-wide">
             {/* Element group 1 */}
             <a 
-              href="tel:+554132788598" 
-              className="inline-flex items-center gap-2 hover:text-amber-300 focus:text-amber-300 focus:underline hover:underline transition-colors focus:outline-none bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20"
-              title="Ligar para o Telefone Fixo destacado"
-            >
-              <Phone className="w-4 h-4 text-amber-400 shrink-0 animate-pulse" />
-              <span className="text-amber-300">FIXO: (41) 3278-8598</span>
-            </a>
-            <span className="text-slate-600 font-normal shrink-0">•</span>
-            <a 
               href="tel:+5541995507310" 
               className="inline-flex items-center gap-2 hover:text-brand-blue focus:text-brand-blue focus:underline hover:underline transition-colors focus:outline-none"
               title="Ligar para Nova's Persianas"
@@ -187,15 +178,6 @@ export default function Header({
           
           <div className="marquee-content gap-12 text-xs md:text-sm font-bold tracking-wide" aria-hidden="true">
             {/* Element group 2 for seamless loop */}
-            <a 
-              href="tel:+554132788598" 
-              className="inline-flex items-center gap-2 hover:text-amber-300 focus:text-amber-300 focus:underline hover:underline transition-colors focus:outline-none bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20"
-              tabIndex={-1}
-            >
-              <Phone className="w-4 h-4 text-amber-400 shrink-0 animate-pulse" />
-              <span className="text-amber-300">FIXO: (41) 3278-8598</span>
-            </a>
-            <span className="text-slate-600 font-normal shrink-0">•</span>
             <a 
               href="tel:+5541995507310" 
               className="inline-flex items-center gap-2 hover:text-brand-blue focus:text-brand-blue focus:underline hover:underline transition-colors focus:outline-none"
@@ -528,18 +510,18 @@ export default function Header({
 
           <div className="hidden xl:flex items-center xl:gap-1.5 2xl:gap-2.5 shrink-0">
             <a
-              href="tel:+554132788598"
+              href="tel:+5541995507310"
               className={`xl:px-2.5 xl:py-1.5 2xl:px-4 2xl:py-2 rounded-xl font-black xl:text-[11px] 2xl:text-[12px] tracking-wider flex items-center gap-1 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md border-2 whitespace-nowrap shrink-0 ${
                 highContrast 
                   ? "bg-black text-yellow-400 border-yellow-400" 
                   : "bg-amber-500 text-slate-950 border-amber-400 hover:bg-amber-400"
               }`}
-              id="header-btn-fixo"
-              aria-label="Ligar para o Telefone Fixo"
-              title="Ligar para o Telefone Fixo (41) 3278-8598"
+              id="header-btn-celular"
+              aria-label="Ligar para o Celular / WhatsApp"
+              title="Ligar para o Celular (41) 99550-7310"
             >
               <Phone className="w-3.5 h-3.5 animate-bounce shrink-0" />
-              <span>FIXO: (41) 3278-8598</span>
+              <span>LIGAR: (41) 99550-7310</span>
             </a>
             <a
               href="https://api.whatsapp.com/send/?phone=5541995507310&text=Ol%C3%A1%2C%20achei%20seu%20site%20no%20%2AGoogle%2A%20e%20%2Agostaria%20de%3A%2A"

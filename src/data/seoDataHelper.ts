@@ -7,9 +7,9 @@ import { generateSeoContent } from "./seoContent";
 
 export function getSEOData(activePage: string) {
   let title = "Nova's Persianas Curitiba | Persianas Sob Medida de Luxo";
-  let description = "A Nova's Persianas em Curitiba é especializada em persianas sob medida residenciais e comerciais. Medição gratuita em domicílio, preço de fábrica e facilidade de pagamento em até 10x.";
+  let description = "A Nova's Persianas Curitiba é especialista em fabricação sob medida, instalação profissional, higienização, lavagem profunda, manutenção, consertos e automatização com motores inteligentes de persianas, cortinas e venezianas externas em Curitiba e região metropolitana! Atendimento ágil, equipe própria e garantia de fábrica.";
   let canonical = "https://www.novaspersianascuritiba.com.br/";
-  let image = "https://img.novaspersianascuritiba.com.br/novas-persianas.webp";
+  let image = "https://img.novaspersianascuritiba.com.br/persianas-curitiba.webp";
   let isLandingPage = false;
   let landingData: any = null;
 
@@ -32,7 +32,7 @@ export function getSEOData(activePage: string) {
     title = landingData.title;
     description = landingData.description;
     canonical = `https://www.novaspersianascuritiba.com.br/${cleanPage}`;
-    image = landingData.heroImage || "https://img.novaspersianascuritiba.com.br/novas-persianas.webp";
+    image = landingData.heroImage || "https://img.novaspersianascuritiba.com.br/persianas-curitiba.webp";
     isLandingPage = true;
   }
 

@@ -16,8 +16,8 @@ export default function FloatingContact({ highContrast }: FloatingContactProps) 
   const [copied, setCopied] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
 
-  const shareText = "Nova's Persianas Curitiba • Persianas sob medida com qualidade premium e atendimento diferenciado em Curitiba e Região!";
-  const shareImage = "https://scontent.fbfh15-1.fna.fbcdn.net/v/t39.30808-6/648959460_863100380114830_786683706665261508_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x2340&ctp=s1080x2340&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFXI1kAWI4sZxK8lFAGtC5bPrwGqdIyTYw-vAap0jJNjN4bpEC-qY8xX26pdfWNzTLvChSUddKgvju-qcLATn4i&_nc_ohc=VzlnOesbaNEQ7kNvwEAKwMe&_nc_oc=AdoQ_Pdg8_rCFwnSHrTHOjC96hYPuvfoQ8v5sOqsfvLdUjNyR0DFkF0_teucOb_02VABoli6_zWp7qz1Ywuuz2dH&_nc_zt=23&_nc_ht=scontent.fbfh15-1.fna&_nc_gid=yxj8pZ1GplcKklaL01qizw&_nc_ss=7b2a8&oh=00_AQBstcjvky5YYZRv7K28_o9ZfM4dMHHmm3t93AzAiPDPqA&oe=6A4C620F";
+  const shareText = "A Nova's Persianas Curitiba é especialista em fabricação sob medida, instalação profissional, higienização, lavagem profunda, manutenção, consertos e automatização com motores inteligentes de persianas, cortinas e venezianas externas em Curitiba e região metropolitana! Atendimento ágil, equipe própria e garantia de fábrica.";
+  const shareImage = "https://img.novaspersianascuritiba.com.br/persianas-curitiba.webp";
 
   useEffect(() => {
     setShareUrl(window.location.href);
@@ -127,9 +127,9 @@ export default function FloatingContact({ highContrast }: FloatingContactProps) 
 
         {/* 4. PERSISTENT FLOATING CALL NOW (LIGAR AGORA) BUTTON WITH PULSE EFFECT */}
         <a
-          href="tel:+554132788598"
+          href="tel:+5541995507310"
           className="relative group cursor-pointer"
-          aria-label="Ligar agora para o Telefone Fixo"
+          aria-label="Ligar agora para o Celular / WhatsApp"
           id="btn-floating-call-now"
         >
           {/* Breathing background circle pulse (Subtle and elegant) */}
@@ -146,7 +146,7 @@ export default function FloatingContact({ highContrast }: FloatingContactProps) 
 
           {/* Text tooltip for hover on desktop */}
           <span className="absolute right-18 top-1/2 -translate-y-1/2 bg-brand-dark text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-xl border border-slate-800 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:inline">
-            Ligar Agora (Fixo): (41) 3278-8598
+            Ligar Agora (Celular): (41) 99550-7310
           </span>
         </a>
 
