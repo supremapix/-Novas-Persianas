@@ -356,6 +356,6 @@ export const SERVICES: Service[] = [
     name: "Consertos & Manutenção de Mecanismos",
     description: "Não troque a sua persiana por qualquer falha de cordão ou engrenagem! Realizamos consertos rápidos em mechanisms de subida, troca de comandos, substituição de lâminas danificadas e trilhos.",
     details: ["Troca de cordões, correntes e freios", "Substituição de lâminas de PVC e madeira", "Ajustes de altura e largura de tecidos", "Peças de reposição originais multimarcas"],
-    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVK11qO7O-gzOMYuc3oVbM-Ka61OI8hST_PF0EaA2qOtfm5pSXpHxjCiDkFTYqDUntY5wC2RDVEAfw9RH_68T-hsqxtF5bT5IbMToRdq4uNIasmzm83e0ReNfaXaPqB7IDgU0Q=s680-w680-h510-rw"
+    image: "https://img.novaspersianascuritiba.com.br/venezianas-persianas-novas.webp"
   }
 ];

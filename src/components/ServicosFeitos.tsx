@@ -116,7 +116,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
       date: "Julho de 2026",
       description: "Manutenção de persiana vertical em consultório médico que possuía lâminas desencaixadas e trilho travando no giro lateral.",
       solution: "Substituição de garras de tração quebradas, alinhamento dos carrinhos deslizantes internos e troca da corrente inferior de união.",
-      imageUrl: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVK11qO7O-gzOMYuc3oVbM-Ka61OI8hST_PF0EaA2qOtfm5pSXpHxjCiDkFTYqDUntY5wC2RDVEAfw9RH_68T-hsqxtF5bT5IbMToRdq4uNIasmzm83e0ReNfaXaPqB7IDgU0Q=s680-w680-h510-rw"
+      imageUrl: "https://img.novaspersianascuritiba.com.br/tecnico-persianas-e-venezianas.webp"
     },
     {
       id: "job7",

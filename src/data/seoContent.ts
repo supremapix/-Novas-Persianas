@@ -456,7 +456,7 @@ export function generateSeoContent(route: string): PageMetadata {
   let title = "Nova's Persianas Curitiba | Fábrica Sob Medida no Hauer";
   let subtitle = "A melhor loja de cortinas e persianas de Curitiba com fabricação própria, preço de fábrica e medição grátis";
   let description = "Compre cortinas e persianas sob medida em Curitiba direto da fábrica Nova's Persianas. Atendimento técnico especializado no Hauer, Batel, Portão e região com até 10x sem juros.";
-  let heroImage = "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTFQj6NuJDjW8sfkkHIhJ4Kw-5EQSw60Fxeqr2IjTc4wFsZUa1i0Jqy219iTSuQhiDH33kJJ45ac9bwZE19jA7i-RRz94ibg7y-SUJ3CjYvlS017X4Av4uLy0c-lwXvPFdZYQ=s680-w680-h510-rw";
+  let heroImage = "https://img.novaspersianascuritiba.com.br/cortinas-e-persianas-novas.webp";
   let intro = "Seja muito bem-vindo à Nova's Persianas Curitiba! Se você está buscando transformar seus ambientes residenciais ou comerciais com persianas sob medida de qualidade de fábrica, durabilidade extrema e acabamento de alto padrão, você acaba de encontrar a parceira ideal em Curitiba e região metropolitana.";
   let content = "Com uma trajetória consolidada e sede física no tradicional bairro Hauer, nos dedicamos a projetar e fabricar persianas que resolvem problemas reais: controlam frestas de luz incômodas, protegem seus móveis e pisos de madeira contra desbotamento pelos raios UV, proporcionam isolamento acústico e privacidade total. Nossas soluções sob medida garantem encaixe milimétrico para que seus espaços fiquem visualmente amplos e confortáveis.";
   let categoryFilter = "all";
@@ -604,7 +604,7 @@ export function generateSeoContent(route: string): PageMetadata {
       ? "https://71026.cdn.simplo7.net/static/71026/sku/persianas-persiana-madeira-persiana-horizontal-de-madeira-natural-branca-50mm-com-fita--p-1631664913801.jpg"
       : productKey === "rolo" || productKey === "blackout"
       ? "https://images.tcdn.com.br/img/img_prod/1175294/persiana_rolo_tela_solar_5_1_60m_x_1_60m_preto_bella_janela_6045_1_ef36aeb9847d26324b3f53fa5d6325f5.jpg"
-      : "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTFQj6NuJDjW8sfkkHIhJ4Kw-5EQSw60Fxeqr2IjTc4wFsZUa1i0Jqy219iTSuQhiDH33kJJ45ac9bwZE19jA7i-RRz94ibg7y-SUJ3CjYvlS017X4Av4uLy0c-lwXvPFdZYQ=s680-w680-h510-rw";
+      : "https://img.novaspersianascuritiba.com.br/cortinas-e-persianas-novas.webp";
     
     intro = `A escolha pelo modelo de ${product.name} é excelente para quem valoriza ${product.description}. Conhecida também como ${product.synonym}, esta peça se destaca no mercado decorativo de Curitiba por proporcionar uma transição perfeita entre luminosidade natural e privacidade. Na Nova's Persianas, produzimos este modelo sob medida utilizando eixos de alumínio reforçado que evitam o desgaste do tecido nas laterais.`;
     
