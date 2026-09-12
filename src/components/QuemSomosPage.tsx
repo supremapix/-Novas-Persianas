@@ -134,8 +134,8 @@ export default function QuemSomosPage({ highContrast, onNavigateHome }: QuemSomo
               highContrast ? "bg-black border-white" : "bg-white border-stone-200 shadow-2xl"
             }`}>
               <img 
-                src="https://scontent.fbfh15-1.fna.fbcdn.net/v/t39.30808-6/611279552_814467461644789_5601742766907040930_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1379&ctp=s1080x1379&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEO2VrTLz3H_xxr4x_SfmAiv8E4V_gpOj6_wThX-Ck6PtIqvD0HY4wzAA7Bm0mPQxBzk6qUu7PKRVWcz3dyNFpf&_nc_ohc=LANmlOodIMEQ7kNvwF6l1v5&_nc_oc=AdoEXzCgSAenUM9gT2ViwEUED3rbsRJLcoTSxfFqyPh6eWmdl0ghcK10tiI_sPvzfTnXp9qXEeC1dR4uty_jBi21&_nc_zt=23&_nc_ht=scontent.fbfh15-1.fna&_nc_gid=XBPhMCbT25-QA0TgwEWPlQ&_nc_ss=7b2a8&oh=00_AQBln_jnN5tyvZ9qW_7ilVqrBocacR8pL3ahLJWfu_RJ1w&oe=6A4C62D8" 
-                alt="Showroom de Persianas Nova's" 
+                src="https://img.supremasite.com.br/persianas/novas-persianas-hauer-cwb.webp" 
+                alt="Showroom de Persianas Nova's no Hauer Curitiba" 
                 className="w-full h-auto rounded-2xl object-cover"
                 referrerPolicy="no-referrer"
               />
