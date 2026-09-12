@@ -35,8 +35,8 @@ function getInjectedHead(seo: any) {
     <!-- Geo Targeting Tags -->
     <meta name="geo.region" content="BR-PR" />
     <meta name="geo.placename" content="Curitiba" />
-    <meta name="geo.position" content="-25.4852924;-49.2562215" />
-    <meta name="ICBM" content="-25.4852924, -49.2562215" />
+    <meta name="geo.position" content="-25.4824515;-49.2581649" />
+    <meta name="ICBM" content="-25.4824515, -49.2581649" />
 
     <!-- Resource Hints & Font Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

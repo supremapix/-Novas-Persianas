@@ -28,13 +28,15 @@ export default function FeaturedProducts({
   // Grouped quick filters
   const filters = [
     { name: "Todos", shortName: "Todos", value: "all" },
-    { name: "Cortinas Rolô", shortName: "Rolô", value: "Rolo" },
-    { name: "Double Vision", shortName: "Double Vision", value: "Double Vision" },
+    { name: "Rolô", shortName: "Rolô", value: "Rolo" },
+    { name: "Double Vision", shortName: "Double", value: "Double Vision" },
     { name: "Romana", shortName: "Romana", value: "Romana" },
     { name: "Painel", shortName: "Painel", value: "Painel" },
     { name: "Vertical", shortName: "Vertical", value: "Vertical" },
-    { name: "Horizontais", shortName: "Horizontais", value: "Horizontal" },
-    { name: "Modelos Premium", shortName: "Premium", value: "Premium" },
+    { name: "Horizontais", shortName: "Horizontal", value: "Horizontal" },
+    { name: "Blackout (100% Escuro)", shortName: "Blackout", value: "Blackout" },
+    { name: "Tela Solar", shortName: "Tela Solar", value: "Tela Solar" },
+    { name: "Shangrilá", shortName: "Shangrilá", value: "Shangrila" },
   ];
 
   // Sync scroll on header filter changes
@@ -57,22 +59,27 @@ export default function FeaturedProducts({
     }
 
     // Advanced category match (robust and accent-insensitive)
-    const normCategory = selectedCategory.toLowerCase();
-    const normProductCat = product.category.toLowerCase();
-    const normProductName = product.name.toLowerCase();
+    const cleanNorm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const normCategory = cleanNorm(selectedCategory);
+    const normProductCat = cleanNorm(product.category);
+    const normProductName = cleanNorm(product.name);
+    const normProductDesc = cleanNorm(product.description);
 
     let matchesCategory = false;
 
     if (normCategory === "rolo") {
-      matchesCategory = normProductCat.includes("rolo") || normProductCat.includes("rolô") || normProductName.includes("rolo") || normProductName.includes("rolô");
-    } else if (normCategory === "premium") {
-      matchesCategory = ["produto-persiana-caixa", "produto-persiana-shangrila"].includes(product.slug);
+      matchesCategory = normProductCat.includes("rolo") || normProductName.includes("rolo");
+    } else if (normCategory === "blackout") {
+      matchesCategory = normProductCat.includes("blackout") || normProductName.includes("blackout") || normProductDesc.includes("blackout");
+    } else if (normCategory === "tela solar" || normCategory === "solar") {
+      matchesCategory = normProductCat.includes("solar") || normProductName.includes("solar") || normProductDesc.includes("solar");
+    } else if (normCategory === "shangrila" || normCategory === "premium") {
+      matchesCategory = product.slug.includes("shangrila") || normProductName.includes("shangrila");
     } else {
-      const cleanNorm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
       matchesCategory = 
-        cleanNorm(product.category).includes(cleanNorm(selectedCategory)) ||
-        cleanNorm(selectedCategory).includes(cleanNorm(product.category)) ||
-        cleanNorm(product.name).includes(cleanNorm(selectedCategory));
+        normProductCat.includes(normCategory) ||
+        normCategory.includes(normProductCat) ||
+        normProductName.includes(normCategory);
     }
 
     return matchesCategory && matchesSearch;

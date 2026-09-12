@@ -18,9 +18,9 @@ export default function PromoBanners({ highContrast, type, onSelectCategory }: P
   // Section 2: "Top Categorias" - Banner Largo de Destaque
   if (type === "top-categories") {
     const categories = [
-      { name: "Linha Rolô", img: "https://beneflexpersianas.com.br/wp-content/uploads/2024/10/2-2.jpg", tag: "Campeã de Vendas" },
+      { name: "Linha Rolô", img: "https://img.supremasite.com.br/persianas/rolo.jpg", tag: "Campeã de Vendas" },
       { name: "Linha Romana", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvQuV6Mx9pMVgez3WzPHRhoKcznNTjohGkTjoldJySO4zFIVCTO1ErWMbS&s=10", tag: "Elegante & Sofisticada" },
-      { name: "Double Vision", img: "https://www.designpaperhome.com.br/media/catalog/product/cache/1/image/800x/17f82f742ffe127f42dca9de82fb58b1/r/o/rolo_dupla.jpg", tag: "Controle de Luz Incrível" },
+      { name: "Double Vision", img: "https://img.supremasite.com.br/persianas/translucidas-persiana.jpg", tag: "Controle de Luz Incrível" },
       { name: "Painel & Vertical", img: "https://www.asafedecor.com.br/persianas/imagens/persiana-vertical-para-porta.jpg", tag: "Ideal para Grandes Vãos" }
     ];
 

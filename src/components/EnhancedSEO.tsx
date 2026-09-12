@@ -46,8 +46,8 @@ export default function EnhancedSEO({ activePage }: EnhancedSEOProps) {
       {/* 5. Geo Targeting Meta Tags */}
       <meta name="geo.region" content="BR-PR" />
       <meta name="geo.placename" content="Curitiba" />
-      <meta name="geo.position" content="-25.4852924;-49.2562215" />
-      <meta name="ICBM" content="-25.4852924, -49.2562215" />
+      <meta name="geo.position" content="-25.4824515;-49.2581649" />
+      <meta name="ICBM" content="-25.4824515, -49.2581649" />
 
       {/* 6. Resource Hints (preconnect / prefetch) */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

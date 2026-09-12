@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
     category: "Persianas Double Vision",
     description: "Permite a entrada suave da luz do dia enquanto bloqueia a visão de fora para dentro. Ideal para salas de estar, cozinhas e escritórios que exigem ambientes claros e aconchegantes.",
     longDescription: "Para quem valoriza ambientes banhados por uma luminosidade suave, clara e agradável, a Persiana Double Vision Translúcida é a solução ideal. O seu sofisticado mecanismo de faixas alternadas permite criar jogos de luz e sombra extraordinários. Quando alinhada em modo aberto, a luz externa entra de forma difusa e homogênea, clareando o espaço sem ofuscamento, enquanto protege pisos e móveis contra os raios UV. Em modo fechado, oferece privacidade completa sem escurecer o ambiente, impedindo a visão de fora para dentro.",
-    image: "https://beneflexpersianas.com.br/wp-content/uploads/2024/10/11-2.jpg",
+    image: "https://img.supremasite.com.br/persianas/translucidas-persiana.jpg",
     features: ["Entrada de luz natural difusa e aconchegante", "Proteção de privacidade diurna e noturna", "Design moderno e contemporâneo com bandô de acabamento"],
     specifications: ["Material: Tecido sintético premium com tramas translúcidas", "Proteção UV: Filtração de até 70% dos raios solares", "Eixo: Tubo de alumínio reforçado para evitar empenamento", "Mecanismo: Comando manual leve com corrente redutora de esforço"],
     idealFor: ["Cozinhas planejadas e copas residenciais", "Salas de jantar e recepções comerciais", "Consultórios e salas de atendimento humanizado"]
@@ -256,7 +256,7 @@ export const PRODUCTS: Product[] = [
     category: "Rolô Blackout",
     description: "O modelo de rolo mais vendido pela praticidade e facilidade de limpeza. Tecido blackout de toque emborrachado para bloqueio de 100% da claridade externa.",
     longDescription: "A Cortina Rolô Blackout destaca-se como o modelo de rolo de maior preferência nacional devido à sua incrível funcionalidade e facilidade absoluta de manutenção. Seu tecido de alta tecnologia possui revestimento vinílico triplo no verso, bloqueando totalmente (100%) a passagem de luz externa, além de criar uma excelente barreira térmica contra o calor ou frio que entra pelos vidros. Quando recolhida, o tecido enrola-se de forma compacta em um tubo de alumínio superior.",
-    image: "https://product-hub-prd.madeiramadeira.com.br/941677960/images/f265afa6-d4df-4547-b952-57fa32bc91b36a29a74282fb5bde91bkbranca.jpg",
+    image: "https://img.supremasite.com.br/persianas/blackout_rolo.jpg",
     features: ["Bloqueio solar absoluto de 100% com vedação total", "Material vinílico triplo impermeável e super durável", "Fácil de limpar, ideal para pessoas alérgicas"],
     specifications: ["Composição: Poliéster e fibra de vidro revestidos com PVC", "Espessura do tecido: 0.40mm de alta durabilidade", "Acionamento: Comando manual por corrente de polímero ou motorizado por botão/Alexa", "Limpeza: Bucha macia com detergente neutro e água, secagem rápida"],
     idealFor: ["Quartos de casal, de solteiro e dormitórios infantis", "Salas de TV, home theater e salas de videoconferência", "Salas comerciais com forte incidência direta do sol"]
@@ -328,7 +328,7 @@ export const PRODUCTS: Product[] = [
     category: "Rolô Translúcida",
     description: "Design reto e minimalista com tecido translúcido que difunde a luz natural de forma agradável e charmosa em ambientes integrados.",
     longDescription: "A Cortina Rolô Translúcida destaca-se pelo seu desenho plano e minimalista, operando como uma barreira leve que clareia o cômodo suavemente, sem reflexos fortes. O seu tecido especial protege sua privacidade impedindo a visão interna do espaço de quem passa na rua, enquanto mantém o cômodo iluminado e extremamente agradável no dia a dia.",
-    image: "https://www.facilpersianas.com.br/cdn/shop/files/rolo-translucida-estampada-xadrez-1.webp?v=1778780182&width=713",
+    image: "https://img.supremasite.com.br/persianas/translucidas-persiana.jpg",
     features: ["Design reto, limpo e extremamente discreto", "Garante privacidade sem escurecer o ambiente", "Filtração de raios solares nocivos de forma uniforme"],
     specifications: ["Tecido: Mistura especial de poliéster e viscose translúcida", "Eixo superior: Alumínio de alta resistência para evitar frestas", "Acionamento: Mecanismo manual por cordão de nylon de tração macia", "Garantia: Total contra problemas de montagem ou fixação técnica"],
     idealFor: ["Cozinhas integradas e lavanderias modernas", "Banheiros residenciais e lavabos elegantes", "Salas de jantar, varandas internas e recepções comerciais"]

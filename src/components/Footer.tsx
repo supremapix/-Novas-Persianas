@@ -29,7 +29,7 @@ export default function Footer({
     }
 
     if (hashId === "sobre") {
-      setActivePage("quem-somos");
+      setActivePage("sobre");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -193,16 +193,16 @@ export default function Footer({
           </div>
 
           <p className="text-stone-400 text-xs mt-2 font-medium max-w-md">
-            Líder em Persianas Sob Medida • Atendimento humanizado e focado no conforto e facilidade para a Terceira Idade.
+            Especialistas em Persianas Sob Medida • Atendimento consultivo, medição no local, instalação e manutenção em Curitiba e Região Metropolitana.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          {/* Column 1: MAPA DO SITE */}
+          {/* Column 1: NAVEGAÇÃO PRINCIPAL */}
           <div className="flex flex-col gap-4">
             <h4 className="text-lg font-bold text-white border-b border-stone-700 pb-2 font-display uppercase tracking-wider">
-              Mapa do Site
+              Navegação
             </h4>
             <ul className="flex flex-col gap-3 text-base font-semibold">
               <li>
@@ -210,15 +210,7 @@ export default function Footer({
                   onClick={() => handleScrollToSection("hero")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  Página Inicial (Home)
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleScrollToSection("sobre")}
-                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
-                >
-                  Quem Somos
+                  Página Inicial
                 </button>
               </li>
               <li>
@@ -226,15 +218,7 @@ export default function Footer({
                   onClick={() => handleScrollToSection("modelos", "all")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  Todos os Modelos
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleScrollToSection("modelos", "Rolô")}
-                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
-                >
-                  Persianas Modelo Rolô
+                  Modelos de Persianas
                 </button>
               </li>
               <li>
@@ -242,72 +226,103 @@ export default function Footer({
                   onClick={() => handleScrollToSection("servicos")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  Nossos Serviços
+                  Instalação e Manutenção
                 </button>
               </li>
               <li>
                 <button 
-                  onClick={() => handleScrollToSection("servicos-feitos")}
-                  className="hover:underline focus:underline text-left text-amber-400 font-extrabold hover:text-white cursor-pointer min-h-[40px] flex items-center gap-1"
+                  onClick={() => handleScrollToSection("sobre")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  ✨ Serviços Feitos (Portfólio)
+                  Sobre a Empresa
                 </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: LINKS ÚTEIS */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-lg font-bold text-white border-b border-stone-700 pb-2 font-display uppercase tracking-wider">
-              Links Úteis
-            </h4>
-            <ul className="flex flex-col gap-3 text-base font-semibold">
-              <li>
-                <a href="#politica" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Política de Privacidade
-                </a>
-              </li>
-              <li>
-                <a href="#devolucoes" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Política de Devoluções
-                </a>
-              </li>
-              <li>
-                <a href="#termos" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Termos & Condições
-                </a>
               </li>
               <li>
                 <button 
                   onClick={() => handleScrollToSection("contato")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  Contate-nos
+                  Fale Conosco
                 </button>
               </li>
-              {onOpenAccessibility && (
-                <li>
-                  <button 
-                    onClick={onOpenAccessibility}
-                    className="hover:underline focus:underline text-left text-brand-blue hover:text-white cursor-pointer min-h-[40px] flex items-center gap-1.5"
-                    aria-label="Abrir Painel de Acessibilidade no topo do site"
-                  >
-                    <span>♿ Acessibilidade (Topo)</span>
-                  </button>
-                </li>
-              )}
               <li>
-                <a href="#noticias" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Últimas Notícias
-                </a>
+                <button 
+                  onClick={() => {
+                    setActivePage("mapa-do-site");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Mapa do Site
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: CENTRAL DO CLIENTE */}
+          {/* Column 2: MODELOS EM DESTAQUE */}
           <div className="flex flex-col gap-4">
             <h4 className="text-lg font-bold text-white border-b border-stone-700 pb-2 font-display uppercase tracking-wider">
-              Central do Cliente
+              Modelos em Destaque
+            </h4>
+            <ul className="flex flex-col gap-3 text-base font-semibold">
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("modelos", "Rolô")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Rolô (Blackout / Solar)
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("modelos", "Double Vision")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Double Vision
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("modelos", "Romana")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Romanas
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("modelos", "Vertical")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Verticais (PVC e Tecido)
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("modelos", "Horizontal")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Horizontais (Alumínio / Madeira)
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    setActivePage("persiana-motorizada-curitiba");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Persianas Motorizadas e Automação
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: ATENDIMENTO & ORÇAMENTO */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-lg font-bold text-white border-b border-stone-700 pb-2 font-display uppercase tracking-wider">
+              Atendimento Consultivo
             </h4>
             <ul className="flex flex-col gap-3 text-base font-semibold">
               <li>
@@ -319,27 +334,17 @@ export default function Footer({
                   title="Acessar o Catálogo de Persianas no WhatsApp"
                 >
                   <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Catálogo de Persianas (WhatsApp)</span>
+                  <span>Catálogo no WhatsApp</span>
                 </a>
               </li>
               <li>
-                <a href="#conta" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Minha Conta / Acesso
-                </a>
-              </li>
-              <li>
-                <a href="https://api.whatsapp.com/send/?phone=5541995507310&text=Ol%C3%A1%2C%20achei%20seu%20site%20no%20%2AGoogle%2A%20e%20%2Agostaria%20de%3A%2A" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Orçamentos Online
-                </a>
-              </li>
-              <li>
-                <a href="#desejos" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Lista de Desejos
-                </a>
-              </li>
-              <li>
-                <a href="#favoritos" className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center">
-                  Seus Favoritos
+                <a 
+                  href="https://api.whatsapp.com/send/?phone=5541995507310&text=Ol%C3%A1%2C%20achei%20seu%20site%20no%20%2AGoogle%2A%20e%20%2Agostaria%20de%3A%2A%20solicitar%20um%20or%C3%A7amento" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline focus:underline text-stone-300 hover:text-white min-h-[40px] flex items-center"
+                >
+                  Orçamento sob Medida
                 </a>
               </li>
               <li>
@@ -347,9 +352,36 @@ export default function Footer({
                   onClick={() => handleScrollToSection("servicos")}
                   className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
                 >
-                  Agendar Limpeza/Higienização
+                  Agendar Medição Gratuita
                 </button>
               </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("servicos")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Higienização e Lavagem
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleScrollToSection("servicos")}
+                  className="hover:underline focus:underline text-left text-stone-300 hover:text-white cursor-pointer min-h-[40px] flex items-center"
+                >
+                  Consertos e Manutenção
+                </button>
+              </li>
+              {onOpenAccessibility && (
+                <li>
+                  <button 
+                    onClick={onOpenAccessibility}
+                    className="hover:underline focus:underline text-left text-brand-blue hover:text-white cursor-pointer min-h-[40px] flex items-center gap-1.5"
+                    aria-label="Abrir Painel de Acessibilidade no topo do site"
+                  >
+                    <span>♿ Acessibilidade</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -488,8 +520,8 @@ export default function Footer({
             <p className="text-stone-400 text-sm font-medium">
               © 2026 Nova's Persianas. Todos os direitos reservados.
             </p>
-            <p className="text-stone-500 text-xs mt-1">
-              CNPJ: 12.345.678/0001-90 • Curitiba, PR
+            <p className="text-stone-400 text-xs mt-1">
+              Rua Frei Henrique de Coimbra, 1750, Hauer, Curitiba - PR
             </p>
             <p className="mt-1 text-[10px] text-stone-600 font-normal">
               <button 

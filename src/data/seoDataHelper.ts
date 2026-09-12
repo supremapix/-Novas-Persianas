@@ -44,7 +44,7 @@ export function getSEOData(activePage: string) {
     "name": "Nova's Persianas",
     "legalName": "Nova's Persianas Curitiba",
     "alternateName": "Novas Persianas",
-    "description": "Líder regional em persianas sob medida em Curitiba. Higienização, conserto e instalação técnica no Hauer, Portão e região.",
+    "description": "Especialistas em persianas sob medida em Curitiba e Região Metropolitana. Venda, instalação, manutenção, conserto, higienização e automação de persianas residenciais e corporativas.",
     "url": "https://www.novaspersianascuritiba.com.br",
     "logo": {
       "@type": "ImageObject",
@@ -61,13 +61,13 @@ export function getSEOData(activePage: string) {
       "streetAddress": "R. Frei Henrique de Coimbra, 1750",
       "addressLocality": "Curitiba",
       "addressRegion": "PR",
-      "postalCode": "81630-140",
+      "postalCode": "81650-060",
       "addressCountry": "BR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "-25.4852924",
-      "longitude": "-49.2562215"
+      "latitude": "-25.4824515",
+      "longitude": "-49.2581649"
     },
     "openingHoursSpecification": [
       {
@@ -83,19 +83,56 @@ export function getSEOData(activePage: string) {
         "closes": "13:00"
       }
     ],
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Curitiba"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Região Metropolitana de Curitiba"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Persianas Sob Medida e Serviços",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Venda e Instalação de Persianas Sob Medida"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manutenção e Conserto de Persianas e Venezianas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Higienização e Lavagem de Persianas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Automação e Motorização de Persianas"
+          }
+        }
+      ]
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-41-99550-7310",
       "contactType": "customer service",
       "areaServed": "BR",
       "availableLanguage": ["Portuguese"]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "184",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 
@@ -157,24 +194,24 @@ export function getSEOData(activePage: string) {
         "streetAddress": "R. Frei Henrique de Coimbra, 1750",
         "addressLocality": "Curitiba",
         "addressRegion": "PR",
-        "postalCode": "81630-140",
+        "postalCode": "81650-060",
         "addressCountry": "BR"
       }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Curitiba",
-      "sameAs": "https://pt.wikipedia.org/wiki/Curitiba"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Curitiba"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Região Metropolitana de Curitiba"
+      }
+    ],
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "priceType": "https://schema.org/MinimumPrice",
-        "billingIncrement": 1,
-        "description": "Orçamento e medição gratuita a laser em Curitiba"
-      }
+      "description": "Orçamento sob medida e consultoria em Curitiba e Região Metropolitana"
     }
   } : null;
 

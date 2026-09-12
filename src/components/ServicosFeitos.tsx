@@ -31,8 +31,8 @@ interface CompletedJob {
   title: string;
   category: "instalacao" | "lavagem" | "reparo" | "automacao";
   categoryLabel: string;
-  neighborhood: string;
-  date: string;
+  environment: string;
+  tag: string;
   description: string;
   solution: string;
   imageUrl: string;
@@ -51,104 +51,104 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
   const COMPLETED_JOBS: CompletedJob[] = [
     {
       id: "job1",
-      title: "Instalação de Rolô Blackout Motorizada",
+      title: "Exemplo de Aplicação: Rolô Blackout Motorizada",
       category: "automacao",
       categoryLabel: "Automação & Instalação",
-      neighborhood: "Batel",
-      date: "Julho de 2026",
-      description: "Instalação de 3 cortinas Rolô Blackout integradas no mesmo vão, equipadas com motor tubular silencioso controlado por comando de voz via Alexa e controle de canais separados.",
-      solution: "Vedação lateral perfeita com guias de alumínio anodizado sob medida, reduzindo 100% de entrada de luz para o quarto de um casal idoso.",
+      environment: "Quartos e Suítes",
+      tag: "Projeto Sob Medida",
+      description: "Instalação de cortinas Rolô Blackout integradas no mesmo vão, equipadas com motor tubular silencioso controlado por controle remoto ou comando de voz.",
+      solution: "Vedação lateral com guias de alumínio sob medida, reduzindo a entrada de luz para máximo conforto e descanso.",
       imageUrl: "https://www.facilpersianas.com.br/cdn/shop/files/Double_Vision_Plus_Preta_8_60046441-bed2-405d-a669-5271781f10e6.jpg?v=1751491915&width=600",
       hasVideo: true
     },
     {
       id: "job2",
-      title: "Higienização e Lavagem com Remoção de Fungos",
+      title: "Serviço Técnico: Higienização e Lavagem Especializada",
       category: "lavagem",
       categoryLabel: "Higienização & Lavagem",
-      neighborhood: "Mercês",
-      date: "Junho de 2026",
-      description: "Lavagem especializada de persianas romanas em tecido translúcido que estavam amareladas por ação do sol e poeira da rua.",
-      solution: "Utilização de produtos de pH neutro e secagem natural vertical controlada, eliminando fungos e ácaros, deixando o tecido com toque suave e aroma limpo.",
+      environment: "Manutenção Preventiva",
+      tag: "Higienização Especializada",
+      description: "Lavagem especializada de persianas romanas e tecidos translúcidos, removendo poeira e sujidades acumuladas pelo tempo com produtos neutros.",
+      solution: "Utilização de produtos de pH neutro e secagem vertical controlada para preservar as fibras e o caimento original do tecido.",
       imageUrl: "https://img.novaspersianascuritiba.com.br/venezianas-novas.webp"
     },
     {
       id: "job3",
-      title: "Conserto de Veneziana Externa Integrada de Enrolar",
+      title: "Serviço Técnico: Conserto de Veneziana Externa de Enrolar",
       category: "reparo",
       categoryLabel: "Consertos & Manutenção",
-      neighborhood: "Água Verde",
-      date: "Julho de 2026",
-      description: "Veneziana externa de rolar de alumínio estava travada pela metade devido a quebra da fita de nylon recolhedora e engripamento de ponteiras.",
-      solution: "Troca completa do cordão de nylon de alta tração por modelo reforçado, lubrificação do eixo metálico com silicone náutico e troca das molas espirais de parede.",
+      environment: "Veneziana Integrada",
+      tag: "Conserto no Local",
+      description: "Veneziana externa de rolar de alumínio travando no recolhimento devido ao desgaste da fita de tração e acúmulo de resíduos no eixo.",
+      solution: "Troca completa do cordão de nylon reforçado, lubrificação do eixo metálico com silicone náutico e ajuste das molas recolhedoras de parede.",
       imageUrl: "https://img.novaspersianascuritiba.com.br/persianas-e-venezianas.webp"
     },
     {
       id: "job4",
-      title: "Instalação de Persianas Double Vision com Bandô de Alumínio",
+      title: "Exemplo de Aplicação: Double Vision com Bandô de Alumínio",
       category: "instalacao",
       categoryLabel: "Instalação sob Medida",
-      neighborhood: "Cabral",
-      date: "Junho de 2026",
-      description: "Montagem de persianas Double Vision premium cor cinza linho com acabamento em bandô curvo de alumínio pintado no tom exato do teto de gesso.",
-      solution: "Nivelamento a laser de precisão milimétrica, controle dinâmico de privacidade e entrada de sol para varanda gourmet integrada.",
+      environment: "Varanda Gourmet e Salas",
+      tag: "Projeto Sob Medida",
+      description: "Montagem de persianas Double Vision com acabamento em bandô curvo de alumínio pintado no tom do ambiente, aliando design e controle térmico.",
+      solution: "Nivelamento a laser de precisão milimétrica com lâminas em sobreposição contínua para controle suave da luminosidade.",
       imageUrl: "https://img.novaspersianascuritiba.com.br/cortinas-e-persianas-novas.webp",
       hasVideo: true
     },
     {
       id: "job5",
-      title: "Automatização de Veneziana de Madeira de Rolar",
+      title: "Serviço Especializado: Automatização de Veneziana de Enrolar",
       category: "automacao",
       categoryLabel: "Automação & Motores",
-      neighborhood: "Santa Felicidade",
-      date: "Maio de 2026",
-      description: "Retrofit mecânico de uma veneziana externa clássica de madeira, cujo manuseio manual por corda pesava mais de 15kg.",
-      solution: "Instalação de motor elétrico tubular italiano de 50Nm inserido dentro do eixo oco, sem quebrar nenhuma parede ou gesso do cliente.",
+      environment: "Modernização Residencial",
+      tag: "Automação / Motores",
+      description: "Modernização mecânica de veneziana externa clássica, substituindo o manuseio manual pesado por motorização tubular elétrica.",
+      solution: "Instalação de motor elétrico tubular inserido no eixo oco existente, com comando por interruptor de parede ou controle remoto.",
       imageUrl: "https://img.novaspersianascuritiba.com.br/veneziana-automatizada-em-curitiba-instalacao-de-automacao-veneziana.webp",
       hasVideo: true
     },
     {
       id: "job6",
-      title: "Conserto Geral de Persiana Vertical de PVC",
+      title: "Serviço Técnico: Conserto Geral de Persiana Vertical de PVC",
       category: "reparo",
       categoryLabel: "Consertos & Manutenção",
-      neighborhood: "Centro Cívico",
-      date: "Julho de 2026",
-      description: "Manutenção de persiana vertical em consultório médico que possuía lâminas desencaixadas e trilho travando no giro lateral.",
+      environment: "Comercial e Consultórios",
+      tag: "Conserto no Local",
+      description: "Manutenção técnica de persiana vertical em consultório com lâminas desencaixadas e trilho superior travando no giro lateral.",
       solution: "Substituição de garras de tração quebradas, alinhamento dos carrinhos deslizantes internos e troca da corrente inferior de união.",
-      imageUrl: "https://img.novaspersianascuritiba.com.br/tecnico-persianas-e-venezianas.webp"
+      imageUrl: "https://img.novaspersianascuritiba.com.br/persianas-e-venezianas.webp"
     },
     {
       id: "job7",
-      title: "Instalação de Persiana Horizontal de Madeira 50mm",
+      title: "Exemplo de Aplicação: Persiana Horizontal de Madeira 50mm",
       category: "instalacao",
       categoryLabel: "Instalação sob Medida",
-      neighborhood: "Ecoville",
-      date: "Julho de 2026",
-      description: "Montagem de 4 persianas horizontais de madeira natural tratada na cor mogno com fitas decorativas de algodão preto.",
+      environment: "Salas e Escritórios",
+      tag: "Projeto Sob Medida",
+      description: "Montagem de persianas horizontais de madeira natural tratada na cor mogno com fitas decorativas de algodão preto.",
       solution: "Aparafusamento seguro em alvenaria com buchas de expansão especiais para isolamento acústico, proporcionando altíssima robustez e beleza natural.",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWHx2idO3_ZjMtKAqP4mUSaQJ9yB69uCVIU9sA-iT7o6gv12-FK6DIuWI&s=10"
     },
     {
       id: "job8",
-      title: "Instalação de Persiana Caixa Box em Dormitório",
+      title: "Exemplo de Aplicação: Persiana Caixa Box em Dormitório",
       category: "instalacao",
       categoryLabel: "Instalação sob Medida",
-      neighborhood: "Hauer",
-      date: "Julho de 2026",
+      environment: "Dormitórios e Home Theater",
+      tag: "Projeto Sob Medida",
       description: "Montagem técnica de persiana rolô caixa em janela de dormitório infantil para obtenção de blackout total.",
       solution: "Montagem de perfis em 'U' laterais com acabamento de escovas vedadoras de vento e claridade, resultando em escurecimento absoluto de 100%.",
       imageUrl: "https://loja.persianascrisdan.com.br/arquivos/produtos/imagens_adicionais/webp/8bd069b3e34f4c5c4462ac923956c34b5b06dacb.jpeg.webp"
     },
     {
       id: "job9",
-      title: "Automação Completa de Persianas Integradas",
+      title: "Serviço Especializado: Automação Completa de Persianas Integradas",
       category: "automacao",
       categoryLabel: "Automação & Motores",
-      neighborhood: "Jardim Social",
-      date: "Julho de 2026",
+      environment: "Residências e Escritórios",
+      tag: "Automação / Motores",
       description: "Instalação de motores eletrônicos inteligentes e silenciosos em persianas de enrolar integradas de alto padrão, configurados para comando remoto.",
-      solution: "Sincronização de controle multicanais e configuração de assistentes Alexa e Google Home para automação de cenários de iluminação personalizados.",
+      solution: "Sincronização de controle multicanais e calibração de limites eletrônicos para automação de cenários de iluminação personalizados.",
       imageUrl: "https://img.novaspersianascuritiba.com.br/persianas-automatica.webp",
       hasVideo: true
     }
@@ -156,9 +156,9 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
 
   // Filters mapping
   const filters = [
-    { value: "all", label: "Todos os Trabalhos" },
+    { value: "all", label: "Todos os Projetos" },
     { value: "instalacao", label: "Instalações" },
-    { value: "lavagem", label: "Limpeza & Lavagem" },
+    { value: "lavagem", label: "Higienização" },
     { value: "reparo", label: "Consertos & Reparos" },
     { value: "automacao", label: "Automatizações / Motores" }
   ];
@@ -169,7 +169,8 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
     const query = searchQuery.toLowerCase().trim();
     const matchesSearch = 
       job.title.toLowerCase().includes(query) ||
-      job.neighborhood.toLowerCase().includes(query) ||
+      job.environment.toLowerCase().includes(query) ||
+      job.tag.toLowerCase().includes(query) ||
       job.description.toLowerCase().includes(query) ||
       job.solution.toLowerCase().includes(query);
     return matchesFilter && matchesSearch;
@@ -187,17 +188,17 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-500 font-black px-4 py-1.5 rounded-full text-xs uppercase mb-3 border border-amber-500/20">
-            <Camera className="w-4 h-4 text-amber-500 shrink-0" />
-            <span>Portfólio de Serviços Concluídos</span>
+          <div className="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue font-black px-4 py-1.5 rounded-full text-xs uppercase mb-3 border border-brand-blue/20">
+            <Camera className="w-4 h-4 text-brand-blue shrink-0" />
+            <span>Exemplos de Aplicação & Serviços Técnicos</span>
           </div>
           <h2 id="portfolio-title" className={`text-3xl md:text-5xl font-black mb-4 font-display tracking-tight leading-tight uppercase ${
             highContrast ? "text-yellow-300" : "text-slate-900"
           }`}>
-            Nossos Serviços Feitos em Curitiba
+            Projetos Sob Medida e Exemplos de Aplicações
           </h2>
           <p className={`text-base leading-relaxed ${highContrast ? "text-slate-200" : "text-slate-500 font-medium"}`}>
-            Confira fotos reais e detalhes técnicos de instalações, reformas, lavagens e automatizações de persianas e venezianas que nossa equipe própria executou recentemente. Transparência e qualidade comprovadas!
+            Conheça sugestões de aplicação para diferentes ambientes residenciais e comerciais, além de serviços especializados de manutenção, conserto, higienização e motorização em Curitiba e Região Metropolitana.
           </p>
         </div>
 
@@ -348,7 +349,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
                       ? "bg-black border-white text-white"
                       : "bg-white border-slate-100 hover:border-brand-blue/20 shadow-sm hover:shadow-md hover:scale-[1.01]"
                   }`}
-                  aria-label={`Trabalho concluído em ${job.neighborhood}: ${job.title}`}
+                  aria-label={`Exemplo de aplicação para ${job.environment}: ${job.title}`}
                 >
                   <div>
                     {/* Media preview area */}
@@ -377,11 +378,11 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
                         </span>
                       </div>
 
-                      {/* Right-side overlays (Neighborhood / Video alert) */}
+                      {/* Right-side overlays (Environment / Video alert) */}
                       <div className="absolute top-2.5 right-2.5 flex flex-col gap-1.5 items-end">
                         <span className="bg-slate-900/85 text-slate-100 backdrop-blur-sm border border-slate-700/50 px-2.5 py-1 rounded text-[10px] font-bold shadow flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                          <span>{job.neighborhood}</span>
+                          <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <span>{job.environment}</span>
                         </span>
                       </div>
 
@@ -396,9 +397,8 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
 
                     {/* Captions area */}
                     <div className="p-5">
-                      <div className="flex items-center gap-1.5 text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-2">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                        <span>Realizado em: {job.date}</span>
+                      <div className="flex items-center gap-1.5 text-[10px] text-brand-blue font-bold uppercase tracking-wider mb-2">
+                        <span>{job.tag}</span>
                       </div>
                       
                       <h3 className={`text-base font-extrabold tracking-tight mb-2 uppercase line-clamp-1 group-hover:text-brand-blue transition-colors ${
@@ -446,7 +446,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
             <span className="text-4xl block mb-3">🔍</span>
             <h4 className="text-lg font-bold mb-1 uppercase">Nenhum serviço encontrado</h4>
             <p className="text-slate-400 text-xs font-semibold max-w-md mx-auto">
-              Nenhum resultado corresponde à busca "{searchQuery}". Experimente buscar por bairros como "Batel", "Hauer" ou "Mercês", ou mude a categoria acima.
+              Nenhum resultado corresponde à busca "{searchQuery}". Experimente buscar por termos como "sala", "motor", "blackout" ou mude a categoria acima.
             </p>
             <button
               onClick={() => { setSearchQuery(""); setActiveFilter("all"); }}
@@ -488,8 +488,8 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
                 
                 <div className="absolute bottom-4 left-4 flex gap-2">
                   <span className="bg-slate-900/80 text-white backdrop-blur-sm border border-slate-700/50 px-3 py-1 rounded text-xs font-bold shadow flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-red-500 shrink-0" />
-                    <span>Bairro: {selectedJob.neighborhood}</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Ambiente: {selectedJob.environment}</span>
                   </span>
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
               {/* Modal Content */}
               <div className="p-6">
                 <span className="text-[10px] font-black text-brand-blue uppercase tracking-widest block mb-1">
-                  Trabalho Concluído em Curitiba ({selectedJob.date})
+                  {selectedJob.tag} • Curitiba e Região Metropolitana
                 </span>
                 
                 <h3 id="modal-title" className={`text-xl md:text-2xl font-black uppercase mb-4 tracking-tight ${
@@ -508,7 +508,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
 
                 <div className="space-y-4 text-sm font-medium leading-relaxed mb-6">
                   <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">O Desafio do Cliente:</h4>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Aplicação / Necessidade:</h4>
                     <p className={highContrast ? "text-slate-200" : "text-slate-600"}>
                       {selectedJob.description}
                     </p>
@@ -519,7 +519,7 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
                   }`}>
                     <h4 className="text-xs font-black text-emerald-600 uppercase tracking-widest mb-1.5 flex items-center gap-1">
                       <CheckCircle className="w-4 h-4 text-emerald-500" />
-                      <span>Solução Nova's Persianas Entregue:</span>
+                      <span>Solução Técnica Nova's Persianas:</span>
                     </h4>
                     <p className={`text-xs md:text-sm ${highContrast ? "text-slate-200" : "text-emerald-950 font-semibold"}`}>
                       {selectedJob.solution}
@@ -531,13 +531,13 @@ export default function ServicosFeitos({ highContrast }: ServicosFeitosProps) {
                 <div className="flex flex-col sm:flex-row gap-3 items-center justify-between pt-4 border-t border-slate-100">
                   <a
                     href={`https://api.whatsapp.com/send/?phone=5541995507310&text=${encodeURIComponent(
-                      `Olá, vi o serviço concluído de "${selectedJob.title}" no bairro "${selectedJob.neighborhood}" e gostaria de agendar um orçamento similar para minha casa.`
+                      `Olá, vi o exemplo de "${selectedJob.title}" para ${selectedJob.environment} e gostaria de solicitar um orçamento para meu imóvel.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-700 shadow-md cursor-pointer min-h-[44px]`}
                   >
-                    <span>Quero Orçamento Igual</span>
+                    <span>Solicitar Orçamento</span>
                   </a>
 
                   <div className="flex gap-2 w-full sm:w-auto">
